@@ -1,0 +1,6183 @@
+
+/* =========================================
+   WELDPRO DASHBOARD
+   PART 3 — RESPONSIVE + RTL
+========================================= */
+
+/* =========================================
+   DESKTOP / IPAD PRO
+   Hamburger enabled at 1199px and below
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .wts-sidebar {
+        position: fixed;
+        inset-block: 0;
+        inset-inline-start: 0;
+
+        width: 270px;
+        max-width: calc(100vw - 40px);
+        height: 100vh;
+        height: 100dvh;
+
+        transform: translateX(-100%);
+        visibility: hidden;
+        pointer-events: none;
+
+        box-shadow: var(--wts-shadow);
+        z-index: 1100;
+    }
+
+    /* RTL sidebar starts from the right */
+    html[dir="rtl"] .wts-sidebar {
+        transform: translateX(100%);
+    }
+
+    .wts-sidebar.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .wts-main-area {
+        width: 100%;
+        margin-inline-start: 0;
+    }
+
+    /* Show hamburger and close buttons */
+    .wts-menu-toggle {
+        display: inline-grid;
+        place-items: center;
+    }
+
+    .wts-sidebar-close {
+        display: inline-grid;
+        place-items: center;
+    }
+
+    /* Sidebar overlay */
+    .wts-sidebar-overlay {
+        position: fixed;
+        inset: 0;
+
+        z-index: 1050;
+
+        display: block;
+
+        background: rgba(15, 18, 21, 0.55);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .wts-sidebar-overlay.is-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .wts-topbar {
+        padding: 15px 24px;
+    }
+
+    .wts-dashboard-content {
+        padding: 26px 24px;
+    }
+}
+
+/* =========================================
+   IPAD PRO / SMALL LAPTOP
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .wts-topbar {
+        gap: 18px;
+    }
+
+    .wts-page-heading h1 {
+        font-size: 20px;
+    }
+
+    .wts-topbar-actions {
+        gap: 8px;
+    }
+
+    .wts-icon-button {
+        width: 42px;
+        height: 42px;
+    }
+
+    .wts-profile-details {
+        display: flex;
+    }
+
+    .wts-profile-chevron {
+        display: inline-block;
+    }
+}
+
+/* =========================================
+   IPAD MINI / TABLET
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    :root {
+        --wts-topbar-height: 78px;
+    }
+
+    .wts-topbar {
+        gap: 12px;
+        padding: 13px 20px;
+    }
+
+    .wts-topbar-left {
+        gap: 12px;
+    }
+
+    .wts-page-heading h1 {
+        font-size: 18px;
+    }
+
+    .wts-page-heading p {
+        font-size: 11px;
+    }
+
+    .wts-topbar-actions {
+        gap: 7px;
+    }
+
+    .wts-icon-button {
+        width: 39px;
+        height: 39px;
+        min-width: 39px;
+        font-size: 14px;
+    }
+
+    .wts-profile-button {
+        min-height: 39px;
+        padding: 0;
+    }
+
+    .wts-profile-avatar {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+    }
+
+    .wts-profile-details,
+    .wts-profile-chevron {
+        display: none;
+    }
+
+    .wts-dashboard-content {
+        padding: 24px 20px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    :root {
+        --wts-topbar-height: 72px;
+    }
+
+    .wts-sidebar {
+        width: 285px;
+        max-width: calc(100vw - 44px);
+        padding: 20px 14px 14px;
+    }
+
+    .wts-sidebar-brand {
+        min-height: 46px;
+        margin-bottom: 25px;
+    }
+
+    .wts-dashboard-logo {
+        width: 175px;
+        height: 42px;
+    }
+
+    .wts-topbar {
+        gap: 9px;
+        padding: 11px 14px;
+    }
+
+    .wts-topbar-left {
+        flex: 1;
+        gap: 9px;
+    }
+
+    .wts-page-heading {
+        flex: 1;
+    }
+
+    .wts-page-heading h1 {
+        margin-bottom: 3px;
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .wts-page-heading p {
+        max-width: 210px;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .wts-menu-toggle,
+    .wts-icon-button {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        font-size: 13px;
+    }
+
+    .wts-topbar-actions {
+        gap: 5px;
+    }
+
+    .wts-rtl-button i {
+        font-size: 15px;
+    }
+
+    .wts-profile-button {
+        min-height: 35px;
+        padding: 0;
+    }
+
+    .wts-profile-avatar {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 12px;
+    }
+
+    .wts-profile-details,
+    .wts-profile-chevron {
+        display: none;
+    }
+
+    .wts-dropdown-menu {
+        top: calc(100% + 8px);
+        width: 205px;
+        max-width: calc(100vw - 20px);
+    }
+
+    .wts-profile-menu {
+        width: 220px;
+    }
+
+    .wts-dashboard-content {
+        min-height: calc(100vh - var(--wts-topbar-height));
+        padding: 18px 14px;
+    }
+
+    .wts-content-placeholder {
+        min-height: 250px;
+        padding: 22px 16px;
+    }
+
+    .wts-placeholder-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 14px;
+        font-size: 20px;
+    }
+
+    .wts-content-placeholder h2 {
+        font-size: 19px;
+    }
+
+    .wts-content-placeholder p {
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .wts-topbar {
+        gap: 6px;
+        padding-inline: 10px;
+    }
+
+    .wts-topbar-left {
+        gap: 7px;
+    }
+
+    .wts-topbar-actions {
+        gap: 4px;
+    }
+
+    .wts-menu-toggle,
+    .wts-icon-button {
+        width: 32px;
+        height: 34px;
+        min-width: 32px;
+        font-size: 12px;
+    }
+
+    .wts-page-heading h1 {
+        font-size: 13px;
+    }
+
+    .wts-page-heading p {
+        max-width: 130px;
+        font-size: 9px;
+    }
+
+    .wts-rtl-button i {
+        font-size: 14px;
+    }
+
+    .wts-profile-avatar {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+    }
+
+    .wts-sidebar {
+        padding-inline: 12px;
+    }
+
+    .wts-dashboard-content {
+        padding: 15px 10px;
+    }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .wts-topbar {
+        gap: 4px;
+        padding-inline: 7px;
+    }
+
+    .wts-topbar-left {
+        gap: 5px;
+    }
+
+    .wts-topbar-actions {
+        gap: 3px;
+    }
+
+    .wts-menu-toggle,
+    .wts-icon-button {
+        width: 29px;
+        height: 31px;
+        min-width: 29px;
+        font-size: 11px;
+    }
+
+    .wts-page-heading h1 {
+        font-size: 12px;
+    }
+
+    .wts-page-heading p {
+        display: none;
+    }
+
+    .wts-profile-avatar {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+}
+
+/* =========================================
+   RTL LAYOUT
+========================================= */
+
+html[dir="rtl"] body {
+    direction: rtl;
+}
+
+html[dir="rtl"] .wts-topbar,
+html[dir="rtl"] .wts-topbar-left,
+html[dir="rtl"] .wts-topbar-actions {
+    direction: rtl;
+}
+
+html[dir="rtl"] .wts-page-heading,
+html[dir="rtl"] .wts-sidebar-label,
+html[dir="rtl"] .wts-nav-link,
+html[dir="rtl"] .wts-dropdown-item {
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-nav-link {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .wts-profile-button {
+    padding-inline: 6px 0;
+}
+
+html[dir="rtl"] .wts-profile-chevron {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .wts-profile-button[aria-expanded="true"] .wts-profile-chevron {
+    transform: rotate(0deg);
+}
+
+html[dir="rtl"] .wts-dropdown-menu {
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+}
+
+html[dir="rtl"] .wts-dashboard-logo {
+    object-position: right center;
+}
+
+/* =========================================
+   DARK MODE RESPONSIVE SUPPORT
+========================================= */
+
+body.dark-mode .wts-sidebar-overlay {
+    background: rgba(0, 0, 0, 0.68);
+}
+
+body.dark-mode .wts-sidebar-close {
+    color: var(--wts-text);
+    background: var(--wts-section);
+    border-color: var(--wts-border);
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .wts-sidebar,
+    .wts-sidebar-overlay,
+    .wts-main-area,
+    .wts-topbar,
+    .wts-nav-link {
+        transition: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********DASHBOARD **********/
+
+
+/* =========================================
+   DASHBOARD OVERVIEW RESPONSIVE
+========================================= */
+
+@media (max-width: 1199px) {
+    .wts-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wts-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        gap: 18px;
+    }
+
+    .wts-dashboard-grid-bottom {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wts-dashboard-panel {
+        padding: 20px;
+    }
+
+    .wts-program-card {
+        grid-template-columns: 95px minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .wts-program-image {
+        min-height: 130px;
+    }
+}
+
+@media (max-width: 991px) {
+    .wts-dashboard-grid,
+    .wts-dashboard-grid-bottom {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .wts-summary-grid {
+        gap: 14px;
+    }
+
+    .wts-summary-card {
+        padding: 18px;
+    }
+
+    .wts-welcome-section {
+        align-items: flex-start;
+    }
+
+    .wts-welcome-text h2 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wts-welcome-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+    }
+
+    .wts-welcome-text h2 {
+        font-size: 21px;
+    }
+
+    .wts-primary-button {
+        align-self: flex-start;
+    }
+
+    .wts-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-summary-card {
+        padding: 15px;
+    }
+
+    .wts-summary-top {
+        margin-bottom: 14px;
+    }
+
+    .wts-summary-icon {
+        width: 37px;
+        height: 37px;
+        font-size: 16px;
+    }
+
+    .wts-summary-value h3 {
+        font-size: 25px;
+    }
+
+    .wts-dashboard-grid {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .wts-dashboard-panel {
+        padding: 17px;
+    }
+
+    .wts-program-card {
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .wts-program-image {
+        min-height: 120px;
+        font-size: 28px;
+    }
+
+    .wts-panel-header h3 {
+        font-size: 14px;
+    }
+
+    .wts-schedule-info h4 {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wts-summary-grid {
+        gap: 10px;
+    }
+
+    .wts-summary-card {
+        padding: 13px 11px;
+    }
+
+    .wts-summary-label {
+        font-size: 11px;
+    }
+
+    .wts-summary-value h3 {
+        font-size: 23px;
+    }
+
+    .wts-summary-description {
+        font-size: 9px;
+    }
+
+    .wts-program-card {
+        grid-template-columns: 1fr;
+    }
+
+    .wts-program-image {
+        min-height: 110px;
+    }
+
+    .wts-panel-header {
+        gap: 9px;
+    }
+
+    .wts-panel-header p {
+        font-size: 10px;
+    }
+
+    .wts-text-link {
+        font-size: 10px;
+    }
+
+    .wts-assessment-row {
+        gap: 9px;
+    }
+
+    .wts-assessment-icon {
+        width: 31px;
+        height: 31px;
+        min-width: 31px;
+    }
+
+    .wts-assessment-info h4 {
+        font-size: 10px;
+    }
+
+    .wts-assessment-info p {
+        font-size: 9px;
+    }
+
+    .wts-assessment-score {
+        font-size: 11px;
+    }
+
+    .wts-assessment-status {
+        padding: 4px 5px;
+        font-size: 8px;
+    }
+
+    .wts-payment-total h3 {
+        font-size: 24px;
+    }
+
+    .wts-payment-details strong {
+        font-size: 13px;
+    }
+}
+
+/* RTL RESPONSIVE ALIGNMENT */
+
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-welcome-section {
+        align-items: stretch;
+    }
+
+    html[dir="rtl"] .wts-primary-button {
+        align-self: flex-start;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*********MY COURSE*******/
+
+
+/* =========================================
+   MY COURSES — RESPONSIVE CSS
+   Desktop, iPad Pro, iPad Mini & Mobile
+========================================= */
+
+
+/* =========================================
+   LAPTOP & IPAD PRO
+   992px – 1199px
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .wts-courses-content {
+        gap: 24px;
+    }
+
+    .wts-courses-intro {
+        padding: 25px;
+        gap: 18px;
+    }
+
+    .wts-courses-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-courses-intro-text p {
+        font-size: 13px;
+    }
+
+    .wts-courses-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .wts-courses-summary-card {
+        padding: 20px;
+    }
+
+    .wts-courses-toolbar {
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .wts-courses-search {
+        max-width: 260px;
+    }
+
+    .wts-courses-filters {
+        gap: 6px;
+    }
+
+    .wts-course-filter {
+        padding: 0 11px;
+        font-size: 11px;
+    }
+
+    .wts-courses-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .wts-course-image {
+        height: 200px;
+    }
+
+    .wts-course-card-body {
+        padding: 20px;
+    }
+
+    .wts-course-card-body h3 {
+        font-size: 18px;
+    }
+
+    .wts-course-description {
+        font-size: 12px;
+    }
+
+    .wts-course-meta {
+        gap: 10px 14px;
+    }
+
+    .wts-courses-support {
+        padding: 22px;
+        gap: 14px;
+    }
+
+    .wts-courses-support-text h3 {
+        font-size: 15px;
+    }
+
+    .wts-courses-support-button {
+        padding: 0 12px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   IPAD MINI & TABLET
+   768px – 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .wts-courses-content {
+        gap: 22px;
+    }
+
+    .wts-courses-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .wts-courses-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-courses-intro-text p {
+        max-width: 100%;
+    }
+
+    .wts-courses-browse-button {
+        align-self: flex-start;
+    }
+
+    .wts-courses-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-courses-summary-card {
+        padding: 19px;
+    }
+
+    .wts-courses-summary-info h3 {
+        font-size: 26px;
+    }
+
+    .wts-courses-list-header h2 {
+        font-size: 22px;
+    }
+
+    .wts-courses-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .wts-courses-search {
+        width: 100%;
+        max-width: none;
+        flex: auto;
+    }
+
+    .wts-courses-filters {
+        justify-content: flex-start;
+    }
+
+    .wts-course-filter {
+        flex: 1;
+        padding: 0 12px;
+    }
+
+    .wts-courses-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .wts-course-image {
+        height: 175px;
+    }
+
+    .wts-course-card-body {
+        padding: 17px;
+    }
+
+    .wts-course-card-body h3 {
+        font-size: 17px;
+    }
+
+    .wts-course-description {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .wts-course-meta {
+        gap: 9px 12px;
+    }
+
+    .wts-course-meta span {
+        font-size: 10px;
+    }
+
+    .wts-course-next-lesson {
+        padding: 12px;
+    }
+
+    .wts-course-next-lesson p {
+        font-size: 11px;
+    }
+
+    .wts-course-action {
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .wts-courses-support {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 21px;
+    }
+
+    .wts-courses-support-text {
+        flex-basis: calc(100% - 70px);
+    }
+
+    .wts-courses-support-button {
+        margin-left: 66px;
+    }
+
+    html[dir="rtl"] .wts-courses-support-button {
+        margin-right: 66px;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   481px – 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+    .wts-courses-content {
+        gap: 20px;
+    }
+
+    .wts-courses-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 21px;
+    }
+
+    .wts-courses-eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .wts-courses-intro-text h2 {
+        margin-bottom: 9px;
+        font-size: 24px;
+    }
+
+    .wts-courses-intro-text p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .wts-courses-browse-button {
+        align-self: stretch;
+        width: 100%;
+        min-height: 43px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    .wts-courses-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-courses-summary-card {
+        align-items: flex-start;
+        gap: 11px;
+        padding: 15px 13px;
+    }
+
+    .wts-courses-summary-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .wts-courses-summary-info p {
+        margin-bottom: 6px;
+        font-size: 11px;
+    }
+
+    .wts-courses-summary-info h3 {
+        margin-bottom: 5px;
+        font-size: 23px;
+    }
+
+    .wts-courses-summary-info span {
+        font-size: 10px;
+    }
+
+    .wts-courses-list-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 17px;
+    }
+
+    .wts-courses-list-header h2 {
+        font-size: 21px;
+    }
+
+    .wts-courses-list-header p {
+        font-size: 12px;
+    }
+
+    .wts-courses-count {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .wts-courses-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 18px;
+        padding: 13px;
+    }
+
+    .wts-courses-search {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        height: 42px;
+        flex: auto;
+        padding: 0 12px;
+    }
+
+    .wts-courses-search input {
+        font-size: 12px;
+    }
+
+    .wts-courses-filters {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        width: 100%;
+    }
+
+    .wts-course-filter {
+        min-width: 0;
+        min-height: 38px;
+        padding: 0 5px;
+        font-size: 10px;
+    }
+
+    .wts-courses-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .wts-course-image {
+        height: 220px;
+    }
+
+    .wts-course-card-body {
+        padding: 19px;
+    }
+
+    .wts-course-card-body h3 {
+        font-size: 19px;
+    }
+
+    .wts-course-description {
+        font-size: 12px;
+    }
+
+    .wts-course-meta {
+        gap: 12px 18px;
+    }
+
+    .wts-course-meta span {
+        font-size: 11px;
+    }
+
+    .wts-course-progress-header {
+        margin-top: 18px;
+    }
+
+    .wts-course-next-lesson {
+        gap: 11px;
+        padding: 13px;
+    }
+
+    .wts-course-next-lesson p {
+        font-size: 11px;
+    }
+
+    .wts-course-action {
+        min-height: 44px;
+        font-size: 12px;
+    }
+
+    .wts-courses-empty {
+        padding: 35px 18px;
+    }
+
+    .wts-courses-support {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 19px;
+    }
+
+    .wts-courses-support-icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .wts-courses-support-text {
+        flex-basis: calc(100% - 58px);
+    }
+
+    .wts-courses-support-text h3 {
+        font-size: 14px;
+    }
+
+    .wts-courses-support-text p {
+        font-size: 11px;
+    }
+
+    .wts-courses-support-button {
+        width: 100%;
+        min-height: 42px;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    html[dir="rtl"] .wts-courses-support-button {
+        margin: 0;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   360px – 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .wts-courses-content {
+        gap: 17px;
+    }
+
+    .wts-courses-intro {
+        padding: 17px;
+    }
+
+    .wts-courses-intro-text h2 {
+        font-size: 21px;
+    }
+
+    .wts-courses-intro-text p {
+        font-size: 11px;
+    }
+
+    .wts-courses-summary {
+        gap: 10px;
+    }
+
+    .wts-courses-summary-card {
+        flex-direction: column;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .wts-courses-summary-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .wts-courses-summary-info h3 {
+        font-size: 22px;
+    }
+
+    .wts-courses-summary-info p {
+        font-size: 10px;
+    }
+
+    .wts-courses-summary-info span {
+        font-size: 9px;
+    }
+
+    .wts-courses-list-header h2 {
+        font-size: 19px;
+    }
+
+    .wts-courses-filters {
+        gap: 5px;
+    }
+
+    .wts-course-filter {
+        padding: 0 3px;
+        font-size: 9px;
+    }
+
+    .wts-course-image {
+        height: 185px;
+    }
+
+    .wts-course-status {
+        top: 11px;
+        left: 11px;
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+
+    .wts-course-level {
+        right: 11px;
+        bottom: 11px;
+        padding: 6px 8px;
+        font-size: 9px;
+    }
+
+    html[dir="rtl"] .wts-course-status {
+        right: 11px;
+        left: auto;
+    }
+
+    html[dir="rtl"] .wts-course-level {
+        right: auto;
+        left: 11px;
+    }
+
+    .wts-course-card-body {
+        padding: 16px;
+    }
+
+    .wts-course-category {
+        font-size: 10px;
+    }
+
+    .wts-course-card-body h3 {
+        font-size: 17px;
+    }
+
+    .wts-course-description {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .wts-course-meta {
+        gap: 9px 14px;
+        padding: 12px 0;
+    }
+
+    .wts-course-meta span {
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .wts-course-progress-header span,
+    .wts-course-progress-header strong {
+        font-size: 11px;
+    }
+
+    .wts-course-next-lesson {
+        gap: 9px;
+        padding: 11px;
+    }
+
+    .wts-course-lesson-icon {
+        flex-basis: 33px;
+        width: 33px;
+        height: 33px;
+        font-size: 11px;
+    }
+
+    .wts-course-next-lesson span {
+        font-size: 8px;
+    }
+
+    .wts-course-next-lesson p {
+        font-size: 10px;
+    }
+
+    .wts-course-action {
+        min-height: 42px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .wts-courses-support {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .wts-courses-support-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .wts-courses-support-text {
+        flex-basis: calc(100% - 48px);
+    }
+
+    .wts-courses-support-text h3 {
+        font-size: 13px;
+    }
+
+    .wts-courses-support-text p {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   359px AND BELOW
+========================================= */
+
+@media (max-width: 359px) {
+
+    .wts-courses-intro {
+        padding: 14px;
+    }
+
+    .wts-courses-intro-text h2 {
+        font-size: 19px;
+    }
+
+    .wts-courses-summary-card {
+        padding: 11px;
+    }
+
+    .wts-courses-summary-info h3 {
+        font-size: 20px;
+    }
+
+    .wts-courses-toolbar {
+        padding: 10px;
+    }
+
+    .wts-course-filter {
+        font-size: 8px;
+    }
+
+    .wts-course-image {
+        height: 160px;
+    }
+
+    .wts-course-card-body {
+        padding: 13px;
+    }
+
+    .wts-course-card-body h3 {
+        font-size: 16px;
+    }
+
+    .wts-course-meta {
+        gap: 8px;
+    }
+
+    .wts-course-meta span {
+        font-size: 9px;
+    }
+
+    .wts-course-next-lesson p {
+        font-size: 9px;
+    }
+
+    .wts-course-action {
+        padding: 0 10px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   RTL RESPONSIVE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .wts-courses-intro,
+    html[dir="rtl"] .wts-courses-list-header,
+    html[dir="rtl"] .wts-courses-toolbar,
+    html[dir="rtl"] .wts-courses-support {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-courses-filters {
+        justify-content: flex-start;
+    }
+
+    html[dir="rtl"] .wts-courses-search {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-courses-search input {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-course-action {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-courses-browse-button,
+    html[dir="rtl"] .wts-courses-support-button {
+        direction: rtl;
+    }
+}
+
+
+/* =========================================
+   DARK MODE RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    body.dark-mode .wts-courses-intro,
+    body.dark-mode .wts-courses-summary-card,
+    body.dark-mode .wts-courses-toolbar,
+    body.dark-mode .wts-course-card,
+    body.dark-mode .wts-courses-support {
+        background: var(--wts-card-bg, #25292D);
+    }
+
+    body.dark-mode .wts-courses-search input {
+        color: var(--wts-heading, #F5F5F5);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******LAB HOUR*******/
+
+
+/* =========================================
+   LAB HOURS — RESPONSIVE CSS
+   Desktop, iPad Pro, iPad Mini & Mobile
+========================================= */
+
+
+/* =========================================
+   LAPTOP & IPAD PRO
+   992px – 1199px
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .wts-lab-content {
+        gap: 24px;
+    }
+
+    .wts-lab-intro {
+        padding: 25px;
+        gap: 18px;
+    }
+
+    .wts-lab-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-lab-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .wts-lab-summary-card {
+        padding: 20px;
+    }
+
+    .wts-lab-overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .wts-lab-panel {
+        padding: 21px;
+    }
+
+    .wts-lab-progress-content {
+        flex-direction: column;
+        gap: 23px;
+    }
+
+    .wts-lab-progress-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+    }
+
+    .wts-lab-progress-stat {
+        gap: 7px;
+    }
+
+    .wts-lab-progress-stat strong {
+        font-size: 12px;
+    }
+
+    .wts-lab-progress-stat p {
+        font-size: 10px;
+    }
+
+    .wts-lab-category-heading {
+        gap: 10px;
+    }
+
+    .wts-lab-category-name {
+        gap: 9px;
+    }
+
+    .wts-lab-category-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .wts-lab-category-name h4 {
+        font-size: 12px;
+    }
+
+    .wts-lab-category-heading > strong {
+        font-size: 11px;
+    }
+
+    .wts-lab-upcoming-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .wts-lab-session-card {
+        padding: 19px;
+    }
+
+    .wts-lab-reminder {
+        padding: 22px;
+        gap: 14px;
+    }
+
+    .wts-lab-reminder-content h3 {
+        font-size: 15px;
+    }
+
+    .wts-lab-reminder-button {
+        padding: 0 12px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   IPAD MINI & TABLET
+   768px – 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .wts-lab-content {
+        gap: 22px;
+    }
+
+    .wts-lab-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 24px;
+    }
+
+    .wts-lab-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-lab-primary-button {
+        align-self: flex-start;
+    }
+
+    .wts-lab-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-lab-summary-card {
+        padding: 19px;
+    }
+
+    .wts-lab-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .wts-lab-panel {
+        padding: 23px;
+    }
+
+    .wts-lab-progress-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .wts-lab-progress-circle {
+        flex-basis: 150px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .wts-lab-progress-details {
+        display: flex;
+        gap: 19px;
+        width: auto;
+    }
+
+    .wts-lab-progress-stat strong {
+        font-size: 13px;
+    }
+
+    .wts-lab-category-list {
+        gap: 24px;
+    }
+
+    .wts-lab-upcoming-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .wts-lab-session-card {
+        padding: 20px;
+    }
+
+    .wts-lab-section-header h3 {
+        font-size: 21px;
+    }
+
+    .wts-lab-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .wts-lab-table {
+        min-width: 800px;
+    }
+
+    .wts-lab-reminder {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 21px;
+    }
+
+    .wts-lab-reminder-content {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .wts-lab-reminder-button {
+        margin-left: 62px;
+    }
+
+    html[dir="rtl"] .wts-lab-reminder-button {
+        margin-right: 62px;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   481px – 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+    .wts-lab-content {
+        gap: 20px;
+    }
+
+    .wts-lab-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 21px;
+    }
+
+    .wts-lab-eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .wts-lab-intro-text h2 {
+        margin-bottom: 9px;
+        font-size: 24px;
+    }
+
+    .wts-lab-intro-text p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .wts-lab-primary-button {
+        width: 100%;
+        min-height: 43px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    .wts-lab-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-lab-summary-card {
+        align-items: flex-start;
+        gap: 11px;
+        padding: 15px 13px;
+    }
+
+    .wts-lab-summary-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .wts-lab-summary-info p {
+        margin-bottom: 6px;
+        font-size: 10px;
+    }
+
+    .wts-lab-summary-info h3 {
+        margin-bottom: 5px;
+        font-size: 23px;
+    }
+
+    .wts-lab-summary-info h3 span {
+        font-size: 11px;
+    }
+
+    .wts-lab-summary-info small {
+        font-size: 9px;
+    }
+
+    .wts-lab-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .wts-lab-panel {
+        padding: 19px;
+    }
+
+    .wts-lab-panel-header {
+        gap: 12px;
+        margin-bottom: 21px;
+    }
+
+    .wts-lab-panel-header h3 {
+        font-size: 17px;
+    }
+
+    .wts-lab-progress-content {
+        flex-direction: column;
+        gap: 23px;
+        padding: 4px 0 21px;
+    }
+
+    .wts-lab-progress-circle {
+        flex-basis: 150px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .wts-lab-progress-circle-inner strong {
+        font-size: 29px;
+    }
+
+    .wts-lab-progress-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .wts-lab-progress-stat {
+        gap: 7px;
+    }
+
+    .wts-lab-stat-dot {
+        flex-basis: 8px;
+        width: 8px;
+        height: 8px;
+    }
+
+    .wts-lab-progress-stat p {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    .wts-lab-progress-stat strong {
+        font-size: 11px;
+    }
+
+    .wts-lab-progress-bar-labels {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .wts-lab-progress-bar-labels span,
+    .wts-lab-progress-bar-labels strong {
+        font-size: 10px;
+    }
+
+    .wts-lab-category-list {
+        gap: 22px;
+    }
+
+    .wts-lab-category-heading {
+        gap: 9px;
+    }
+
+    .wts-lab-category-name {
+        gap: 9px;
+    }
+
+    .wts-lab-category-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .wts-lab-category-name h4 {
+        font-size: 12px;
+    }
+
+    .wts-lab-category-name p {
+        font-size: 9px;
+    }
+
+    .wts-lab-category-heading > strong {
+        font-size: 11px;
+    }
+
+    .wts-lab-category-heading > strong span {
+        font-size: 9px;
+    }
+
+    .wts-lab-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 17px;
+    }
+
+    .wts-lab-section-header h3 {
+        font-size: 20px;
+    }
+
+    .wts-lab-section-header p {
+        font-size: 11px;
+    }
+
+    .wts-lab-text-link {
+        font-size: 11px;
+    }
+
+    .wts-lab-upcoming-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .wts-lab-session-card {
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 16px;
+    }
+
+    .wts-lab-session-date {
+        flex-basis: 55px;
+        width: 55px;
+        min-height: 73px;
+    }
+
+    .wts-lab-session-date strong {
+        font-size: 24px;
+    }
+
+    .wts-lab-session-details {
+        flex-basis: calc(100% - 70px);
+    }
+
+    .wts-lab-session-details h4 {
+        font-size: 13px;
+    }
+
+    .wts-lab-session-details p {
+        font-size: 10px;
+    }
+
+    .wts-lab-session-status {
+        margin-left: 68px;
+    }
+
+    .wts-lab-table-wrapper {
+        overflow-x: auto;
+        border-radius: 6px;
+    }
+
+    .wts-lab-table {
+        min-width: 760px;
+    }
+
+    .wts-lab-table th {
+        padding: 14px;
+        font-size: 10px;
+    }
+
+    .wts-lab-table td {
+        padding: 14px;
+        font-size: 10px;
+    }
+
+    .wts-lab-reminder {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 18px;
+    }
+
+    .wts-lab-reminder-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .wts-lab-reminder-content {
+        flex-basis: calc(100% - 55px);
+    }
+
+    .wts-lab-reminder-content h3 {
+        font-size: 14px;
+    }
+
+    .wts-lab-reminder-content p {
+        font-size: 11px;
+    }
+
+    .wts-lab-reminder-button {
+        width: 100%;
+        min-height: 42px;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    html[dir="rtl"] .wts-lab-session-status {
+        margin-right: 68px;
+        margin-left: 0;
+    }
+
+    html[dir="rtl"] .wts-lab-reminder-button {
+        margin: 0;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   360px – 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .wts-lab-content {
+        gap: 17px;
+    }
+
+    .wts-lab-intro {
+        padding: 17px;
+    }
+
+    .wts-lab-intro-text h2 {
+        font-size: 21px;
+    }
+
+    .wts-lab-intro-text p {
+        font-size: 11px;
+    }
+
+    .wts-lab-summary {
+        gap: 10px;
+    }
+
+    .wts-lab-summary-card {
+        flex-direction: column;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .wts-lab-summary-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .wts-lab-summary-info h3 {
+        font-size: 21px;
+    }
+
+    .wts-lab-summary-info p {
+        font-size: 10px;
+    }
+
+    .wts-lab-summary-info small {
+        font-size: 9px;
+    }
+
+    .wts-lab-panel {
+        padding: 15px;
+    }
+
+    .wts-lab-panel-header h3 {
+        font-size: 16px;
+    }
+
+    .wts-lab-progress-circle {
+        flex-basis: 135px;
+        width: 135px;
+        height: 135px;
+    }
+
+    .wts-lab-progress-circle::before {
+        inset: 10px;
+    }
+
+    .wts-lab-progress-circle-inner strong {
+        font-size: 26px;
+    }
+
+    .wts-lab-progress-circle-inner span {
+        font-size: 10px;
+    }
+
+    .wts-lab-progress-details {
+        gap: 7px;
+    }
+
+    .wts-lab-progress-stat {
+        gap: 5px;
+    }
+
+    .wts-lab-progress-stat p {
+        font-size: 8px;
+    }
+
+    .wts-lab-progress-stat strong {
+        font-size: 10px;
+    }
+
+    .wts-lab-progress-bar-labels {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .wts-lab-category-heading {
+        align-items: flex-start;
+    }
+
+    .wts-lab-category-name {
+        gap: 8px;
+    }
+
+    .wts-lab-category-icon {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .wts-lab-category-name h4 {
+        font-size: 11px;
+    }
+
+    .wts-lab-category-name p {
+        font-size: 8px;
+    }
+
+    .wts-lab-category-heading > strong {
+        font-size: 10px;
+    }
+
+    .wts-lab-category-heading > strong span {
+        font-size: 8px;
+    }
+
+    .wts-lab-section-header h3 {
+        font-size: 18px;
+    }
+
+    .wts-lab-session-card {
+        padding: 13px;
+    }
+
+    .wts-lab-session-date {
+        flex-basis: 49px;
+        width: 49px;
+        min-height: 68px;
+    }
+
+    .wts-lab-session-date strong {
+        font-size: 22px;
+    }
+
+    .wts-lab-session-details {
+        flex-basis: calc(100% - 62px);
+    }
+
+    .wts-lab-session-details h4 {
+        font-size: 12px;
+    }
+
+    .wts-lab-session-type {
+        font-size: 9px;
+    }
+
+    .wts-lab-session-status {
+        margin-left: 62px;
+        font-size: 8px;
+    }
+
+    .wts-lab-reminder {
+        padding: 15px;
+    }
+
+    .wts-lab-reminder-icon {
+        flex-basis: 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .wts-lab-reminder-content {
+        flex-basis: calc(100% - 48px);
+    }
+
+    .wts-lab-reminder-content h3 {
+        font-size: 13px;
+    }
+
+    .wts-lab-reminder-content p {
+        font-size: 10px;
+    }
+
+    html[dir="rtl"] .wts-lab-session-status {
+        margin-right: 62px;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   359px AND BELOW
+========================================= */
+
+@media (max-width: 359px) {
+
+    .wts-lab-intro {
+        padding: 14px;
+    }
+
+    .wts-lab-intro-text h2 {
+        font-size: 19px;
+    }
+
+    .wts-lab-summary-card {
+        padding: 10px;
+    }
+
+    .wts-lab-summary-info h3 {
+        font-size: 19px;
+    }
+
+    .wts-lab-summary-info p {
+        font-size: 9px;
+    }
+
+    .wts-lab-panel {
+        padding: 12px;
+    }
+
+    .wts-lab-progress-circle {
+        flex-basis: 120px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .wts-lab-progress-circle-inner strong {
+        font-size: 23px;
+    }
+
+    .wts-lab-progress-stat p {
+        font-size: 7px;
+    }
+
+    .wts-lab-progress-stat strong {
+        font-size: 9px;
+    }
+
+    .wts-lab-category-heading {
+        gap: 6px;
+    }
+
+    .wts-lab-category-name {
+        gap: 6px;
+    }
+
+    .wts-lab-category-icon {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .wts-lab-category-name h4 {
+        font-size: 10px;
+    }
+
+    .wts-lab-category-heading > strong {
+        font-size: 9px;
+    }
+
+    .wts-lab-session-card {
+        gap: 10px;
+        padding: 11px;
+    }
+
+    .wts-lab-session-details h4 {
+        font-size: 11px;
+    }
+
+    .wts-lab-session-details p {
+        font-size: 9px;
+    }
+
+    .wts-lab-session-status {
+        margin-left: 59px;
+    }
+
+    .wts-lab-reminder {
+        padding: 12px;
+    }
+
+    html[dir="rtl"] .wts-lab-session-status {
+        margin-right: 59px;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================
+   RTL RESPONSIVE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .wts-lab-intro,
+    html[dir="rtl"] .wts-lab-panel-header,
+    html[dir="rtl"] .wts-lab-category-heading,
+    html[dir="rtl"] .wts-lab-section-header,
+    html[dir="rtl"] .wts-lab-session-card,
+    html[dir="rtl"] .wts-lab-reminder {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-lab-intro-text,
+    html[dir="rtl"] .wts-lab-summary-info,
+    html[dir="rtl"] .wts-lab-panel,
+    html[dir="rtl"] .wts-lab-section-header > div:first-child,
+    html[dir="rtl"] .wts-lab-reminder-content {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-lab-progress-stat {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-lab-progress-bar-labels {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-lab-table {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-lab-table-session {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-lab-primary-button,
+    html[dir="rtl"] .wts-lab-text-link,
+    html[dir="rtl"] .wts-lab-reminder-button {
+        direction: rtl;
+    }
+}
+
+
+/* =========================================
+   DARK MODE RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    body.dark-mode .wts-lab-intro,
+    body.dark-mode .wts-lab-summary-card,
+    body.dark-mode .wts-lab-panel,
+    body.dark-mode .wts-lab-session-card,
+    body.dark-mode .wts-lab-table-wrapper,
+    body.dark-mode .wts-lab-reminder {
+        background: var(--wts-card-bg, #25292D);
+    }
+
+    body.dark-mode .wts-lab-progress-circle::before {
+        background: var(--wts-card-bg, #25292D);
+    }
+
+    body.dark-mode .wts-lab-session-date,
+    body.dark-mode .wts-lab-table thead {
+        background: var(--wts-section-bg, #222528);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*******SKILL ASSESSMENT******/
+
+
+/* =========================================
+   SKILL ASSESSMENTS — RESPONSIVE CSS
+   Desktop, iPad Pro, iPad Mini & Mobile
+========================================= */
+
+
+/* =========================================
+   LAPTOP & IPAD PRO
+   992px – 1199px
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .wts-assessments-content {
+        gap: 24px;
+    }
+
+    .wts-assessments-intro {
+        padding: 25px;
+        gap: 18px;
+    }
+
+    .wts-assessments-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-assessments-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .wts-assessment-summary-card {
+        padding: 20px;
+    }
+
+    .wts-assessments-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .wts-assessments-panel {
+        padding: 21px;
+    }
+
+    .wts-assessments-performance-content {
+        flex-direction: column;
+        gap: 23px;
+    }
+
+    .wts-assessments-performance-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+    }
+
+    .wts-assessments-performance-stat {
+        gap: 7px;
+    }
+
+    .wts-assessments-performance-stat p {
+        font-size: 10px;
+    }
+
+    .wts-assessments-performance-stat strong {
+        font-size: 12px;
+    }
+
+    .wts-assessments-skill-heading {
+        gap: 10px;
+    }
+
+    .wts-assessments-skill-name {
+        gap: 9px;
+    }
+
+    .wts-assessments-skill-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .wts-assessments-skill-name h4 {
+        font-size: 12px;
+    }
+
+    .wts-assessments-skill-heading > strong {
+        font-size: 12px;
+    }
+
+    .wts-assessments-upcoming-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-assessment-upcoming-card {
+        padding: 19px;
+    }
+
+    .wts-assessment-upcoming-card h4 {
+        font-size: 15px;
+    }
+
+    .wts-assessment-upcoming-card > p {
+        font-size: 11px;
+    }
+
+    .wts-assessment-upcoming-meta {
+        gap: 10px;
+    }
+
+    .wts-assessment-upcoming-meta span {
+        font-size: 10px;
+    }
+
+    .wts-assessments-toolbar {
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .wts-assessments-search {
+        max-width: 260px;
+    }
+
+    .wts-assessments-filters {
+        gap: 6px;
+    }
+
+    .wts-assessment-filter {
+        padding: 0 11px;
+        font-size: 10px;
+    }
+
+    .wts-assessments-table {
+        min-width: 1000px;
+    }
+
+    .wts-assessments-feedback {
+        padding: 22px;
+        gap: 14px;
+    }
+
+    .wts-assessments-feedback-content h3 {
+        font-size: 15px;
+    }
+
+    .wts-assessments-feedback-button {
+        padding: 0 12px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   IPAD MINI & TABLET
+   768px – 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .wts-assessments-content {
+        gap: 22px;
+    }
+
+    .wts-assessments-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 24px;
+    }
+
+    .wts-assessments-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-assessments-primary-button {
+        align-self: flex-start;
+    }
+
+    .wts-assessments-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-assessment-summary-card {
+        padding: 19px;
+    }
+
+    .wts-assessments-overview {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .wts-assessments-panel {
+        padding: 23px;
+    }
+
+    .wts-assessments-performance-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .wts-assessments-score-circle {
+        flex-basis: 150px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .wts-assessments-performance-details {
+        display: flex;
+        gap: 19px;
+        width: auto;
+    }
+
+    .wts-assessments-performance-stat strong {
+        font-size: 13px;
+    }
+
+    .wts-assessments-skill-list {
+        gap: 24px;
+    }
+
+    .wts-assessments-upcoming-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-assessment-upcoming-card {
+        padding: 18px;
+    }
+
+    .wts-assessment-upcoming-card h4 {
+        font-size: 15px;
+    }
+
+    .wts-assessment-upcoming-card > p {
+        font-size: 11px;
+    }
+
+    .wts-assessment-upcoming-meta {
+        gap: 10px;
+    }
+
+    .wts-assessment-upcoming-meta span {
+        font-size: 10px;
+    }
+
+    .wts-assessments-section-header h3 {
+        font-size: 21px;
+    }
+
+    .wts-assessments-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .wts-assessments-search {
+        width: 100%;
+        max-width: none;
+        flex: auto;
+    }
+
+    .wts-assessments-filters {
+        justify-content: flex-start;
+    }
+
+    .wts-assessment-filter {
+        flex: 1;
+    }
+
+    .wts-assessments-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .wts-assessments-table {
+        min-width: 1000px;
+    }
+
+    .wts-assessments-feedback {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 21px;
+    }
+
+    .wts-assessments-feedback-content {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .wts-assessments-feedback-button {
+        margin-left: 62px;
+    }
+
+    html[dir="rtl"] .wts-assessments-feedback-button {
+        margin-right: 62px;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   481px – 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+    .wts-assessments-content {
+        gap: 20px;
+    }
+
+    .wts-assessments-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 21px;
+    }
+
+    .wts-assessments-eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .wts-assessments-intro-text h2 {
+        margin-bottom: 9px;
+        font-size: 24px;
+    }
+
+    .wts-assessments-intro-text p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .wts-assessments-primary-button {
+        width: 100%;
+        min-height: 43px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    .wts-assessments-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-assessment-summary-card {
+        align-items: flex-start;
+        gap: 11px;
+        padding: 15px 13px;
+    }
+
+    .wts-assessment-summary-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .wts-assessment-summary-info p {
+        margin-bottom: 6px;
+        font-size: 10px;
+    }
+
+    .wts-assessment-summary-info h3 {
+        margin-bottom: 5px;
+        font-size: 23px;
+    }
+
+    .wts-assessment-summary-info h3 span {
+        font-size: 11px;
+    }
+
+    .wts-assessment-summary-info > span {
+        font-size: 9px;
+    }
+
+    .wts-assessments-overview {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .wts-assessments-panel {
+        padding: 19px;
+    }
+
+    .wts-assessments-panel-header {
+        gap: 12px;
+        margin-bottom: 21px;
+    }
+
+    .wts-assessments-panel-header h3 {
+        font-size: 17px;
+    }
+
+    .wts-assessments-performance-content {
+        flex-direction: column;
+        gap: 23px;
+        padding: 4px 0 21px;
+    }
+
+    .wts-assessments-score-circle {
+        flex-basis: 150px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .wts-assessments-score-circle-inner strong {
+        font-size: 29px;
+    }
+
+    .wts-assessments-performance-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .wts-assessments-performance-stat {
+        gap: 7px;
+    }
+
+    .wts-assessments-stat-dot {
+        flex-basis: 8px;
+        width: 8px;
+        height: 8px;
+    }
+
+    .wts-assessments-performance-stat p {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    .wts-assessments-performance-stat strong {
+        font-size: 11px;
+    }
+
+    .wts-assessments-progress-labels {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .wts-assessments-progress-labels span,
+    .wts-assessments-progress-labels strong {
+        font-size: 10px;
+    }
+
+    .wts-assessments-skill-list {
+        gap: 22px;
+    }
+
+    .wts-assessments-skill-heading {
+        gap: 9px;
+    }
+
+    .wts-assessments-skill-name {
+        gap: 9px;
+    }
+
+    .wts-assessments-skill-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .wts-assessments-skill-name h4 {
+        font-size: 12px;
+    }
+
+    .wts-assessments-skill-name p {
+        font-size: 9px;
+    }
+
+    .wts-assessments-skill-heading > strong {
+        font-size: 12px;
+    }
+
+    .wts-assessments-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 17px;
+    }
+
+    .wts-assessments-section-header h3 {
+        font-size: 20px;
+    }
+
+    .wts-assessments-section-header p {
+        font-size: 11px;
+    }
+
+    .wts-assessments-upcoming-count {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .wts-assessments-upcoming-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .wts-assessment-upcoming-card {
+        padding: 19px;
+    }
+
+    .wts-assessment-upcoming-card h4 {
+        font-size: 16px;
+    }
+
+    .wts-assessment-upcoming-card > p {
+        font-size: 11px;
+    }
+
+    .wts-assessment-upcoming-meta {
+        gap: 10px 16px;
+    }
+
+    .wts-assessment-upcoming-meta span {
+        font-size: 10px;
+    }
+
+    .wts-assessment-upcoming-link {
+        min-height: 42px;
+        font-size: 11px;
+    }
+
+    .wts-assessments-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 18px;
+        padding: 13px;
+    }
+
+    .wts-assessments-search {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        height: 42px;
+        flex: auto;
+        padding: 0 12px;
+    }
+
+    .wts-assessments-search input {
+        font-size: 12px;
+    }
+
+    .wts-assessments-filters {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        width: 100%;
+    }
+
+    .wts-assessment-filter {
+        min-width: 0;
+        min-height: 38px;
+        padding: 0 5px;
+        font-size: 10px;
+    }
+
+    .wts-assessments-table-wrapper {
+        overflow-x: auto;
+        border-radius: 6px;
+    }
+
+    .wts-assessments-table {
+        min-width: 1000px;
+    }
+
+    .wts-assessments-table th {
+        padding: 14px;
+        font-size: 10px;
+    }
+
+    .wts-assessments-table td {
+        padding: 14px;
+        font-size: 10px;
+    }
+
+    .wts-assessments-empty {
+        padding: 35px 18px;
+    }
+
+    .wts-assessments-feedback {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 18px;
+    }
+
+    .wts-assessments-feedback-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .wts-assessments-feedback-content {
+        flex-basis: calc(100% - 55px);
+    }
+
+    .wts-assessments-feedback-content h3 {
+        font-size: 14px;
+    }
+
+    .wts-assessments-feedback-content p {
+        font-size: 11px;
+    }
+
+    .wts-assessments-feedback-button {
+        width: 100%;
+        min-height: 42px;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    html[dir="rtl"] .wts-assessments-feedback-button {
+        margin: 0;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   360px – 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .wts-assessments-content {
+        gap: 17px;
+    }
+
+    .wts-assessments-intro {
+        padding: 17px;
+    }
+
+    .wts-assessments-intro-text h2 {
+        font-size: 21px;
+    }
+
+    .wts-assessments-intro-text p {
+        font-size: 11px;
+    }
+
+    .wts-assessments-summary {
+        gap: 10px;
+    }
+
+    .wts-assessment-summary-card {
+        flex-direction: column;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .wts-assessment-summary-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .wts-assessment-summary-info h3 {
+        font-size: 21px;
+    }
+
+    .wts-assessment-summary-info p {
+        font-size: 10px;
+    }
+
+    .wts-assessment-summary-info > span {
+        font-size: 9px;
+    }
+
+    .wts-assessments-panel {
+        padding: 15px;
+    }
+
+    .wts-assessments-panel-header h3 {
+        font-size: 16px;
+    }
+
+    .wts-assessments-score-circle {
+        flex-basis: 135px;
+        width: 135px;
+        height: 135px;
+    }
+
+    .wts-assessments-score-circle::before {
+        inset: 10px;
+    }
+
+    .wts-assessments-score-circle-inner strong {
+        font-size: 26px;
+    }
+
+    .wts-assessments-score-circle-inner span {
+        font-size: 10px;
+    }
+
+    .wts-assessments-performance-details {
+        gap: 7px;
+    }
+
+    .wts-assessments-performance-stat {
+        gap: 5px;
+    }
+
+    .wts-assessments-performance-stat p {
+        font-size: 8px;
+    }
+
+    .wts-assessments-performance-stat strong {
+        font-size: 10px;
+    }
+
+    .wts-assessments-progress-labels {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .wts-assessments-skill-heading {
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .wts-assessments-skill-name {
+        gap: 8px;
+    }
+
+    .wts-assessments-skill-icon {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .wts-assessments-skill-name h4 {
+        font-size: 11px;
+    }
+
+    .wts-assessments-skill-name p {
+        font-size: 8px;
+    }
+
+    .wts-assessments-skill-heading > strong {
+        font-size: 11px;
+    }
+
+    .wts-assessments-section-header h3 {
+        font-size: 18px;
+    }
+
+    .wts-assessment-upcoming-card {
+        padding: 15px;
+    }
+
+    .wts-assessment-upcoming-card h4 {
+        font-size: 15px;
+    }
+
+    .wts-assessment-upcoming-card > p {
+        font-size: 10px;
+    }
+
+    .wts-assessment-upcoming-meta {
+        gap: 9px 12px;
+    }
+
+    .wts-assessment-upcoming-meta span {
+        font-size: 9px;
+    }
+
+    .wts-assessments-toolbar {
+        padding: 10px;
+    }
+
+    .wts-assessments-filters {
+        gap: 5px;
+    }
+
+    .wts-assessment-filter {
+        padding: 0 3px;
+        font-size: 9px;
+    }
+
+    .wts-assessments-table {
+        min-width: 1000px;
+    }
+
+    .wts-assessments-feedback {
+        padding: 15px;
+    }
+
+    .wts-assessments-feedback-icon {
+        flex-basis: 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .wts-assessments-feedback-content {
+        flex-basis: calc(100% - 48px);
+    }
+
+    .wts-assessments-feedback-content h3 {
+        font-size: 13px;
+    }
+
+    .wts-assessments-feedback-content p {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   359px AND BELOW
+========================================= */
+
+@media (max-width: 359px) {
+
+    .wts-assessments-intro {
+        padding: 14px;
+    }
+
+    .wts-assessments-intro-text h2 {
+        font-size: 19px;
+    }
+
+    .wts-assessment-summary-card {
+        padding: 10px;
+    }
+
+    .wts-assessment-summary-info h3 {
+        font-size: 19px;
+    }
+
+    .wts-assessment-summary-info p {
+        font-size: 9px;
+    }
+
+    .wts-assessments-panel {
+        padding: 12px;
+    }
+
+    .wts-assessments-score-circle {
+        flex-basis: 120px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .wts-assessments-score-circle-inner strong {
+        font-size: 23px;
+    }
+
+    .wts-assessments-performance-stat p {
+        font-size: 7px;
+    }
+
+    .wts-assessments-performance-stat strong {
+        font-size: 9px;
+    }
+
+    .wts-assessments-skill-heading {
+        gap: 5px;
+    }
+
+    .wts-assessments-skill-name {
+        gap: 6px;
+    }
+
+    .wts-assessments-skill-icon {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .wts-assessments-skill-name h4 {
+        font-size: 10px;
+    }
+
+    .wts-assessments-skill-heading > strong {
+        font-size: 10px;
+    }
+
+    .wts-assessment-upcoming-card {
+        padding: 12px;
+    }
+
+    .wts-assessment-upcoming-card h4 {
+        font-size: 13px;
+    }
+
+    .wts-assessment-upcoming-meta span {
+        font-size: 8px;
+    }
+
+    .wts-assessment-filter {
+        font-size: 8px;
+    }
+
+    .wts-assessments-feedback {
+        padding: 12px;
+    }
+
+    .wts-assessments-feedback-content h3 {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   RTL RESPONSIVE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .wts-assessments-intro,
+    html[dir="rtl"] .wts-assessments-panel-header,
+    html[dir="rtl"] .wts-assessments-skill-heading,
+    html[dir="rtl"] .wts-assessments-section-header,
+    html[dir="rtl"] .wts-assessments-toolbar,
+    html[dir="rtl"] .wts-assessments-feedback {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-assessments-intro-text,
+    html[dir="rtl"] .wts-assessments-panel,
+    html[dir="rtl"] .wts-assessments-section-header > div:first-child,
+    html[dir="rtl"] .wts-assessments-feedback-content {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-assessments-performance-stat,
+    html[dir="rtl"] .wts-assessments-skill-name,
+    html[dir="rtl"] .wts-assessment-table-name {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-assessments-search {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-assessments-search input {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-assessments-table {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-assessment-upcoming-link,
+    html[dir="rtl"] .wts-assessments-primary-button,
+    html[dir="rtl"] .wts-assessments-feedback-button {
+        direction: rtl;
+    }
+}
+
+
+/* =========================================
+   DARK MODE RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    body.dark-mode .wts-assessments-intro,
+    body.dark-mode .wts-assessment-summary-card,
+    body.dark-mode .wts-assessments-panel,
+    body.dark-mode .wts-assessment-upcoming-card,
+    body.dark-mode .wts-assessments-toolbar,
+    body.dark-mode .wts-assessments-table-wrapper,
+    body.dark-mode .wts-assessments-feedback {
+        background: var(--wts-card-bg, #25292D);
+    }
+
+    body.dark-mode .wts-assessments-score-circle::before {
+        background: var(--wts-card-bg, #25292D);
+    }
+
+    body.dark-mode .wts-assessments-search input {
+        color: var(--wts-heading, #F5F5F5);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********CLASS SCHEDULE******/
+
+
+/* =========================================
+   CLASS SCHEDULE — RESPONSIVE CSS
+   Welding Trade School Dashboard
+========================================= */
+
+
+/* =========================================
+   IPAD PRO / SMALL LAPTOP
+   992px – 1199px
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .wts-schedule-content {
+        gap: 23px;
+    }
+
+    .wts-schedule-intro {
+        padding: 24px;
+        gap: 18px;
+    }
+
+    .wts-schedule-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-schedule-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-schedule-summary-card {
+        padding: 19px;
+    }
+
+    .wts-schedule-section-header h3 {
+        font-size: 21px;
+    }
+
+    .wts-schedule-week-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-schedule-day-header {
+        padding: 13px 8px;
+    }
+
+    .wts-schedule-day-events {
+        padding: 10px;
+    }
+
+    .wts-schedule-event {
+        padding: 12px 10px;
+    }
+
+    .wts-schedule-event h4 {
+        font-size: 12px;
+    }
+
+    .wts-schedule-event p,
+    .wts-schedule-event-location {
+        font-size: 10px;
+    }
+
+    .wts-schedule-event-type {
+        font-size: 9px;
+    }
+
+    .wts-schedule-rest-content {
+        min-height: 130px;
+    }
+
+    .wts-schedule-upcoming-card {
+        gap: 16px;
+        padding: 19px;
+    }
+
+    .wts-schedule-upcoming-info h4 {
+        font-size: 15px;
+    }
+
+    .wts-schedule-upcoming-meta {
+        gap: 9px 13px;
+    }
+
+    .wts-schedule-upcoming-meta span {
+        font-size: 9px;
+    }
+
+    .wts-schedule-view-link {
+        padding: 0 11px;
+        font-size: 10px;
+    }
+
+    .wts-schedule-reminder {
+        gap: 14px;
+        padding: 21px;
+    }
+
+    .wts-schedule-reminder-content h3 {
+        font-size: 15px;
+    }
+
+    .wts-schedule-reminder-link {
+        padding: 0 12px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   IPAD MINI / TABLET
+   768px – 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .wts-schedule-content {
+        gap: 22px;
+    }
+
+    .wts-schedule-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 23px;
+    }
+
+    .wts-schedule-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-schedule-primary-button {
+        align-self: flex-start;
+    }
+
+    .wts-schedule-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-schedule-summary-card {
+        padding: 19px;
+    }
+
+    .wts-schedule-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .wts-schedule-section-header h3 {
+        font-size: 22px;
+    }
+
+    .wts-schedule-week-label {
+        align-self: flex-start;
+    }
+
+    .wts-schedule-week-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-schedule-day-header {
+        padding: 14px 8px;
+    }
+
+    .wts-schedule-day-events {
+        padding: 10px;
+    }
+
+    .wts-schedule-event {
+        padding: 12px 10px;
+    }
+
+    .wts-schedule-event h4 {
+        font-size: 12px;
+    }
+
+    .wts-schedule-event p,
+    .wts-schedule-event-location {
+        font-size: 10px;
+    }
+
+    .wts-schedule-event-type {
+        font-size: 9px;
+    }
+
+    .wts-schedule-rest-content {
+        min-height: 135px;
+    }
+
+    .wts-schedule-legend {
+        gap: 15px;
+    }
+
+    .wts-schedule-upcoming-card {
+        display: grid;
+        grid-template-columns: 65px minmax(0, 1fr);
+        gap: 15px;
+        padding: 19px;
+    }
+
+    .wts-schedule-date-box {
+        grid-row: 1 / 3;
+        grid-column: 1;
+    }
+
+    .wts-schedule-upcoming-info {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .wts-schedule-view-link {
+        justify-self: start;
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .wts-schedule-upcoming-info h4 {
+        font-size: 15px;
+    }
+
+    .wts-schedule-upcoming-meta {
+        gap: 9px 14px;
+    }
+
+    .wts-schedule-upcoming-meta span {
+        font-size: 10px;
+    }
+
+    .wts-schedule-reminder {
+        display: grid;
+        grid-template-columns: 45px minmax(0, 1fr);
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .wts-schedule-reminder-icon {
+        grid-row: 1;
+        grid-column: 1;
+        width: 45px;
+        height: 45px;
+    }
+
+    .wts-schedule-reminder-content {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .wts-schedule-reminder-link {
+        justify-self: start;
+        grid-row: 2;
+        grid-column: 2;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   481px – 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+    .wts-schedule-content {
+        gap: 20px;
+        min-width: 0;
+    }
+
+    /* Page intro */
+
+    .wts-schedule-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        padding: 20px;
+    }
+
+    .wts-schedule-eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .wts-schedule-intro-text h2 {
+        margin-bottom: 9px;
+        font-size: 24px;
+    }
+
+    .wts-schedule-intro-text p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .wts-schedule-primary-button {
+        width: 100%;
+        min-height: 43px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    /* Summary cards */
+
+    .wts-schedule-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-schedule-summary-card {
+        flex-direction: column;
+        gap: 11px;
+        padding: 15px;
+    }
+
+    .wts-schedule-summary-icon {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .wts-schedule-summary-info p {
+        margin-bottom: 7px;
+        font-size: 10px;
+    }
+
+    .wts-schedule-summary-info h3 {
+        margin-bottom: 6px;
+        font-size: 24px;
+    }
+
+    .wts-schedule-summary-info h3 span {
+        font-size: 12px;
+    }
+
+    .wts-schedule-summary-info > span {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    /* Section headings */
+
+    .wts-schedule-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 17px;
+    }
+
+    .wts-schedule-section-header h3 {
+        margin-bottom: 7px;
+        font-size: 21px;
+    }
+
+    .wts-schedule-section-header p {
+        font-size: 11px;
+    }
+
+    .wts-schedule-week-label {
+        align-self: flex-start;
+        max-width: 100%;
+        padding: 10px 12px;
+        font-size: 10px;
+    }
+
+    /* Weekly schedule */
+
+    .wts-schedule-week-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-schedule-day-card {
+        min-width: 0;
+    }
+
+    .wts-schedule-day-header {
+        padding: 13px 8px;
+    }
+
+    .wts-schedule-day-header span {
+        font-size: 9px;
+    }
+
+    .wts-schedule-day-header strong {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .wts-schedule-day-events {
+        padding: 9px;
+    }
+
+    .wts-schedule-event {
+        padding: 11px 9px;
+    }
+
+    .wts-schedule-event-type {
+        margin-bottom: 8px;
+        font-size: 8px;
+    }
+
+    .wts-schedule-event h4 {
+        margin-bottom: 9px;
+        font-size: 11px;
+    }
+
+    .wts-schedule-event p {
+        gap: 5px;
+        font-size: 9px;
+    }
+
+    .wts-schedule-event-location {
+        font-size: 9px;
+    }
+
+    .wts-schedule-rest-content {
+        min-height: 130px;
+        padding: 12px 8px;
+    }
+
+    .wts-schedule-rest-content > i {
+        font-size: 20px;
+    }
+
+    .wts-schedule-rest-content h4 {
+        font-size: 10px;
+    }
+
+    .wts-schedule-rest-content p {
+        font-size: 9px;
+    }
+
+    /* Legend */
+
+    .wts-schedule-legend {
+        gap: 12px 16px;
+        padding: 13px;
+    }
+
+    .wts-schedule-legend > span {
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    /* Upcoming classes */
+
+    .wts-schedule-upcoming-count {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .wts-schedule-upcoming-list {
+        gap: 13px;
+    }
+
+    .wts-schedule-upcoming-card {
+        display: grid;
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 13px;
+        padding: 15px;
+    }
+
+    .wts-schedule-date-box {
+        grid-row: 1;
+        grid-column: 1;
+        width: 54px;
+        min-height: 63px;
+    }
+
+    .wts-schedule-date-box span {
+        font-size: 9px;
+    }
+
+    .wts-schedule-date-box strong {
+        font-size: 23px;
+    }
+
+    .wts-schedule-upcoming-info {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .wts-schedule-upcoming-tag {
+        margin-bottom: 7px;
+        padding: 5px 7px;
+        font-size: 8px;
+    }
+
+    .wts-schedule-upcoming-info h4 {
+        margin-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .wts-schedule-upcoming-info > p {
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+
+    .wts-schedule-upcoming-meta {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .wts-schedule-upcoming-meta span {
+        align-items: flex-start;
+        font-size: 9px;
+    }
+
+    .wts-schedule-upcoming-meta i {
+        margin-top: 2px;
+    }
+
+    .wts-schedule-view-link {
+        justify-self: start;
+        grid-row: 2;
+        grid-column: 2;
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    /* Reminder banner */
+
+    .wts-schedule-reminder {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 13px;
+        padding: 17px;
+    }
+
+    .wts-schedule-reminder-icon {
+        grid-row: 1;
+        grid-column: 1;
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .wts-schedule-reminder-content {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .wts-schedule-reminder-content h3 {
+        margin-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .wts-schedule-reminder-content p {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .wts-schedule-reminder-link {
+        justify-self: stretch;
+        grid-row: 2;
+        grid-column: 1 / -1;
+        min-height: 41px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   360px – 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .wts-schedule-content {
+        gap: 17px;
+    }
+
+    .wts-schedule-intro {
+        padding: 16px;
+    }
+
+    .wts-schedule-intro-text h2 {
+        font-size: 21px;
+    }
+
+    .wts-schedule-intro-text p {
+        font-size: 11px;
+    }
+
+    .wts-schedule-summary {
+        gap: 9px;
+    }
+
+    .wts-schedule-summary-card {
+        padding: 12px;
+        gap: 9px;
+    }
+
+    .wts-schedule-summary-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .wts-schedule-summary-info p {
+        font-size: 9px;
+    }
+
+    .wts-schedule-summary-info h3 {
+        font-size: 22px;
+    }
+
+    .wts-schedule-summary-info > span {
+        font-size: 8px;
+    }
+
+    .wts-schedule-section-header h3 {
+        font-size: 19px;
+    }
+
+    .wts-schedule-week-label {
+        gap: 7px;
+        font-size: 9px;
+    }
+
+    .wts-schedule-week-grid {
+        gap: 9px;
+    }
+
+    .wts-schedule-day-header {
+        padding: 11px 6px;
+    }
+
+    .wts-schedule-day-header strong {
+        width: 31px;
+        height: 31px;
+        font-size: 13px;
+    }
+
+    .wts-schedule-day-events {
+        padding: 7px;
+    }
+
+    .wts-schedule-event {
+        padding: 9px 7px;
+    }
+
+    .wts-schedule-event-type {
+        font-size: 7px;
+        letter-spacing: 0;
+    }
+
+    .wts-schedule-event h4 {
+        font-size: 10px;
+    }
+
+    .wts-schedule-event p,
+    .wts-schedule-event-location {
+        font-size: 8px;
+    }
+
+    .wts-schedule-rest-content {
+        min-height: 115px;
+    }
+
+    .wts-schedule-rest-content h4 {
+        font-size: 9px;
+    }
+
+    .wts-schedule-rest-content p {
+        font-size: 8px;
+    }
+
+    .wts-schedule-legend {
+        gap: 10px 13px;
+        padding: 11px;
+    }
+
+    .wts-schedule-legend > span {
+        font-size: 9px;
+    }
+
+    .wts-schedule-upcoming-card {
+        grid-template-columns: 45px minmax(0, 1fr);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .wts-schedule-date-box {
+        width: 45px;
+        min-height: 57px;
+    }
+
+    .wts-schedule-date-box span {
+        font-size: 8px;
+    }
+
+    .wts-schedule-date-box strong {
+        font-size: 21px;
+    }
+
+    .wts-schedule-upcoming-info h4 {
+        font-size: 12px;
+    }
+
+    .wts-schedule-upcoming-info > p {
+        font-size: 9px;
+    }
+
+    .wts-schedule-upcoming-meta span {
+        font-size: 8px;
+    }
+
+    .wts-schedule-view-link {
+        min-height: 36px;
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .wts-schedule-reminder {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .wts-schedule-reminder-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .wts-schedule-reminder-content h3 {
+        font-size: 12px;
+    }
+
+    .wts-schedule-reminder-content p {
+        font-size: 9px;
+    }
+
+    .wts-schedule-reminder-link {
+        min-height: 38px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+   359px AND BELOW
+========================================= */
+
+@media (max-width: 359px) {
+
+    .wts-schedule-intro {
+        padding: 13px;
+    }
+
+    .wts-schedule-intro-text h2 {
+        font-size: 19px;
+    }
+
+    .wts-schedule-primary-button {
+        font-size: 10px;
+    }
+
+    .wts-schedule-summary {
+        gap: 7px;
+    }
+
+    .wts-schedule-summary-card {
+        padding: 9px;
+    }
+
+    .wts-schedule-summary-info p {
+        font-size: 8px;
+    }
+
+    .wts-schedule-summary-info h3 {
+        font-size: 20px;
+    }
+
+    .wts-schedule-summary-info > span {
+        font-size: 7px;
+    }
+
+    .wts-schedule-week-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .wts-schedule-day-header {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 11px 13px;
+    }
+
+    .wts-schedule-day-header strong {
+        width: 30px;
+        height: 30px;
+    }
+
+    .wts-schedule-day-events {
+        padding: 10px;
+    }
+
+    .wts-schedule-event {
+        padding: 12px;
+    }
+
+    .wts-schedule-event h4 {
+        font-size: 12px;
+    }
+
+    .wts-schedule-event p,
+    .wts-schedule-event-location {
+        font-size: 10px;
+    }
+
+    .wts-schedule-event-type {
+        font-size: 8px;
+    }
+
+    .wts-schedule-day-rest .wts-schedule-day-header {
+        flex-direction: row;
+    }
+
+    .wts-schedule-rest-content {
+        min-height: 95px;
+    }
+
+    .wts-schedule-legend {
+        gap: 10px;
+    }
+
+    .wts-schedule-legend > span {
+        font-size: 8px;
+    }
+
+    .wts-schedule-upcoming-card {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .wts-schedule-date-box {
+        width: 40px;
+        min-height: 52px;
+    }
+
+    .wts-schedule-date-box strong {
+        font-size: 19px;
+    }
+
+    .wts-schedule-upcoming-info h4 {
+        font-size: 11px;
+    }
+
+    .wts-schedule-upcoming-info > p {
+        font-size: 8px;
+    }
+
+    .wts-schedule-upcoming-meta span {
+        font-size: 7px;
+    }
+
+    .wts-schedule-view-link {
+        font-size: 8px;
+    }
+
+    .wts-schedule-reminder {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .wts-schedule-reminder-icon {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .wts-schedule-reminder-content {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .wts-schedule-reminder-link {
+        grid-row: 3;
+        grid-column: 1;
+    }
+}
+
+
+/* =========================================
+   RTL RESPONSIVE FIXES
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .wts-schedule-intro,
+    html[dir="rtl"] .wts-schedule-section-header,
+    html[dir="rtl"] .wts-schedule-upcoming-card,
+    html[dir="rtl"] .wts-schedule-reminder {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-schedule-intro-text,
+    html[dir="rtl"] .wts-schedule-section-header > div:first-child,
+    html[dir="rtl"] .wts-schedule-summary-info,
+    html[dir="rtl"] .wts-schedule-event,
+    html[dir="rtl"] .wts-schedule-upcoming-info,
+    html[dir="rtl"] .wts-schedule-reminder-content {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-schedule-event {
+        border-right-width: 3px;
+        border-left-width: 0;
+    }
+
+    html[dir="rtl"] .wts-schedule-upcoming-meta,
+    html[dir="rtl"] .wts-schedule-upcoming-meta span {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-schedule-view-link,
+    html[dir="rtl"] .wts-schedule-reminder-link {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-schedule-day-header {
+        direction: rtl;
+    }
+}
+
+
+/* =========================================
+   DARK MODE RESPONSIVE FIXES
+========================================= */
+
+@media (max-width: 1199px) {
+
+    body.dark-mode .wts-schedule-intro,
+    body.dark-mode .wts-schedule-summary-card,
+    body.dark-mode .wts-schedule-day-card,
+    body.dark-mode .wts-schedule-legend,
+    body.dark-mode .wts-schedule-upcoming-card,
+    body.dark-mode .wts-schedule-reminder {
+        background: var(--wts-card-bg, #25292D);
+        border-color: var(--wts-border, #3B4045);
+    }
+
+    body.dark-mode .wts-schedule-day-header,
+    body.dark-mode .wts-schedule-day-rest {
+        background: var(--wts-section-bg, #222528);
+    }
+
+    body.dark-mode .wts-schedule-day-header strong {
+        background: var(--wts-card-bg, #25292D);
+        border-color: var(--wts-border, #3B4045);
+        color: var(--wts-heading, #F5F5F5);
+    }
+
+    body.dark-mode .wts-schedule-day-card:nth-child(4) .wts-schedule-day-header strong {
+        background: var(--wts-primary, #E87524);
+        border-color: var(--wts-primary, #E87524);
+        color: #FFFFFF;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******EXAM RESULT AND CERTIFICATE*******/
+
+
+/* =========================================
+   EXAM RESULTS & CERTIFICATES
+   RESPONSIVE CSS
+========================================= */
+
+
+/* =========================================
+   IPAD PRO / SMALL LAPTOP
+   992px – 1199px
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .wts-results-content {
+        gap: 24px;
+    }
+
+    .wts-results-intro {
+        padding: 24px;
+        gap: 18px;
+    }
+
+    .wts-results-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-results-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-results-summary-card {
+        padding: 19px;
+    }
+
+    .wts-results-performance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-results-panel {
+        padding: 19px;
+    }
+
+    .wts-results-overall-content {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .wts-results-score-circle {
+        flex-basis: 145px;
+        width: 145px;
+        height: 145px;
+    }
+
+    .wts-results-score-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+    }
+
+    .wts-results-score-stat {
+        gap: 7px;
+    }
+
+    .wts-results-score-stat strong {
+        font-size: 11px;
+    }
+
+    .wts-results-score-stat p {
+        font-size: 10px;
+    }
+
+    .wts-results-subject-list {
+        gap: 20px;
+    }
+
+    .wts-results-subject-name {
+        gap: 9px;
+    }
+
+    .wts-results-subject-icon {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .wts-results-subject-name h5 {
+        font-size: 11px;
+    }
+
+    .wts-results-subject-name p {
+        font-size: 9px;
+    }
+
+    .wts-results-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .wts-results-search {
+        max-width: none;
+        width: 100%;
+        flex: auto;
+    }
+
+    .wts-results-filters {
+        gap: 8px;
+    }
+
+    .wts-results-filter {
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    .wts-results-table {
+        min-width: 960px;
+    }
+
+    .wts-results-certificate-grid {
+        gap: 15px;
+    }
+
+    .wts-results-certificate-card {
+        padding: 20px;
+    }
+
+    .wts-results-certificate-card h4 {
+        font-size: 16px;
+    }
+
+    .wts-results-certificate-meta {
+        gap: 10px;
+    }
+
+    .wts-results-certificate-meta strong {
+        font-size: 9px;
+    }
+
+    .wts-results-reminder {
+        gap: 14px;
+        padding: 21px;
+    }
+
+    .wts-results-reminder-content h3 {
+        font-size: 15px;
+    }
+
+    .wts-results-reminder-link {
+        padding: 0 12px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   IPAD MINI / TABLET
+   768px – 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .wts-results-content {
+        gap: 22px;
+    }
+
+    /* Intro */
+
+    .wts-results-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 23px;
+    }
+
+    .wts-results-intro-text h2 {
+        font-size: 27px;
+    }
+
+    .wts-results-primary-button {
+        align-self: flex-start;
+    }
+
+    /* Summary */
+
+    .wts-results-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-results-summary-card {
+        padding: 19px;
+    }
+
+    /* Performance */
+
+    .wts-results-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .wts-results-section-header h3 {
+        font-size: 22px;
+    }
+
+    .wts-results-performance-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .wts-results-panel {
+        padding: 23px;
+    }
+
+    .wts-results-overall-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .wts-results-score-circle {
+        flex-basis: 150px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .wts-results-score-details {
+        display: flex;
+        gap: 19px;
+        width: auto;
+    }
+
+    .wts-results-score-stat strong {
+        font-size: 13px;
+    }
+
+    .wts-results-score-stat p {
+        font-size: 11px;
+    }
+
+    .wts-results-subject-list {
+        gap: 24px;
+    }
+
+    /* Results toolbar */
+
+    .wts-results-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .wts-results-search {
+        width: 100%;
+        max-width: none;
+        flex: auto;
+    }
+
+    .wts-results-filters {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .wts-results-filter {
+        min-width: 0;
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    .wts-results-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .wts-results-table {
+        min-width: 960px;
+    }
+
+    /* Certificates */
+
+    .wts-results-certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .wts-results-certificate-card {
+        padding: 19px;
+    }
+
+    .wts-results-certificate-top {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .wts-results-certificate-icon {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .wts-results-certificate-card h4 {
+        font-size: 16px;
+    }
+
+    .wts-results-certificate-meta {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .wts-results-certificate-actions {
+        align-items: stretch;
+    }
+
+    .wts-results-certificate-primary {
+        padding: 0 9px;
+        font-size: 10px;
+    }
+
+    /* Reminder */
+
+    .wts-results-reminder {
+        display: grid;
+        grid-template-columns: 45px minmax(0, 1fr);
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .wts-results-reminder-icon {
+        grid-row: 1;
+        grid-column: 1;
+        width: 45px;
+        height: 45px;
+    }
+
+    .wts-results-reminder-content {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .wts-results-reminder-link {
+        justify-self: start;
+        grid-row: 2;
+        grid-column: 2;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   481px – 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+    .wts-results-content {
+        gap: 20px;
+        min-width: 0;
+    }
+
+    /* Intro */
+
+    .wts-results-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        padding: 20px;
+    }
+
+    .wts-results-eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .wts-results-intro-text h2 {
+        margin-bottom: 9px;
+        font-size: 24px;
+    }
+
+    .wts-results-intro-text p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .wts-results-primary-button {
+        width: 100%;
+        min-height: 43px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    /* Summary cards */
+
+    .wts-results-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .wts-results-summary-card {
+        flex-direction: column;
+        gap: 11px;
+        padding: 15px;
+    }
+
+    .wts-results-summary-icon {
+        flex-basis: 37px;
+        width: 37px;
+        height: 37px;
+        font-size: 16px;
+    }
+
+    .wts-results-summary-info p {
+        margin-bottom: 7px;
+        font-size: 10px;
+    }
+
+    .wts-results-summary-info h3 {
+        margin-bottom: 6px;
+        font-size: 24px;
+    }
+
+    .wts-results-summary-info h3 span {
+        font-size: 12px;
+    }
+
+    .wts-results-summary-info > span {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    /* Section headings */
+
+    .wts-results-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 17px;
+    }
+
+    .wts-results-section-header h3 {
+        font-size: 20px;
+    }
+
+    .wts-results-section-header p {
+        font-size: 11px;
+    }
+
+    /* Performance panels */
+
+    .wts-results-performance-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .wts-results-panel {
+        padding: 19px;
+    }
+
+    .wts-results-panel-header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .wts-results-panel-header h4 {
+        font-size: 15px;
+    }
+
+    .wts-results-overall-content {
+        flex-direction: column;
+        gap: 23px;
+        padding-bottom: 21px;
+    }
+
+    .wts-results-score-circle {
+        flex-basis: 145px;
+        width: 145px;
+        height: 145px;
+    }
+
+    .wts-results-score-circle-inner strong {
+        font-size: 29px;
+    }
+
+    .wts-results-score-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .wts-results-score-stat {
+        gap: 7px;
+    }
+
+    .wts-results-score-stat p {
+        font-size: 9px;
+    }
+
+    .wts-results-score-stat strong {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .wts-results-progress-labels {
+        gap: 8px;
+    }
+
+    .wts-results-progress-labels span,
+    .wts-results-progress-labels strong {
+        font-size: 10px;
+    }
+
+    /* Subject scores */
+
+    .wts-results-subject-list {
+        gap: 21px;
+    }
+
+    .wts-results-subject-heading {
+        gap: 9px;
+    }
+
+    .wts-results-subject-name {
+        gap: 9px;
+    }
+
+    .wts-results-subject-icon {
+        flex-basis: 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .wts-results-subject-name h5 {
+        font-size: 11px;
+    }
+
+    .wts-results-subject-name p {
+        font-size: 9px;
+    }
+
+    .wts-results-subject-heading > strong {
+        font-size: 12px;
+    }
+
+    /* Search and filters */
+
+    .wts-results-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 16px;
+        padding: 12px;
+    }
+
+    .wts-results-search {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        height: 42px;
+        flex: auto;
+        padding: 0 12px;
+    }
+
+    .wts-results-search input {
+        font-size: 11px;
+    }
+
+    .wts-results-filters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .wts-results-filter {
+        min-width: 0;
+        min-height: 39px;
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    /* Results table: horizontal scroll */
+
+    .wts-results-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+    }
+
+    .wts-results-table {
+        width: 100%;
+        min-width: 900px;
+    }
+
+    .wts-results-table th {
+        padding: 14px;
+        font-size: 10px;
+    }
+
+    .wts-results-table td {
+        padding: 14px;
+        font-size: 10px;
+    }
+
+    .wts-results-exam-name {
+        min-width: 205px;
+    }
+
+    /* Certificates */
+
+    .wts-results-certificate-count {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .wts-results-certificate-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .wts-results-certificate-card {
+        padding: 20px;
+    }
+
+    .wts-results-certificate-top {
+        margin-bottom: 19px;
+    }
+
+    .wts-results-certificate-icon {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .wts-results-certificate-label {
+        font-size: 9px;
+    }
+
+    .wts-results-certificate-card h4 {
+        font-size: 16px;
+    }
+
+    .wts-results-certificate-card > p {
+        margin-bottom: 18px;
+        font-size: 11px;
+    }
+
+    .wts-results-certificate-meta {
+        gap: 12px;
+        padding: 15px 0;
+    }
+
+    .wts-results-certificate-meta strong {
+        font-size: 10px;
+    }
+
+    .wts-results-certificate-actions {
+        margin-top: 16px;
+    }
+
+    .wts-results-certificate-primary {
+        min-height: 42px;
+        font-size: 11px;
+    }
+
+    /* Reminder */
+
+    .wts-results-reminder {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 13px;
+        padding: 17px;
+    }
+
+    .wts-results-reminder-icon {
+        grid-row: 1;
+        grid-column: 1;
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .wts-results-reminder-content {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .wts-results-reminder-content h3 {
+        font-size: 14px;
+    }
+
+    .wts-results-reminder-content p {
+        font-size: 10px;
+    }
+
+    .wts-results-reminder-link {
+        justify-self: stretch;
+        grid-row: 2;
+        grid-column: 1 / -1;
+        min-height: 41px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   360px – 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .wts-results-content {
+        gap: 17px;
+    }
+
+    .wts-results-intro {
+        padding: 16px;
+    }
+
+    .wts-results-intro-text h2 {
+        font-size: 21px;
+    }
+
+    .wts-results-intro-text p {
+        font-size: 11px;
+    }
+
+    .wts-results-summary {
+        gap: 9px;
+    }
+
+    .wts-results-summary-card {
+        gap: 9px;
+        padding: 12px;
+    }
+
+    .wts-results-summary-icon {
+        flex-basis: 33px;
+        width: 33px;
+        height: 33px;
+        font-size: 14px;
+    }
+
+    .wts-results-summary-info p {
+        font-size: 9px;
+    }
+
+    .wts-results-summary-info h3 {
+        font-size: 22px;
+    }
+
+    .wts-results-summary-info > span {
+        font-size: 8px;
+    }
+
+    .wts-results-section-header h3 {
+        font-size: 18px;
+    }
+
+    .wts-results-panel {
+        padding: 15px;
+    }
+
+    .wts-results-panel-header h4 {
+        font-size: 14px;
+    }
+
+    .wts-results-status-badge {
+        padding: 6px 8px;
+        font-size: 8px;
+    }
+
+    .wts-results-score-circle {
+        flex-basis: 130px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .wts-results-score-circle::before {
+        inset: 10px;
+    }
+
+    .wts-results-score-circle-inner strong {
+        font-size: 26px;
+    }
+
+    .wts-results-score-circle-inner span {
+        font-size: 9px;
+    }
+
+    .wts-results-score-details {
+        gap: 7px;
+    }
+
+    .wts-results-score-stat {
+        gap: 5px;
+    }
+
+    .wts-results-stat-dot {
+        flex-basis: 7px;
+        width: 7px;
+        height: 7px;
+    }
+
+    .wts-results-score-stat p {
+        font-size: 8px;
+    }
+
+    .wts-results-score-stat strong {
+        font-size: 9px;
+    }
+
+    .wts-results-progress-labels span,
+    .wts-results-progress-labels strong {
+        font-size: 9px;
+    }
+
+    .wts-results-subject-list {
+        gap: 19px;
+    }
+
+    .wts-results-subject-icon {
+        flex-basis: 31px;
+        width: 31px;
+        height: 31px;
+        font-size: 12px;
+    }
+
+    .wts-results-subject-name {
+        gap: 8px;
+    }
+
+    .wts-results-subject-name h5 {
+        font-size: 10px;
+    }
+
+    .wts-results-subject-name p {
+        font-size: 8px;
+    }
+
+    .wts-results-subject-heading > strong {
+        font-size: 11px;
+    }
+
+    .wts-results-toolbar {
+        padding: 10px;
+    }
+
+    .wts-results-filter {
+        min-height: 37px;
+        padding: 0 5px;
+        font-size: 9px;
+    }
+
+    .wts-results-table {
+        min-width: 900px;
+    }
+
+    .wts-results-certificate-card {
+        padding: 16px;
+    }
+
+    .wts-results-certificate-card h4 {
+        font-size: 15px;
+    }
+
+    .wts-results-certificate-card > p {
+        font-size: 10px;
+    }
+
+    .wts-results-certificate-meta {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .wts-results-certificate-meta span {
+        font-size: 9px;
+    }
+
+    .wts-results-certificate-meta strong {
+        font-size: 10px;
+    }
+
+    .wts-results-certificate-primary {
+        padding: 0 9px;
+        font-size: 10px;
+    }
+
+    .wts-results-certificate-secondary {
+        flex-basis: 39px;
+        width: 39px;
+        height: 39px;
+    }
+
+    .wts-results-reminder {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .wts-results-reminder-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .wts-results-reminder-content h3 {
+        font-size: 12px;
+    }
+
+    .wts-results-reminder-content p {
+        font-size: 9px;
+    }
+
+    .wts-results-reminder-link {
+        min-height: 38px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+   359px AND BELOW
+========================================= */
+
+@media (max-width: 359px) {
+
+    .wts-results-intro {
+        padding: 13px;
+    }
+
+    .wts-results-intro-text h2 {
+        font-size: 19px;
+    }
+
+    .wts-results-primary-button {
+        font-size: 10px;
+    }
+
+    .wts-results-summary {
+        gap: 7px;
+    }
+
+    .wts-results-summary-card {
+        padding: 9px;
+    }
+
+    .wts-results-summary-info p {
+        font-size: 8px;
+    }
+
+    .wts-results-summary-info h3 {
+        font-size: 20px;
+    }
+
+    .wts-results-summary-info > span {
+        font-size: 7px;
+    }
+
+    .wts-results-panel {
+        padding: 12px;
+    }
+
+    .wts-results-panel-header h4 {
+        font-size: 13px;
+    }
+
+    .wts-results-score-circle {
+        flex-basis: 115px;
+        width: 115px;
+        height: 115px;
+    }
+
+    .wts-results-score-circle-inner strong {
+        font-size: 23px;
+    }
+
+    .wts-results-score-circle-inner span {
+        font-size: 8px;
+    }
+
+    .wts-results-score-stat p {
+        font-size: 7px;
+    }
+
+    .wts-results-score-stat strong {
+        font-size: 8px;
+    }
+
+    .wts-results-subject-name h5 {
+        font-size: 9px;
+    }
+
+    .wts-results-subject-name p {
+        font-size: 7px;
+    }
+
+    .wts-results-subject-heading > strong {
+        font-size: 10px;
+    }
+
+    .wts-results-filter {
+        font-size: 8px;
+    }
+
+    .wts-results-certificate-card {
+        padding: 12px;
+    }
+
+    .wts-results-certificate-card h4 {
+        font-size: 13px;
+    }
+
+    .wts-results-certificate-earned,
+    .wts-results-certificate-locked-badge {
+        padding: 6px 7px;
+        font-size: 8px;
+    }
+
+    .wts-results-certificate-actions {
+        gap: 7px;
+    }
+
+    .wts-results-certificate-primary {
+        gap: 6px;
+        padding: 0 7px;
+        font-size: 9px;
+    }
+
+    .wts-results-reminder {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .wts-results-reminder-icon {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .wts-results-reminder-content {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .wts-results-reminder-link {
+        grid-row: 3;
+        grid-column: 1;
+    }
+}
+
+
+/* =========================================
+   RTL RESPONSIVE FIXES
+========================================= */
+
+@media (max-width: 1199px) {
+
+    html[dir="rtl"] .wts-results-intro,
+    html[dir="rtl"] .wts-results-section-header,
+    html[dir="rtl"] .wts-results-panel-header,
+    html[dir="rtl"] .wts-results-toolbar,
+    html[dir="rtl"] .wts-results-certificate-top,
+    html[dir="rtl"] .wts-results-reminder {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-results-intro-text,
+    html[dir="rtl"] .wts-results-summary-info,
+    html[dir="rtl"] .wts-results-section-header > div:first-child,
+    html[dir="rtl"] .wts-results-panel,
+    html[dir="rtl"] .wts-results-certificate-card,
+    html[dir="rtl"] .wts-results-reminder-content {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-results-subject-heading,
+    html[dir="rtl"] .wts-results-subject-name,
+    html[dir="rtl"] .wts-results-score-stat,
+    html[dir="rtl"] .wts-results-exam-name {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-results-search {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-results-search input {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-results-table {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .wts-results-reminder {
+        border-right: 4px solid var(--wts-primary, #E87524);
+        border-left: 1px solid rgba(232, 117, 36, 0.35);
+    }
+
+    html[dir="rtl"] .wts-results-certificate-primary,
+    html[dir="rtl"] .wts-results-reminder-link {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .wts-results-certificate-primary .fa-arrow-right,
+    html[dir="rtl"] .wts-results-reminder-link .fa-arrow-right {
+        transform: rotate(180deg);
+    }
+}
+
+
+/* =========================================
+   DARK MODE RESPONSIVE FIXES
+========================================= */
+
+@media (max-width: 1199px) {
+
+    body.dark-mode .wts-results-intro,
+    body.dark-mode .wts-results-summary-card,
+    body.dark-mode .wts-results-panel,
+    body.dark-mode .wts-results-toolbar,
+    body.dark-mode .wts-results-table-wrapper,
+    body.dark-mode .wts-results-certificate-card,
+    body.dark-mode .wts-results-reminder {
+        background: var(--wts-card-bg, #25292D);
+        border-color: var(--wts-border, #3B4045);
+    }
+
+    body.dark-mode .wts-results-search {
+        background: var(--wts-section-bg, #222528);
+        border-color: var(--wts-border, #3B4045);
+    }
+
+    body.dark-mode .wts-results-search input {
+        color: var(--wts-heading, #F5F5F5);
+    }
+
+    body.dark-mode .wts-results-table thead {
+        background: var(--wts-section-bg, #222528);
+    }
+
+    body.dark-mode .wts-results-table th,
+    body.dark-mode .wts-results-table td {
+        border-color: var(--wts-border, #3B4045);
+    }
+
+    body.dark-mode .wts-results-grade {
+        background: var(--wts-section-bg, #222528);
+        color: var(--wts-heading, #F5F5F5);
+    }
+
+    body.dark-mode .wts-results-score-circle::before {
+        background: var(--wts-card-bg, #25292D);
+    }
+
+    body.dark-mode .wts-results-certificate-meta,
+    body.dark-mode .wts-results-certificate-progress,
+    body.dark-mode .wts-results-overall-progress {
+        border-color: var(--wts-border, #3B4045);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******PAYMENT*****/
+
+
+/* =========================================================
+   WELDING TRADE SCHOOL — PAYMENTS RESPONSIVE CSS
+   File: css/payments-responsive.css
+========================================================= */
+
+/* =========================
+   DESKTOP / SMALL LAPTOP
+========================= */
+
+@media (max-width: 1199px) {
+
+    .wts-payments-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .wts-payments-summary-card {
+        padding: 21px;
+    }
+
+    .wts-payments-intro {
+        gap: 18px;
+    }
+
+    .wts-payments-fee-card,
+    .wts-payments-invoices {
+        padding: 24px;
+    }
+
+    .wts-payments-upcoming {
+        padding: 21px;
+    }
+
+    .wts-payments-table {
+        min-width: 850px;
+    }
+}
+
+/* =========================
+   TABLET / IPAD MINI
+========================= */
+
+@media (max-width: 991px) {
+
+    .wts-payments-intro {
+        align-items: flex-start;
+    }
+
+    .wts-payments-intro h1 {
+        font-size: 29px;
+    }
+
+    .wts-payments-summary {
+        gap: 14px;
+    }
+
+    .wts-payments-summary-card {
+        padding: 20px;
+    }
+
+    .wts-payments-summary-top {
+        margin-bottom: 17px;
+    }
+
+    .wts-payments-icon {
+        width: 39px;
+        height: 39px;
+        font-size: 16px;
+    }
+
+    .wts-payments-fee-card,
+    .wts-payments-invoices {
+        padding: 22px;
+    }
+
+    .wts-payments-table-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .wts-payments-search {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .wts-payments-filters {
+        width: 100%;
+    }
+
+    .wts-payments-table {
+        min-width: 820px;
+    }
+
+    .wts-payments-upcoming {
+        gap: 15px;
+    }
+
+    .wts-payments-help {
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================
+   MOBILE / LARGE PHONE
+========================= */
+
+@media (max-width: 767px) {
+
+    .wts-payments-content {
+        padding-top: 5px;
+    }
+
+    /* PAGE INTRO */
+
+    .wts-payments-intro {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+        margin-bottom: 23px;
+    }
+
+    .wts-payments-intro h1 {
+        font-size: 26px;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .wts-payments-intro p {
+        font-size: 13px;
+    }
+
+    .wts-payments-eyebrow,
+    .wts-payments-section-label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .wts-payments-outline-btn {
+        align-self: flex-start;
+        min-height: 41px;
+        padding: 0 15px;
+    }
+
+    /* SUMMARY CARDS */
+
+    .wts-payments-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 19px;
+    }
+
+    .wts-payments-summary-card {
+        padding: 17px 15px;
+        border-radius: 5px;
+    }
+
+    .wts-payments-summary-top {
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .wts-payments-summary-top > span:first-child {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .wts-payments-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .wts-payments-summary-card h2 {
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+
+    .wts-payments-summary-card .wts-payments-date-value {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .wts-payments-summary-card > p {
+        font-size: 10px;
+    }
+
+    /* FEE PROGRESS */
+
+    .wts-payments-fee-card {
+        padding: 20px 17px;
+        margin-bottom: 19px;
+    }
+
+    .wts-payments-fee-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13px;
+        margin-bottom: 20px;
+    }
+
+    .wts-payments-fee-header h2,
+    .wts-payments-section-header h2 {
+        font-size: 18px;
+    }
+
+    .wts-payments-fee-header p,
+    .wts-payments-section-header p {
+        font-size: 12px;
+    }
+
+    .wts-payments-progress-percent {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    .wts-payments-progress-track {
+        height: 9px;
+    }
+
+    .wts-payments-progress-details {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+        margin-top: 16px;
+    }
+
+    .wts-payments-progress-details > div {
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .wts-payments-progress-details strong {
+        font-size: 12px;
+    }
+
+    /* UPCOMING PAYMENT */
+
+    .wts-payments-upcoming {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        align-items: start;
+        gap: 13px;
+        padding: 18px 16px;
+        margin-bottom: 23px;
+    }
+
+    .wts-payments-upcoming-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .wts-payments-upcoming-info h2 {
+        font-size: 14px;
+    }
+
+    .wts-payments-upcoming-info p {
+        font-size: 11px;
+    }
+
+    .wts-payments-upcoming-action {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 11px;
+        margin-top: 3px;
+    }
+
+    .wts-payments-status {
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+
+    .wts-payments-primary-btn {
+        min-height: 39px;
+        padding: 0 13px;
+        font-size: 11px;
+    }
+
+    /* INVOICE HISTORY */
+
+    .wts-payments-invoices {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+
+    .wts-payments-section-header {
+        margin-bottom: 18px;
+    }
+
+    .wts-payments-table-toolbar {
+        gap: 13px;
+        margin-bottom: 16px;
+    }
+
+    .wts-payments-search {
+        min-height: 42px;
+        padding: 0 11px;
+    }
+
+    .wts-payments-search input {
+        font-size: 12px;
+    }
+
+    .wts-payments-filters {
+        gap: 7px;
+    }
+
+    .wts-payments-filter {
+        flex: 1;
+        min-height: 36px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .wts-payments-table-wrap {
+        border-radius: 4px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .wts-payments-table {
+        min-width: 790px;
+    }
+
+    .wts-payments-table th {
+        padding: 13px 12px;
+        font-size: 10px;
+    }
+
+    .wts-payments-table td {
+        padding: 14px 12px;
+        font-size: 11px;
+    }
+
+    .wts-payments-description strong {
+        font-size: 11px;
+    }
+
+    .wts-payments-description span {
+        font-size: 10px;
+    }
+
+    .wts-payments-action {
+        padding: 7px 9px;
+        font-size: 10px;
+    }
+
+    /* FINANCE HELP */
+
+    .wts-payments-help {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+        padding: 18px 16px;
+    }
+
+    .wts-payments-help-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .wts-payments-help h3 {
+        font-size: 13px;
+    }
+
+    .wts-payments-help p {
+        font-size: 11px;
+    }
+
+    .wts-payments-help-link {
+        grid-column: 2;
+        justify-self: start;
+        font-size: 11px;
+    }
+
+    /* RTL */
+
+    html[dir="rtl"] .wts-payments-intro {
+        align-items: stretch;
+    }
+
+    html[dir="rtl"] .wts-payments-outline-btn {
+        align-self: flex-start;
+    }
+
+    html[dir="rtl"] .wts-payments-fee-header {
+        align-items: flex-start;
+    }
+
+    html[dir="rtl"] .wts-payments-upcoming-action {
+        align-items: flex-start;
+    }
+
+    html[dir="rtl"] .wts-payments-help-link {
+        justify-self: start;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .wts-payments-intro h1 {
+        font-size: 24px;
+    }
+
+    .wts-payments-summary {
+        gap: 10px;
+    }
+
+    .wts-payments-summary-card {
+        padding: 15px 12px;
+    }
+
+    .wts-payments-summary-top {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .wts-payments-summary-card h2 {
+        font-size: 20px;
+    }
+
+    .wts-payments-summary-card .wts-payments-date-value {
+        font-size: 15px;
+    }
+
+    .wts-payments-summary-card > p {
+        line-height: 1.5;
+    }
+
+    .wts-payments-fee-card {
+        padding: 18px 14px;
+    }
+
+    .wts-payments-fee-header h2,
+    .wts-payments-section-header h2 {
+        font-size: 17px;
+    }
+
+    .wts-payments-progress-details > div {
+        width: 100%;
+    }
+
+    .wts-payments-upcoming {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 10px;
+        padding: 16px 13px;
+    }
+
+    .wts-payments-upcoming-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .wts-payments-upcoming-info h2 {
+        font-size: 13px;
+    }
+
+    .wts-payments-upcoming-info p {
+        font-size: 10px;
+    }
+
+    .wts-payments-primary-btn {
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .wts-payments-invoices {
+        padding: 18px 12px;
+    }
+
+    .wts-payments-filter {
+        padding: 0 8px;
+    }
+
+    .wts-payments-help {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+        padding: 16px 12px;
+    }
+
+    .wts-payments-help-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
+@media (max-width: 359px) {
+
+    .wts-payments-intro h1 {
+        font-size: 22px;
+    }
+
+    .wts-payments-summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .wts-payments-summary-card {
+        padding: 16px;
+    }
+
+    .wts-payments-summary-top {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .wts-payments-summary-card h2 {
+        font-size: 22px;
+    }
+
+    .wts-payments-summary-card .wts-payments-date-value {
+        font-size: 17px;
+    }
+
+    .wts-payments-fee-card,
+    .wts-payments-invoices {
+        padding: 15px 11px;
+    }
+
+    .wts-payments-upcoming-action {
+        gap: 8px;
+    }
+
+    .wts-payments-primary-btn {
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .wts-payments-filter {
+        font-size: 10px;
+        padding: 0 6px;
+    }
+}
+
+/* =========================
+   DARK MODE RESPONSIVE
+========================= */
+
+@media (max-width: 767px) {
+
+    body.dark-mode .wts-payments-summary-card,
+    body.dark-mode .wts-payments-fee-card,
+    body.dark-mode .wts-payments-invoices {
+        background: var(--wts-card-bg, #25292D);
+        border-color: var(--wts-border, #3B4045);
+    }
+
+    body.dark-mode .wts-payments-upcoming {
+        background: rgba(232, 117, 36, .09);
+        border-color: rgba(232, 117, 36, .35);
+    }
+
+    body.dark-mode .wts-payments-help {
+        background: var(--wts-section-bg, #222528);
+        border-color: var(--wts-border, #3B4045);
+    }
+}
+/* SCHEDULE — CENTER SUNDAY CARD ON MOBILE */
+@media screen and (max-width: 767px) {
+    .wts-schedule-day-rest {
+        grid-column: 1 / -1 !important;
+        justify-self: center !important;
+        width: 100% !important;
+        max-width: 175px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+/* SCHEDULE — CENTER SUNDAY CARD ON IPAD MINI */
+@media screen and (min-width: 768px) and (max-width: 900px) {
+
+    .wts-schedule-day-card.wts-schedule-day-rest {
+        grid-column: 1 / -1 !important;
+        justify-self: center !important;
+        width: calc(33.333% - 8px) !important;
+        max-width: 180px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+
+}
+/* SCHEDULE — IPAD PRO: NORMAL GRID ALIGNMENT */
+@media screen and (min-width: 901px) and (max-width: 1199px) {
+
+    .wts-schedule-day-card {
+        grid-column: auto !important;
+        justify-self: stretch !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+}
