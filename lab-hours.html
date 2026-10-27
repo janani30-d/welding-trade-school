@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+
+<body>
+
+<div class="wts-dashboard" id="wtsDashboard">
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+    <div class="wts-sidebar-overlay" id="wtsSidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="wts-sidebar" id="wtsSidebar">
+
+        <!-- LOGO IMAGE -->
+        <div class="wts-sidebar-brand">
+
+            <a href="index.html" class="wts-brand-link">
+                <img
+                    src="images/logo.png"
+                    alt="Welding Trade School"
+                    class="wts-dashboard-logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button
+                type="button"
+                class="wts-sidebar-close"
+                id="wtsSidebarClose"
+                aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <!-- SIDEBAR LABEL -->
+        <div class="wts-sidebar-label">STUDENT MENU</div>
+
+        <!-- NAVIGATION -->
+        <nav class="wts-sidebar-nav" aria-label="Student navigation">
+
+            <a href="dashboard.html"
+               class="wts-nav-link"
+               aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-courses.html" class="wts-nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="lab-hours.html" class="wts-nav-link active">
+                <i class="fa-regular fa-clock"></i>
+                <span>Lab Hours</span>
+            </a>
+
+            <a href="skill-assessments.html" class="wts-nav-link">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Skill Assessments</span>
+            </a>
+
+            <a href="class-schedule.html" class="wts-nav-link">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="exam-results.html" class="wts-nav-link">
+                <i class="fa-solid fa-award"></i>
+                <span>Exam Results &amp; Certificates</span>
+            </a>
+
+            <a href="payments.html" class="wts-nav-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Payments &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="wts-sidebar-bottom">
+
+            <div class="wts-sidebar-divider"></div>
+
+            <a href="login.html" class="wts-nav-link wts-logout-link">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+            <div class="wts-sidebar-footer">
+                <span class="wts-footer-indicator"></span>
+                <span>Welding Student Portal</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="wts-main-area">
+
+        <!-- TOPBAR -->
+        <header class="wts-topbar">
+
+            <!-- LEFT SIDE -->
+            <div class="wts-topbar-left">
+
+                <!-- HAMBURGER -->
+                <button
+                    type="button"
+                    class="wts-icon-button wts-menu-toggle"
+                    id="wtsMenuToggle"
+                    aria-label="Open sidebar"
+                    aria-controls="wtsSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- PAGE HEADING -->
+                <div class="wts-page-heading">
+                    <h1>Student Dashboard</h1>
+                    <p>Welcome back! Continue your welding journey.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE ACTIONS -->
+            <div class="wts-topbar-actions">
+
+                <!-- RTL BUTTON: IMAGE REFERENCE STYLE -->
+               <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                <!-- SETTINGS -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-icon-button"
+                        id="wtsSettingsToggle"
+                        aria-label="Settings"
+                        aria-expanded="false"
+                        aria-controls="wtsSettingsMenu"
+                        title="Settings">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu"
+                        id="wtsSettingsMenu"
+                        hidden>
+
+                        <span class="wts-dropdown-heading">Preferences</span>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsDark">
+                            <i class="fa-solid fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsRtl">
+                            <i class="fa-solid fa-left-right"></i>
+                            <span>RTL Layout</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PROFILE -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-profile-button"
+                        id="wtsProfileToggle"
+                        aria-label="Student profile"
+                        aria-expanded="false"
+                        aria-controls="wtsProfileMenu">
+
+                        <span class="wts-profile-avatar">
+    <img src="images/profile.jpg" alt="Student profile photo">
+</span>
+
+                        <span class="wts-profile-details">
+                            <strong>Ram</strong>
+                            <small>Welding Trainee</small>
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down wts-profile-chevron"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu wts-profile-menu"
+                        id="wtsProfileMenu"
+                        hidden>
+
+                        <div class="wts-profile-menu-header">
+                            <strong>Ram Account</strong>
+                            <span>Welding Trainee</span>
+                        </div>
+
+                        <div class="wts-dropdown-divider"></div>
+
+                        <a href="login.html" class="wts-dropdown-item">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================
+     LAB HOURS SECTION
+     Welding Trade School Dashboard
+========================================= -->
+
+<main class="wts-dashboard-content wts-lab-content">
+
+    <!-- PAGE INTRO -->
+    <section class="wts-lab-intro">
+
+        <div class="wts-lab-intro-text">
+            <span class="wts-lab-eyebrow">PRACTICAL TRAINING TRACKER</span>
+
+            <h2>Lab Hours</h2>
+
+            <p>
+                Track your hands-on welding practice, monitor your training
+                progress, and review your completed lab sessions.
+            </p>
+        </div>
+
+        <a href="#wtsLabHistory" class="wts-lab-primary-button">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            View Lab History
+        </a>
+
+    </section>
+
+
+    <!-- LAB HOURS SUMMARY -->
+    <section class="wts-lab-summary" aria-label="Lab hours summary">
+
+        <!-- REQUIRED HOURS -->
+        <article class="wts-lab-summary-card">
+
+            <div class="wts-lab-summary-icon">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
+
+            <div class="wts-lab-summary-info">
+                <p>Required Hours</p>
+                <h3>80 <span>hrs</span></h3>
+                <small>Program requirement</small>
+            </div>
+
+        </article>
+
+
+        <!-- COMPLETED HOURS -->
+        <article class="wts-lab-summary-card">
+
+            <div class="wts-lab-summary-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div class="wts-lab-summary-info">
+                <p>Completed Hours</p>
+                <h3>48 <span>hrs</span></h3>
+                <small>60% completed</small>
+            </div>
+
+        </article>
+
+
+        <!-- REMAINING HOURS -->
+        <article class="wts-lab-summary-card">
+
+            <div class="wts-lab-summary-icon">
+                <i class="fa-solid fa-hourglass-half"></i>
+            </div>
+
+            <div class="wts-lab-summary-info">
+                <p>Remaining Hours</p>
+                <h3>32 <span>hrs</span></h3>
+                <small>Hours to complete</small>
+            </div>
+
+        </article>
+
+
+        <!-- ATTENDANCE -->
+        <article class="wts-lab-summary-card">
+
+            <div class="wts-lab-summary-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div class="wts-lab-summary-info">
+                <p>Lab Attendance</p>
+                <h3>92<span>%</span></h3>
+                <small>Overall attendance</small>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- LAB PROGRESS AND BREAKDOWN -->
+    <section class="wts-lab-overview-grid">
+
+        <!-- OVERALL PROGRESS -->
+        <article class="wts-lab-panel wts-lab-progress-panel">
+
+            <div class="wts-lab-panel-header">
+                <div>
+                    <span class="wts-lab-eyebrow">YOUR ACHIEVEMENT</span>
+                    <h3>Practical Training Progress</h3>
+                </div>
+
+                <span class="wts-lab-progress-badge">60%</span>
+            </div>
+
+
+            <div class="wts-lab-progress-content">
+
+                <div class="wts-lab-progress-circle"
+                     role="img"
+                     aria-label="60 percent of required lab hours completed">
+
+                    <div class="wts-lab-progress-circle-inner">
+                        <strong>60%</strong>
+                        <span>Completed</span>
+                    </div>
+
+                </div>
+
+                <div class="wts-lab-progress-details">
+
+                    <div class="wts-lab-progress-stat">
+                        <span class="wts-lab-stat-dot completed"></span>
+
+                        <div>
+                            <p>Hours Completed</p>
+                            <strong>48 hours</strong>
+                        </div>
+                    </div>
+
+                    <div class="wts-lab-progress-stat">
+                        <span class="wts-lab-stat-dot remaining"></span>
+
+                        <div>
+                            <p>Hours Remaining</p>
+                            <strong>32 hours</strong>
+                        </div>
+                    </div>
+
+                    <div class="wts-lab-progress-stat">
+                        <span class="wts-lab-stat-dot required"></span>
+
+                        <div>
+                            <p>Total Requirement</p>
+                            <strong>80 hours</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="wts-lab-progress-bar-section">
+
+                <div class="wts-lab-progress-bar-labels">
+                    <span>Training completion</span>
+                    <strong>48 / 80 hours</strong>
+                </div>
+
+                <div class="wts-lab-progress-bar"
+                     role="progressbar"
+                     aria-label="Overall lab hour completion"
+                     aria-valuemin="0"
+                     aria-valuemax="80"
+                     aria-valuenow="48">
+
+                    <span style="width: 60%;"></span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- WELDING CATEGORY BREAKDOWN -->
+        <article class="wts-lab-panel wts-lab-breakdown-panel">
+
+            <div class="wts-lab-panel-header">
+                <div>
+                    <span class="wts-lab-eyebrow">SKILL DEVELOPMENT</span>
+                    <h3>Hours by Welding Type</h3>
+                </div>
+
+                <i class="fa-solid fa-chart-pie wts-lab-header-icon"></i>
+            </div>
+
+
+            <div class="wts-lab-category-list">
+
+                <!-- MIG -->
+                <div class="wts-lab-category-item">
+
+                    <div class="wts-lab-category-heading">
+                        <div class="wts-lab-category-name">
+                            <span class="wts-lab-category-icon">
+                                <i class="fa-solid fa-fire-burner"></i>
+                            </span>
+
+                            <div>
+                                <h4>MIG Welding</h4>
+                                <p>Wire-feed welding practice</p>
+                            </div>
+                        </div>
+
+                        <strong>24 <span>/ 30 hrs</span></strong>
+                    </div>
+
+                    <div class="wts-lab-category-bar">
+                        <span style="width: 80%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- TIG -->
+                <div class="wts-lab-category-item">
+
+                    <div class="wts-lab-category-heading">
+                        <div class="wts-lab-category-name">
+                            <span class="wts-lab-category-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </span>
+
+                            <div>
+                                <h4>TIG Welding</h4>
+                                <p>Precision welding practice</p>
+                            </div>
+                        </div>
+
+                        <strong>14 <span>/ 30 hrs</span></strong>
+                    </div>
+
+                    <div class="wts-lab-category-bar">
+                        <span style="width: 46.67%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- ARC -->
+                <div class="wts-lab-category-item">
+
+                    <div class="wts-lab-category-heading">
+                        <div class="wts-lab-category-name">
+                            <span class="wts-lab-category-icon">
+                                <i class="fa-solid fa-plug"></i>
+                            </span>
+
+                            <div>
+                                <h4>Arc Welding</h4>
+                                <p>Shielded metal arc practice</p>
+                            </div>
+                        </div>
+
+                        <strong>10 <span>/ 20 hrs</span></strong>
+                    </div>
+
+                    <div class="wts-lab-category-bar">
+                        <span style="width: 50%;"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- UPCOMING LAB SESSIONS -->
+    <section class="wts-lab-upcoming-section">
+
+        <div class="wts-lab-section-header">
+
+            <div>
+                <span class="wts-lab-eyebrow">PLAN YOUR PRACTICE</span>
+                <h3>Upcoming Lab Sessions</h3>
+                <p>Prepare for your next hands-on training session.</p>
+            </div>
+
+            <a href="class-schedule.html" class="wts-lab-text-link">
+                Full Schedule
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="wts-lab-upcoming-grid">
+
+            <!-- UPCOMING SESSION 1 -->
+            <article class="wts-lab-session-card">
+
+                <div class="wts-lab-session-date">
+                    <span>OCT</span>
+                    <strong>28</strong>
+                    <small>2026</small>
+                </div>
+
+                <div class="wts-lab-session-details">
+
+                    <span class="wts-lab-session-type">MIG WELDING</span>
+
+                    <h4>Joint Preparation &amp; Practice</h4>
+
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        09:00 AM – 11:00 AM
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-user-tie"></i>
+                        Instructor-led practical
+                    </p>
+
+                </div>
+
+                <span class="wts-lab-session-status upcoming">
+                    Upcoming
+                </span>
+
+            </article>
+
+
+            <!-- UPCOMING SESSION 2 -->
+            <article class="wts-lab-session-card">
+
+                <div class="wts-lab-session-date">
+                    <span>OCT</span>
+                    <strong>30</strong>
+                    <small>2026</small>
+                </div>
+
+                <div class="wts-lab-session-details">
+
+                    <span class="wts-lab-session-type">TIG WELDING</span>
+
+                    <h4>Torch Control Techniques</h4>
+
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        01:00 PM – 03:00 PM
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-user-tie"></i>
+                        Instructor-led practical
+                    </p>
+
+                </div>
+
+                <span class="wts-lab-session-status upcoming">
+                    Upcoming
+                </span>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECENT LAB HISTORY -->
+    <section class="wts-lab-history-section" id="wtsLabHistory">
+
+        <div class="wts-lab-section-header">
+
+            <div>
+                <span class="wts-lab-eyebrow">TRAINING RECORDS</span>
+                <h3>Recent Lab Sessions</h3>
+                <p>Review your practical training attendance and hours.</p>
+            </div>
+
+            <a href="#wtsLabHistoryTable" class="wts-lab-text-link">
+                View Records
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- HISTORY TABLE -->
+        <div class="wts-lab-table-wrapper" id="wtsLabHistoryTable">
+
+            <table class="wts-lab-table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Session</th>
+                        <th scope="col">Welding Type</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Instructor</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <div class="wts-lab-table-session">
+                                <span class="wts-lab-table-icon">
+                                    <i class="fa-solid fa-fire-burner"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Basic Joint Welding</strong>
+                                    <small>Practical session 01</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>MIG Welding</td>
+                        <td>Oct 24, 2026</td>
+                        <td>2 hours</td>
+                        <td>Instructor A</td>
+
+                        <td>
+                            <span class="wts-lab-table-status completed">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="wts-lab-table-session">
+                                <span class="wts-lab-table-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Torch Control Practice</strong>
+                                    <small>Practical session 02</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>TIG Welding</td>
+                        <td>Oct 22, 2026</td>
+                        <td>3 hours</td>
+                        <td>Instructor B</td>
+
+                        <td>
+                            <span class="wts-lab-table-status completed">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="wts-lab-table-session">
+                                <span class="wts-lab-table-icon">
+                                    <i class="fa-solid fa-plug"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Arc Welding Basics</strong>
+                                    <small>Practical session 03</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>Arc Welding</td>
+                        <td>Oct 20, 2026</td>
+                        <td>2 hours</td>
+                        <td>Instructor A</td>
+
+                        <td>
+                            <span class="wts-lab-table-status completed">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="wts-lab-table-session">
+                                <span class="wts-lab-table-icon">
+                                    <i class="fa-solid fa-ruler-combined"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Weld Inspection Practice</strong>
+                                    <small>Practical session 04</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>MIG Welding</td>
+                        <td>Oct 18, 2026</td>
+                        <td>2 hours</td>
+                        <td>Instructor B</td>
+
+                        <td>
+                            <span class="wts-lab-table-status completed">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAINING REMINDER -->
+    <section class="wts-lab-reminder">
+
+        <div class="wts-lab-reminder-icon">
+            <i class="fa-solid fa-bullseye"></i>
+        </div>
+
+        <div class="wts-lab-reminder-content">
+            <h3>Keep Moving Toward Your Certification</h3>
+
+            <p>
+                You have 32 practical hours remaining to reach your
+                80-hour training target. Attend your scheduled sessions
+                and keep your skills progressing.
+            </p>
+        </div>
+
+        <a href="class-schedule.html" class="wts-lab-reminder-button">
+            Check Schedule
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</main>
+
+        </div>
+
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="wts-logout-overlay" id="wtsLogoutModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="wtsLogoutTitle"
+     aria-describedby="wtsLogoutMessage"
+     aria-hidden="true"
+     hidden>
+
+    <div class="wts-logout-modal">
+
+        <button type="button"
+                class="wts-logout-close"
+                id="wtsLogoutClose"
+                aria-label="Close logout dialog">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="wts-logout-icon">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+
+        <h2 id="wtsLogoutTitle">Logout?</h2>
+
+        <p id="wtsLogoutMessage">
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="wts-logout-actions">
+            <button type="button"
+                    class="wts-logout-stay"
+                    id="wtsLogoutStay">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="wts-logout-confirm"
+                    id="wtsLogoutConfirm">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Yes, Logout
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SHARED JAVASCRIPT -->
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

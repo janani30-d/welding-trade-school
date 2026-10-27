@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+
+<body>
+
+<div class="wts-dashboard" id="wtsDashboard">
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+    <div class="wts-sidebar-overlay" id="wtsSidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="wts-sidebar" id="wtsSidebar">
+
+        <!-- LOGO IMAGE -->
+        <div class="wts-sidebar-brand">
+
+            <a href="index.html" class="wts-brand-link">
+                <img
+                    src="images/logo.png"
+                    alt="Welding Trade School"
+                    class="wts-dashboard-logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button
+                type="button"
+                class="wts-sidebar-close"
+                id="wtsSidebarClose"
+                aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <!-- SIDEBAR LABEL -->
+        <div class="wts-sidebar-label">STUDENT MENU</div>
+
+        <!-- NAVIGATION -->
+        <nav class="wts-sidebar-nav" aria-label="Student navigation">
+
+            <a href="dashboard.html"
+               class="wts-nav-link"
+               aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-courses.html" class="wts-nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="lab-hours.html" class="wts-nav-link">
+                <i class="fa-regular fa-clock"></i>
+                <span>Lab Hours</span>
+            </a>
+
+            <a href="skill-assessments.html" class="wts-nav-link">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Skill Assessments</span>
+            </a>
+
+            <a href="class-schedule.html" class="wts-nav-link active">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="exam-results.html" class="wts-nav-link">
+                <i class="fa-solid fa-award"></i>
+                <span>Exam Results &amp; Certificates</span>
+            </a>
+
+            <a href="payments.html" class="wts-nav-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Payments &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="wts-sidebar-bottom">
+
+            <div class="wts-sidebar-divider"></div>
+
+            <a href="login.html" class="wts-nav-link wts-logout-link">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+            <div class="wts-sidebar-footer">
+                <span class="wts-footer-indicator"></span>
+                <span>Welding Student Portal</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="wts-main-area">
+
+        <!-- TOPBAR -->
+        <header class="wts-topbar">
+
+            <!-- LEFT SIDE -->
+            <div class="wts-topbar-left">
+
+                <!-- HAMBURGER -->
+                <button
+                    type="button"
+                    class="wts-icon-button wts-menu-toggle"
+                    id="wtsMenuToggle"
+                    aria-label="Open sidebar"
+                    aria-controls="wtsSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- PAGE HEADING -->
+                <div class="wts-page-heading">
+                    <h1>Student Dashboard</h1>
+                    <p>Welcome back! Continue your welding journey.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE ACTIONS -->
+            <div class="wts-topbar-actions">
+
+                <!-- RTL BUTTON: IMAGE REFERENCE STYLE -->
+                <!-- RTL TOGGLE -->
+<!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                <!-- SETTINGS -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-icon-button"
+                        id="wtsSettingsToggle"
+                        aria-label="Settings"
+                        aria-expanded="false"
+                        aria-controls="wtsSettingsMenu"
+                        title="Settings">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu"
+                        id="wtsSettingsMenu"
+                        hidden>
+
+                        <span class="wts-dropdown-heading">Preferences</span>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsDark">
+                            <i class="fa-solid fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsRtl">
+                            <i class="fa-solid fa-left-right"></i>
+                            <span>RTL Layout</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PROFILE -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-profile-button"
+                        id="wtsProfileToggle"
+                        aria-label="Student profile"
+                        aria-expanded="false"
+                        aria-controls="wtsProfileMenu">
+
+                        <span class="wts-profile-avatar">
+    <img src="images/profile.jpg" alt="Student profile photo">
+</span>
+
+                        <span class="wts-profile-details">
+                            <strong>Ram</strong>
+                            <small>Welding Trainee</small>
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down wts-profile-chevron"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu wts-profile-menu"
+                        id="wtsProfileMenu"
+                        hidden>
+
+                        <div class="wts-profile-menu-header">
+                            <strong>Ram Account</strong>
+                            <span>Welding Trainee</span>
+                        </div>
+
+                        <div class="wts-dropdown-divider"></div>
+
+                        <a href="login.html" class="wts-dropdown-item">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<main class="wts-dashboard-content wts-schedule-content">
+
+    <!-- PAGE INTRO -->
+    <section class="wts-schedule-intro">
+        <div class="wts-schedule-intro-text">
+            <span class="wts-schedule-eyebrow">LEARNING PLANNER</span>
+            <h2>Class Schedule</h2>
+            <p>
+                View your upcoming welding classes, practical sessions,
+                and training schedule in one place.
+            </p>
+        </div>
+
+        <a href="#wtsScheduleUpcoming" class="wts-schedule-primary-button">
+            <i class="fa-regular fa-calendar"></i>
+            View Upcoming Classes
+        </a>
+    </section>
+
+
+    <!-- SUMMARY CARDS -->
+    <section class="wts-schedule-summary">
+
+        <article class="wts-schedule-summary-card">
+            <div class="wts-schedule-summary-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div class="wts-schedule-summary-info">
+                <p>Classes This Week</p>
+                <h3>06</h3>
+                <span>Across all enrolled courses</span>
+            </div>
+        </article>
+
+        <article class="wts-schedule-summary-card">
+            <div class="wts-schedule-summary-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="wts-schedule-summary-info">
+                <p>Scheduled Hours</p>
+                <h3>14 <span>hrs</span></h3>
+                <span>Planned for this week</span>
+            </div>
+        </article>
+
+        <article class="wts-schedule-summary-card">
+            <div class="wts-schedule-summary-icon">
+                <i class="fa-solid fa-flask"></i>
+            </div>
+            <div class="wts-schedule-summary-info">
+                <p>Practical Sessions</p>
+                <h3>04</h3>
+                <span>Hands-on workshop training</span>
+            </div>
+        </article>
+
+        <article class="wts-schedule-summary-card">
+            <div class="wts-schedule-summary-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="wts-schedule-summary-info">
+                <p>Theory Classes</p>
+                <h3>02</h3>
+                <span>Classroom learning sessions</span>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- WEEKLY SCHEDULE -->
+    <section class="wts-schedule-week-section">
+
+        <div class="wts-schedule-section-header">
+            <div>
+                <span class="wts-schedule-eyebrow">YOUR TRAINING PLAN</span>
+                <h3>Weekly Schedule</h3>
+                <p>Check your classes and practical sessions for the week.</p>
+            </div>
+
+            <div class="wts-schedule-week-label">
+                <i class="fa-regular fa-calendar"></i>
+                <span>October 26 – November 1, 2026</span>
+            </div>
+        </div>
+
+        <div class="wts-schedule-week-grid">
+
+            <!-- MONDAY -->
+            <article class="wts-schedule-day-card">
+                <div class="wts-schedule-day-header">
+                    <span>MON</span>
+                    <strong>26</strong>
+                </div>
+                <div class="wts-schedule-day-events">
+                    <div class="wts-schedule-event wts-schedule-event-theory">
+                        <span class="wts-schedule-event-type">THEORY</span>
+                        <h4>Welding Safety</h4>
+                        <p><i class="fa-regular fa-clock"></i> 09:00 – 10:30 AM</p>
+                        <span class="wts-schedule-event-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Room 101
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TUESDAY -->
+            <article class="wts-schedule-day-card">
+                <div class="wts-schedule-day-header">
+                    <span>TUE</span>
+                    <strong>27</strong>
+                </div>
+                <div class="wts-schedule-day-events">
+                    <div class="wts-schedule-event wts-schedule-event-practical">
+                        <span class="wts-schedule-event-type">PRACTICAL</span>
+                        <h4>MIG Welding Basics</h4>
+                        <p><i class="fa-regular fa-clock"></i> 09:00 – 11:00 AM</p>
+                        <span class="wts-schedule-event-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Workshop A
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WEDNESDAY -->
+            <article class="wts-schedule-day-card">
+                <div class="wts-schedule-day-header">
+                    <span>WED</span>
+                    <strong>28</strong>
+                </div>
+                <div class="wts-schedule-day-events">
+                    <div class="wts-schedule-event wts-schedule-event-practical">
+                        <span class="wts-schedule-event-type">PRACTICAL</span>
+                        <h4>Joint Preparation</h4>
+                        <p><i class="fa-regular fa-clock"></i> 10:00 AM – 12:00 PM</p>
+                        <span class="wts-schedule-event-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Workshop B
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- THURSDAY -->
+            <article class="wts-schedule-day-card">
+                <div class="wts-schedule-day-header">
+                    <span>THU</span>
+                    <strong>29</strong>
+                </div>
+                <div class="wts-schedule-day-events">
+                    <div class="wts-schedule-event wts-schedule-event-assessment">
+                        <span class="wts-schedule-event-type">ASSESSMENT</span>
+                        <h4>MIG Joint Evaluation</h4>
+                        <p><i class="fa-regular fa-clock"></i> 10:00 – 11:00 AM</p>
+                        <span class="wts-schedule-event-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Assessment Lab
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FRIDAY -->
+            <article class="wts-schedule-day-card">
+                <div class="wts-schedule-day-header">
+                    <span>FRI</span>
+                    <strong>30</strong>
+                </div>
+                <div class="wts-schedule-day-events">
+                    <div class="wts-schedule-event wts-schedule-event-practical">
+                        <span class="wts-schedule-event-type">PRACTICAL</span>
+                        <h4>TIG Torch Control</h4>
+                        <p><i class="fa-regular fa-clock"></i> 01:00 – 03:00 PM</p>
+                        <span class="wts-schedule-event-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Workshop A
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SATURDAY -->
+            <article class="wts-schedule-day-card">
+                <div class="wts-schedule-day-header">
+                    <span>SAT</span>
+                    <strong>31</strong>
+                </div>
+                <div class="wts-schedule-day-events">
+                    <div class="wts-schedule-event wts-schedule-event-theory">
+                        <span class="wts-schedule-event-type">THEORY</span>
+                        <h4>Welding Materials</h4>
+                        <p><i class="fa-regular fa-clock"></i> 09:00 – 10:30 AM</p>
+                        <span class="wts-schedule-event-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Room 102
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SUNDAY -->
+            <article class="wts-schedule-day-card wts-schedule-day-rest">
+                <div class="wts-schedule-day-header">
+                    <span>SUN</span>
+                    <strong>01</strong>
+                </div>
+                <div class="wts-schedule-rest-content">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <h4>No Classes</h4>
+                    <p>Enjoy your day off.</p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- SCHEDULE LEGEND -->
+        <div class="wts-schedule-legend">
+            <span>
+                <i class="wts-schedule-legend-dot wts-schedule-dot-theory"></i>
+                Theory
+            </span>
+            <span>
+                <i class="wts-schedule-legend-dot wts-schedule-dot-practical"></i>
+                Practical
+            </span>
+            <span>
+                <i class="wts-schedule-legend-dot wts-schedule-dot-assessment"></i>
+                Assessment
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- UPCOMING CLASSES -->
+    <section class="wts-schedule-upcoming-section" id="wtsScheduleUpcoming">
+
+        <div class="wts-schedule-section-header">
+            <div>
+                <span class="wts-schedule-eyebrow">DON'T MISS A SESSION</span>
+                <h3>Upcoming Classes</h3>
+                <p>Prepare for your next training sessions.</p>
+            </div>
+            <span class="wts-schedule-upcoming-count">3 Upcoming</span>
+        </div>
+
+        <div class="wts-schedule-upcoming-list">
+
+            <article class="wts-schedule-upcoming-card">
+                <div class="wts-schedule-date-box">
+                    <span>OCT</span>
+                    <strong>28</strong>
+                </div>
+
+                <div class="wts-schedule-upcoming-info">
+                    <span class="wts-schedule-upcoming-tag wts-schedule-tag-practical">
+                        Practical Training
+                    </span>
+                    <h4>Joint Preparation Workshop</h4>
+                    <p>Learn joint preparation and material handling techniques.</p>
+
+                    <div class="wts-schedule-upcoming-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10:00 AM – 12:00 PM</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Workshop B</span>
+                        <span><i class="fa-solid fa-user-tie"></i> Instructor A</span>
+                    </div>
+                </div>
+
+                <a href="my-courses.html" class="wts-schedule-view-link">
+                    View Course
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="wts-schedule-upcoming-card">
+                <div class="wts-schedule-date-box">
+                    <span>OCT</span>
+                    <strong>29</strong>
+                </div>
+
+                <div class="wts-schedule-upcoming-info">
+                    <span class="wts-schedule-upcoming-tag wts-schedule-tag-assessment">
+                        Assessment
+                    </span>
+                    <h4>MIG Joint Quality Evaluation</h4>
+                    <p>Demonstrate your MIG welding skills and joint quality.</p>
+
+                    <div class="wts-schedule-upcoming-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10:00 – 11:00 AM</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Assessment Lab</span>
+                        <span><i class="fa-solid fa-user-tie"></i> Instructor B</span>
+                    </div>
+                </div>
+
+                <a href="skill-assessments.html" class="wts-schedule-view-link">
+                    View Assessment
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="wts-schedule-upcoming-card">
+                <div class="wts-schedule-date-box">
+                    <span>OCT</span>
+                    <strong>30</strong>
+                </div>
+
+                <div class="wts-schedule-upcoming-info">
+                    <span class="wts-schedule-upcoming-tag wts-schedule-tag-practical">
+                        Practical Training
+                    </span>
+                    <h4>TIG Torch Control</h4>
+                    <p>Practice torch movement, control, and precision techniques.</p>
+
+                    <div class="wts-schedule-upcoming-meta">
+                        <span><i class="fa-regular fa-clock"></i> 01:00 – 03:00 PM</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Workshop A</span>
+                        <span><i class="fa-solid fa-user-tie"></i> Instructor A</span>
+                    </div>
+                </div>
+
+                <a href="my-courses.html" class="wts-schedule-view-link">
+                    View Course
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLASS REMINDER -->
+    <section class="wts-schedule-reminder">
+
+        <div class="wts-schedule-reminder-icon">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <div class="wts-schedule-reminder-content">
+            <h3>Be Ready for Your Next Class</h3>
+            <p>
+                Arrive 10 minutes early for practical sessions.
+                Remember to bring your required protective equipment
+                and follow all workshop safety guidelines.
+            </p>
+        </div>
+
+        <a href="lab-hours.html" class="wts-schedule-reminder-link">
+            View Lab Hours
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</main>
+
+        </div>
+
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="wts-logout-overlay" id="wtsLogoutModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="wtsLogoutTitle"
+     aria-describedby="wtsLogoutMessage"
+     aria-hidden="true"
+     hidden>
+
+    <div class="wts-logout-modal">
+
+        <button type="button"
+                class="wts-logout-close"
+                id="wtsLogoutClose"
+                aria-label="Close logout dialog">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="wts-logout-icon">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+
+        <h2 id="wtsLogoutTitle">Logout?</h2>
+
+        <p id="wtsLogoutMessage">
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="wts-logout-actions">
+            <button type="button"
+                    class="wts-logout-stay"
+                    id="wtsLogoutStay">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="wts-logout-confirm"
+                    id="wtsLogoutConfirm">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Yes, Logout
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SHARED JAVASCRIPT -->
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

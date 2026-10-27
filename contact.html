@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welding Trade School | Skills, Certification & Careers</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <meta name="description"
+          content="Learn professional welding skills, earn certifications, and prepare for a successful career at Welding Trade School.">
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Website CSS (we will create this in Part 2) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         WELDING TRADE SCHOOL — HEADER
+    =========================================== -->
+
+    <header class="wts-header" id="wtsHeader">
+
+        <div class="wts-header-container">
+
+            <!-- LOGO — LEFT -->
+
+            <a href="index.html"
+               class="wts-logo"
+               aria-label="Welding Trade School Home">
+
+                <img src="images/logo.png"
+                     alt="Welding Trade School Logo"
+                     class="wts-logo-img">
+
+            </a>
+
+
+            <!-- HAMBURGER MENU BUTTON -->
+
+            <button class="wts-menu-toggle"
+                    id="wtsMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="wtsNavigation"
+                    aria-expanded="false">
+
+                <span class="wts-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+            </button>
+
+
+            <!-- NAVIGATION AND ACTIONS -->
+
+            <div class="wts-header-content" id="wtsNavigation">
+
+
+                <!-- CENTER NAVIGATION -->
+
+                <nav class="wts-nav" aria-label="Main navigation">
+
+
+                    <!-- HOME DROPDOWN -->
+
+                    <div class="wts-nav-item wts-home-dropdown">
+
+                        <button class="wts-nav-link wts-dropdown-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="wtsHomeDropdown">
+
+                            <span>Home</span>
+
+                            <i class="fa-solid fa-chevron-down"
+                               aria-hidden="true"></i>
+
+                        </button>
+
+
+                        <div class="wts-dropdown-menu"
+                             id="wtsHomeDropdown">
+
+                            <a href="index.html">Home 1</a>
+
+                            <a href="home-2.html">Home 2</a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OTHER MENUS -->
+                    <a href="about.html" class="wts-nav-link">
+                        About Us
+                    </a>
+
+                    <a href="programs.html" class="wts-nav-link">
+                        Programs
+                    </a>
+
+                    <a href="instructors.html" class="wts-nav-link">
+                        Instructors
+                    </a>
+
+                    <a href="facilities.html" class="wts-nav-link">
+                        Facilities
+                    </a>
+
+                    <a href="contact.html" class="wts-nav-link active">
+                        Contact
+                    </a>
+
+                </nav>
+
+
+
+                <!-- RIGHT-SIDE BUTTONS -->
+
+                <div class="wts-header-actions">
+
+
+                    <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <a href="login.html"
+                       class="wts-btn wts-btn-secondary">
+
+                        Login
+
+                    </a>
+
+
+
+                    <!-- DASHBOARD BUTTON -->
+
+                    <a href="dashboard.html"
+                       class="wts-btn wts-btn-primary">
+
+                        Dashboard
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         Home page sections will be added later.
+    =========================================== -->
+
+    <main id="mainContent">
+
+<!-- =========================================
+     CONTACT PAGE — SECTION 1
+     HERO BANNER
+========================================= -->
+
+<section class="wts-contact-hero" id="contact-hero">
+
+    <!-- BACKGROUND OVERLAY -->
+    <div class="wts-contact-hero-overlay"></div>
+
+    <div class="wts-contact-hero-container">
+
+        <!-- HERO CONTENT -->
+        <div class="wts-contact-hero-content">
+
+            <span class="wts-contact-hero-eyebrow">
+                WE'RE HERE TO HELP
+            </span>
+
+            <h1 class="wts-contact-hero-title">
+                Contact <span>Our Team</span>
+            </h1>
+
+            <p class="wts-contact-hero-description">
+                Have questions about our welding programs, training
+                facilities, or enrollment process? Get in touch with
+                our team, and we'll help you find the information you need.
+            </p>
+            
+<!-- CONTACT HERO BUTTONS -->
+<div class="wts-contact-hero-actions">
+
+    <a href="#contact-form"
+       class="wts-contact-hero-button wts-contact-hero-button-primary">
+        Send Us a Message
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+
+    <a href="programs.html"
+       class="wts-contact-hero-button wts-contact-hero-button-secondary">
+        Explore Our Programs
+        <i class="fa-solid fa-arrow-up-right-from-square"
+           aria-hidden="true"></i>
+    </a>
+
+</div>
+
+            <!-- BREADCRUMB -->
+            <nav class="wts-contact-hero-breadcrumb"
+                 aria-label="Breadcrumb">
+
+                <a href="index.html">Home</a>
+
+                <i class="fa-solid fa-chevron-right"
+                   aria-hidden="true"></i>
+
+                <span aria-current="page">Contact Us</span>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END CONTACT HERO -->
+
+<!-- =========================================
+     CONTACT PAGE — SECTION 2
+     CONTACT INFORMATION
+========================================= -->
+
+<section class="wts-contact-info" id="contact-information">
+
+    <div class="wts-contact-info-container">
+
+        <!-- SECTION HEADER -->
+        <div class="wts-contact-info-header">
+
+            <span class="wts-contact-info-eyebrow">
+                GET IN TOUCH
+            </span>
+
+            <h2 class="wts-contact-info-title">
+                We're Here to <span>Help You</span>
+            </h2>
+
+            <p class="wts-contact-info-intro">
+                Whether you're exploring our welding programs or
+                preparing to enroll, our team is ready to answer
+                your questions and guide you through the next steps.
+            </p>
+
+        </div>
+
+        <!-- CONTACT CARDS -->
+        <div class="wts-contact-info-grid">
+
+            <!-- CARD 1: CONTACT DETAILS -->
+            <article class="wts-contact-info-card">
+
+                <div class="wts-contact-info-icon">
+                    <i class="fa-solid fa-headset"
+                       aria-hidden="true"></i>
+                </div>
+
+                <span class="wts-contact-info-card-label">
+                    TALK TO OUR TEAM
+                </span>
+
+                <h3 class="wts-contact-info-card-title">
+                    Contact Details
+                </h3>
+
+                <p class="wts-contact-info-card-description">
+                    Have questions about our courses or enrollment?
+                    Reach out to our team connect.
+                </p>
+
+                <div class="wts-contact-info-links">
+
+                    <a href="tel:+10000000000"
+                       class="wts-contact-info-link">
+
+                        <i class="fa-solid fa-phone"
+                           aria-hidden="true"></i>
+
+                        <span>+1 (000) 000-0000</span>
+
+                    </a>
+
+                    <a href="mailto:info@example.com"
+                       class="wts-contact-info-link">
+
+                        <i class="fa-solid fa-envelope"
+                           aria-hidden="true"></i>
+
+                        <span>info@example.com</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- CARD 2: LOCATION -->
+            <article class="wts-contact-info-card">
+
+                <div class="wts-contact-info-icon">
+                    <i class="fa-solid fa-location-dot"
+                       aria-hidden="true"></i>
+                </div>
+
+                <span class="wts-contact-info-card-label">
+                    COME VISIT US
+                </span>
+
+                <h3 class="wts-contact-info-card-title">
+                    Training Center
+                </h3>
+
+                <p class="wts-contact-info-card-description">
+                    Visit our training center to learn more about
+                    our facilities and hands-on welding education.
+                </p>
+
+                
+<div class="wts-contact-info-location">
+
+    <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+
+    <address>
+        Welding Trade School<br>
+        Chennai, Tamil Nadu,<br>
+        India
+    </address>
+
+</div>
+
+
+                <a href="#contact-message"
+                   class="wts-contact-info-text-link">
+
+                    Get in Touch
+
+                    <i class="fa-solid fa-arrow-right"
+                       aria-hidden="true"></i>
+
+                </a>
+
+            </article>
+
+            <!-- CARD 3: OFFICE HOURS -->
+            <article class="wts-contact-info-card">
+
+                <div class="wts-contact-info-icon">
+                    <i class="fa-regular fa-clock"
+                       aria-hidden="true"></i>
+                </div>
+
+                <span class="wts-contact-info-card-label">
+                    WHEN TO REACH US
+                </span>
+
+                <h3 class="wts-contact-info-card-title">
+                    Office Hours
+                </h3>
+
+                <p class="wts-contact-info-card-description">
+                    Contact our team during office hours for
+                    information about programs and admissions.
+                </p>
+
+                <div class="wts-contact-info-hours">
+
+                    <div class="wts-contact-info-hours-row">
+                        <span>Monday – Friday</span>
+                        <strong>9:00 AM – 5:00 PM</strong>
+                    </div>
+
+                    <div class="wts-contact-info-hours-row">
+                        <span>Saturday</span>
+                        <strong>9:00 AM – 1:00 PM</strong>
+                    </div>
+
+                    <div class="wts-contact-info-hours-row">
+                        <span>Sunday</span>
+                        <strong>Closed</strong>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <!-- BOTTOM NOTE -->
+        <div class="wts-contact-info-note">
+
+            <span class="wts-contact-info-note-icon">
+                <i class="fa-solid fa-circle-info"
+                   aria-hidden="true"></i>
+            </span>
+
+            <p>
+                Not sure which welding program is right for you?
+                Contact our team, and we'll help you explore your options.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END CONTACT INFORMATION -->
+
+<!-- =========================================
+     CONTACT PAGE — SECTION 3
+     ENQUIRY FORM + GOOGLE MAP
+========================================= -->
+
+<section class="wts-contact-message" id="contact-message">
+
+    <div class="wts-contact-message-container">
+
+        <!-- SECTION HEADER -->
+        <div class="wts-contact-message-header">
+
+            <span class="wts-contact-message-eyebrow">
+                SEND AN ENQUIRY
+            </span>
+
+            <h2 class="wts-contact-message-title">
+                Let's Start a <span>Conversation</span>
+            </h2>
+
+            <p class="wts-contact-message-intro">
+                Tell us what you'd like to know about our welding
+                programs, admissions, or training facilities.
+                Complete the form and our team can follow up with you.
+            </p>
+
+        </div>
+
+        <!-- FORM + MAP LAYOUT -->
+        <div class="wts-contact-message-layout">
+
+            <!-- LEFT: ENQUIRY FORM -->
+            <div class="wts-contact-message-form-panel">
+
+                <div class="wts-contact-message-form-heading">
+                    <h3>Send Us a Message</h3>
+                    <p>
+                        Fill in your details and let us know how we can help.
+                    </p>
+                </div>
+
+                <form
+                    class="wts-contact-message-form"
+                    id="wtsContactEnquiryForm"
+                    action="#"
+                    method="post"
+                >
+
+                    <!-- NAME -->
+                    <div class="wts-contact-message-field">
+                        <label for="wts-contact-name">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="wts-contact-name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="wts-contact-message-field">
+                        <label for="wts-contact-email">
+                            Email Address <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="wts-contact-email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="wts-contact-message-field">
+                        <label for="wts-contact-phone">
+                            Phone Number <span>*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="wts-contact-phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <!-- ENQUIRY TYPE -->
+                    <div class="wts-contact-message-field">
+                        <label for="wts-contact-subject">
+                            What Can We Help You With? <span>*</span>
+                        </label>
+
+                        <select
+                            id="wts-contact-subject"
+                            name="subject"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select an enquiry type
+                            </option>
+
+                            <option value="course-information">
+                                Course Information
+                            </option>
+
+                            <option value="admissions">
+                                Admissions & Enrollment
+                            </option>
+
+                            <option value="training-facilities">
+                                Training Facilities
+                            </option>
+
+                            <option value="fees">
+                                Course Fees
+                            </option>
+
+                            <option value="other">
+                                Other Enquiry
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- MESSAGE -->
+                    <div class="wts-contact-message-field wts-contact-message-field-full">
+                        <label for="wts-contact-message-text">
+                            Your Message <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="wts-contact-message-text"
+                            name="message"
+                            rows="5"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="wts-contact-message-submit">
+                        <button type="submit">
+                            Send Enquiry
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </button>
+
+                        <p>
+                            <i class="fa-solid fa-lock"
+                               aria-hidden="true"></i>
+                            Your information will be handled responsibly.
+                        </p>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- RIGHT: GOOGLE MAP -->
+            <div class="wts-contact-message-map-panel">
+
+                <div class="wts-contact-message-map-heading">
+                    <span class="wts-contact-message-map-icon">
+                        <i class="fa-solid fa-location-dot"
+                           aria-hidden="true"></i>
+                    </span>
+
+                    <div>
+                        <h3>Find Our Location</h3>
+                        <p>Chennai, Tamil Nadu, India</p>
+                    </div>
+                </div>
+
+                <div class="wts-contact-message-map">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Chennai%2C%20Tamil%20Nadu%2C%20India&output=embed"
+                        title="Google Map showing Chennai, Tamil Nadu, India"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="wts-contact-message-map-footer">
+                    <i class="fa-solid fa-map-pin"
+                       aria-hidden="true"></i>
+
+                    <p>
+                        Planning to visit? Use the map to explore
+                        the Chennai area and plan your route.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END CONTACT MESSAGE SECTION -->
+
+        </main>
+<!-- =========================================
+     WELDING TRADE SCHOOL — FOOTER
+========================================= -->
+
+<footer class="wts-footer" id="wtsFooter">
+    <div class="wts-footer-main">
+        <div class="wts-footer-container">
+
+            <!-- Brand -->
+            <div class="wts-footer-brand">
+                <a href="index.html" class="wts-footer-logo">
+                    <img
+                        src="images/logo.png"
+                        alt="Welding Trade School"
+                    >
+                </a>
+
+                <p class="wts-footer-description">
+                    Build practical welding skills, gain industry knowledge,
+                    and prepare for new opportunities in the skilled trades.
+                </p>
+
+                <div class="wts-footer-socials">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="wts-footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                    <li><a href="programs.html">Our Programs</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Training Programs -->
+            <div class="wts-footer-column">
+                <h3>Training Programs</h3>
+                <ul>
+                    <li><a href="programs.html">Welding Fundamentals</a></li>
+                    <li><a href="programs.html">MIG Welding</a></li>
+                    <li><a href="programs.html">TIG Welding</a></li>
+                    <li><a href="programs.html">Stick Welding</a></li>
+                    <li><a href="programs.html">Welding Certification</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="wts-footer-column wts-footer-contact">
+                <h3>Contact Information</h3>
+
+                <div class="wts-footer-contact-item">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <p>Your School Address, City, State</p>
+                </div>
+
+                <div class="wts-footer-contact-item">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+10000000000">+1 (000) 000-0000</a>
+                </div>
+
+                <div class="wts-footer-contact-item">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:info@example.com">info@example.com</a>
+                </div>
+
+                <div class="wts-footer-contact-item">
+                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                    <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+                </div>
+
+                <a href="contact.html" class="wts-btn wts-btn-primary wts-footer-cta">
+                    Contact Our Team
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="wts-footer-bottom">
+        <div class="wts-footer-bottom-container">
+            <p>
+                &copy; <span id="wtsFooterYear">2026</span>
+                Welding Trade School. All rights reserved.
+            </p>
+
+            <div class="wts-footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+
+
+    <!-- Website JavaScript (we will create this later) -->
+<!-- SCROLL TO TOP BUTTON -->
+<button id="wtsScrollTop" class="wts-scroll-top"
+        aria-label="Scroll to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

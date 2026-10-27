@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Member Login | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Login Page CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Responsive and RTL CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<main class="wts-login-page" id="wtsLoginPage">
+
+    <!-- =========================================
+         TOP HEADER — OUTSIDE LOGIN CARD
+    ========================================== -->
+    <header class="wts-login-page-header">
+
+        <!-- Logo -->
+        <a href="index.html"
+           class="wts-login-logo"
+           aria-label="Welding Trade School home">
+
+            <img src="images/logo.png"
+                 alt="Welding Trade School">
+        </a>
+
+        <!-- RTL and Dark Mode Controls -->
+        <div class="wts-login-card-controls">
+
+            <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         LOGIN CARD
+    ========================================== -->
+    <div class="wts-login-shell">
+
+        <!-- =====================================
+             LEFT WELCOME IMAGE PANEL
+        ====================================== -->
+        <section class="wts-login-visual"
+                 aria-label="Welcome to Welding Trade School">
+
+            <div class="wts-login-visual-overlay"></div>
+
+            <!-- Top Label -->
+            <div class="wts-login-visual-top">
+
+                <span class="wts-login-visual-eyebrow">
+                    YOUR FUTURE STARTS HERE
+                </span>
+
+            </div>
+
+            <!-- Welcome Content -->
+            <div class="wts-login-visual-content">
+
+                <span class="wts-login-visual-kicker">
+                    WELCOME BACK
+                </span>
+
+                <h1 class="wts-login-visual-title">
+                    Your Welding Career
+                    <span>Starts Here.</span>
+                </h1>
+
+                <p class="wts-login-visual-description">
+                    Sign in to access your training dashboard, track your
+                    learning progress, and continue building practical
+                    skills for your future.
+                </p>
+
+                <!-- Highlights -->
+                <div class="wts-login-visual-highlights">
+
+                    <span>SKILLS</span>
+
+                    <i aria-hidden="true"></i>
+
+                    <span>SAFETY</span>
+
+                    <i aria-hidden="true"></i>
+
+                    <span>CAREER</span>
+
+                </div>
+
+            </div>
+
+            <!-- Image Panel Footer -->
+            <div class="wts-login-visual-footer">
+
+                <span class="wts-login-visual-footer-line"></span>
+
+                <p>
+                    Learn the Craft. Build Your Future.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             RIGHT LOGIN FORM PANEL
+        ====================================== -->
+        <section class="wts-login-form-panel"
+                 aria-labelledby="wtsLoginTitle">
+
+            <div class="wts-login-form-inner">
+
+                <!-- Login Step -->
+                <div class="wts-login-step">
+
+                    <span class="wts-login-step-number">
+                        01
+                    </span>
+
+                    <span class="wts-login-step-line"></span>
+
+                    <span class="wts-login-step-label">
+                        MEMBER LOGIN
+                    </span>
+
+                </div>
+
+
+                <!-- Login Heading -->
+                <div class="wts-login-heading">
+
+                    <span class="wts-login-eyebrow">
+                        WELCOME BACK
+                    </span>
+
+                    <h2 class="wts-login-title"
+                        id="wtsLoginTitle">
+
+                        Good to See
+                        <span>You Again.</span>
+
+                    </h2>
+
+                    <p class="wts-login-subtitle">
+                        Sign in to continue your welding training journey
+                        and access your account.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+                <form class="wts-login-form"
+                      id="wtsLoginForm"
+                      action="#"
+                      method="post">
+
+                    <!-- Email -->
+                    <div class="wts-login-field">
+
+                        <label for="wtsLoginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="wts-login-input-wrap">
+
+                            <i class="fa-regular fa-envelope wts-login-input-icon"
+                               aria-hidden="true"></i>
+
+                            <input type="email"
+                                   id="wtsLoginEmail"
+                                   name="email"
+                                   placeholder="Enter your email address"
+                                   autocomplete="email"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+<div class="wts-login-field">
+
+    <label for="wtsLoginPassword">Password</label>
+
+    <div class="wts-login-input-wrap">
+        <i class="fa-solid fa-lock wts-login-input-icon"
+           aria-hidden="true"></i>
+
+        <input type="password"
+               id="wtsLoginPassword"
+               name="password"
+               placeholder="Enter your password"
+               autocomplete="current-password"
+               required>
+
+        <button type="button"
+                class="wts-login-password-toggle"
+                id="wtsLoginPasswordToggle"
+                aria-label="Show password"
+                aria-controls="wtsLoginPassword">
+            <i class="fa-regular fa-eye" aria-hidden="true"></i>
+        </button>
+    </div>
+
+</div>
+
+<!-- Remember Me + Forgot Password -->
+<div class="wts-login-options">
+
+    <label class="wts-login-remember">
+        <input type="checkbox" name="remember" id="wtsLoginRemember">
+        <span class="wts-login-checkbox"></span>
+        <span>Remember me</span>
+    </label>
+
+    <a href="forgot-password.html" class="wts-login-forgot">
+        Forgot Password?
+    </a>
+
+</div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                            class="wts-login-submit">
+
+                        <span>Sign In to Your Account</span>
+
+                        <i class="fa-solid fa-arrow-right"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+                    <!-- Divider -->
+                    <div class="wts-login-divider">
+
+                        <span></span>
+
+                        <p>OR CONTINUE WITH</p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         SOCIAL LOGIN BUTTONS
+                    ================================== -->
+                    <div class="wts-login-social">
+
+                        <!-- Google -->
+                        <button type="button"
+                                class="wts-login-social-button"
+                                data-provider="google"
+                                aria-label="Continue with Google">
+
+                            <svg class="wts-login-google-icon"
+                                 viewBox="0 0 48 48"
+                                 width="20"
+                                 height="20"
+                                 aria-hidden="true">
+
+                                <path fill="#EA4335"
+                                      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 3.04 13.22l7.98 6.19C12.91 13.72 18.02 9.5 24 9.5Z"
+                                      transform="translate(0 4)"/>
+
+                                <path fill="#4285F4"
+                                      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.76 7.18l7.73 6C44.42 38.05 46.98 31.93 46.98 24.55Z"/>
+
+                                <path fill="#FBBC05"
+                                      d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.56 10.78l7.97-6.19Z"
+                                      transform="translate(0 4)"/>
+
+                                <path fill="#34A853"
+                                      d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-5.98 0-11.09-4.22-12.98-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"
+                                      transform="translate(0 -4)"/>
+
+                            </svg>
+
+                            <span>Google</span>
+
+                        </button>
+
+
+                        <!-- Facebook -->
+                        <button type="button"
+                                class="wts-login-social-button"
+                                data-provider="facebook"
+                                aria-label="Continue with Facebook">
+
+                            <svg viewBox="0 0 24 24"
+                                 width="20"
+                                 height="20"
+                                 aria-hidden="true">
+
+                                <path fill="#1877F2"
+                                      d="M24 12a12 12 0 1 0-13.875 11.86v-8.39H7.08V12h3.045V9.35c0-3.005 1.79-4.665 4.53-4.665 1.31 0 2.68.235 2.68.235v2.94h-1.51c-1.49 0-1.955.925-1.955 1.875V12h3.325l-.532 3.47H13.87v8.39A12.002 12.002 0 0 0 24 12Z"/>
+
+                            </svg>
+
+                            <span>Facebook</span>
+
+                        </button>
+
+
+                        <!-- Apple -->
+                        <button type="button"
+                                class="wts-login-social-button"
+                                data-provider="apple"
+                                aria-label="Continue with Apple">
+
+                            <svg viewBox="0 0 24 24"
+                                 width="20"
+                                 height="20"
+                                 aria-hidden="true">
+
+                                <path fill="currentColor"
+                                      d="M16.37 12.47c.02 2.06 1.81 2.75 1.83 2.76-.02.05-.29 1.02-.95 2.02-.57.86-1.16 1.72-2.09 1.74-.91.02-1.2-.56-2.24-.56s-1.37.54-2.23.58c-.9.03-1.58-.93-2.16-1.79-1.18-1.71-2.08-4.84-.87-6.95.6-1.04 1.68-1.7 2.85-1.72.89-.02 1.73.6 2.27.6.54 0 1.55-.74 2.62-.63.45.02 1.72.18 2.54 1.38-.07.04-1.52.89-1.57 2.57ZM14.65 6.98c.47-.57.79-1.36.7-2.14-.68.03-1.5.45-1.98 1.02-.43.5-.81 1.31-.71 2.08.75.06 1.52-.38 1.99-.96Z"/>
+
+                            </svg>
+
+                            <span>Apple</span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Register Link -->
+                    <div class="wts-login-register">
+
+                        <p>
+                            Don't have an account?
+
+                            <a href="register.html">
+                                Create Account
+                            </a>
+                        </p>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Login Card Footer -->
+                <div class="wts-login-footer">
+
+                    <span>
+                        <i class="fa-solid fa-shield-halved"
+                           aria-hidden="true"></i>
+                        Secure Access
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"
+                           aria-hidden="true"></i>
+                        Student Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- Login Page JavaScript -->
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

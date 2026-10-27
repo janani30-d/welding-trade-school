@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+
+<body>
+
+<div class="wts-dashboard" id="wtsDashboard">
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+    <div class="wts-sidebar-overlay" id="wtsSidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="wts-sidebar" id="wtsSidebar">
+
+        <!-- LOGO IMAGE -->
+        <div class="wts-sidebar-brand">
+
+            <a href="index.html" class="wts-brand-link">
+                <img
+                    src="images/logo.png"
+                    alt="Welding Trade School"
+                    class="wts-dashboard-logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button
+                type="button"
+                class="wts-sidebar-close"
+                id="wtsSidebarClose"
+                aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <!-- SIDEBAR LABEL -->
+        <div class="wts-sidebar-label">STUDENT MENU</div>
+
+        <!-- NAVIGATION -->
+        <nav class="wts-sidebar-nav" aria-label="Student navigation">
+
+            <a href="dashboard.html"
+               class="wts-nav-link"
+               aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-courses.html" class="wts-nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="lab-hours.html" class="wts-nav-link">
+                <i class="fa-regular fa-clock"></i>
+                <span>Lab Hours</span>
+            </a>
+
+            <a href="skill-assessments.html" class="wts-nav-link">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Skill Assessments</span>
+            </a>
+
+            <a href="class-schedule.html" class="wts-nav-link">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="exam-results.html" class="wts-nav-link">
+                <i class="fa-solid fa-award"></i>
+                <span>Exam Results &amp; Certificates</span>
+            </a>
+
+            <a href="payments.html" class="wts-nav-link active">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Payments &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="wts-sidebar-bottom">
+
+            <div class="wts-sidebar-divider"></div>
+
+            <a href="login.html" class="wts-nav-link wts-logout-link">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+            <div class="wts-sidebar-footer">
+                <span class="wts-footer-indicator"></span>
+                <span>Welding Student Portal</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="wts-main-area">
+
+        <!-- TOPBAR -->
+        <header class="wts-topbar">
+
+            <!-- LEFT SIDE -->
+            <div class="wts-topbar-left">
+
+                <!-- HAMBURGER -->
+                <button
+                    type="button"
+                    class="wts-icon-button wts-menu-toggle"
+                    id="wtsMenuToggle"
+                    aria-label="Open sidebar"
+                    aria-controls="wtsSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- PAGE HEADING -->
+                <div class="wts-page-heading">
+                    <h1>Student Dashboard</h1>
+                    <p>Welcome back! Continue your welding journey.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE ACTIONS -->
+            <div class="wts-topbar-actions">
+
+                <!-- RTL BUTTON: IMAGE REFERENCE STYLE -->
+                <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                <!-- SETTINGS -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-icon-button"
+                        id="wtsSettingsToggle"
+                        aria-label="Settings"
+                        aria-expanded="false"
+                        aria-controls="wtsSettingsMenu"
+                        title="Settings">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu"
+                        id="wtsSettingsMenu"
+                        hidden>
+
+                        <span class="wts-dropdown-heading">Preferences</span>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsDark">
+                            <i class="fa-solid fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsRtl">
+                            <i class="fa-solid fa-left-right"></i>
+                            <span>RTL Layout</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PROFILE -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-profile-button"
+                        id="wtsProfileToggle"
+                        aria-label="Student profile"
+                        aria-expanded="false"
+                        aria-controls="wtsProfileMenu">
+
+                        <span class="wts-profile-avatar">
+    <img src="images/profile.jpg" alt="Student profile photo">
+</span>
+
+                        <span class="wts-profile-details">
+                            <strong>Ram</strong>
+                            <small>Welding Trainee</small>
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down wts-profile-chevron"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu wts-profile-menu"
+                        id="wtsProfileMenu"
+                        hidden>
+
+                        <div class="wts-profile-menu-header">
+                            <strong>Ram Account</strong>
+                            <span>Welding Trainee</span>
+                        </div>
+
+                        <div class="wts-dropdown-divider"></div>
+
+                        <a href="login.html" class="wts-dropdown-item">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<main class="wts-dashboard-content wts-payments-content">
+
+    <!-- PAGE INTRO -->
+    <section class="wts-payments-intro">
+        <div class="wts-payments-intro-text">
+            <span class="wts-payments-eyebrow">STUDENT FINANCE</span>
+            <h1>Payments &amp; Invoices</h1>
+            <p>Track your course fees, review invoices, and manage your payment history.</p>
+        </div>
+
+        <a href="#wtsInvoiceHistory" class="wts-payments-outline-btn">
+            <i class="fa-solid fa-file-invoice"></i>
+            View Invoices
+        </a>
+    </section>
+
+    <!-- PAYMENT SUMMARY -->
+    <section class="wts-payments-summary">
+
+        <article class="wts-payments-summary-card">
+            <div class="wts-payments-summary-top">
+                <span>Total Course Fees</span>
+                <span class="wts-payments-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </span>
+            </div>
+            <h2>₹45,000</h2>
+            <p>Fees for enrolled programs</p>
+        </article>
+
+        <article class="wts-payments-summary-card">
+            <div class="wts-payments-summary-top">
+                <span>Total Paid</span>
+                <span class="wts-payments-icon wts-payments-icon-success">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+            </div>
+            <h2>₹30,000</h2>
+            <p>Payments successfully received</p>
+        </article>
+
+        <article class="wts-payments-summary-card">
+            <div class="wts-payments-summary-top">
+                <span>Outstanding Balance</span>
+                <span class="wts-payments-icon wts-payments-icon-warning">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+            </div>
+            <h2>₹15,000</h2>
+            <p>Remaining course fees</p>
+        </article>
+
+        <article class="wts-payments-summary-card">
+            <div class="wts-payments-summary-top">
+                <span>Next Due Date</span>
+                <span class="wts-payments-icon">
+                    <i class="fa-regular fa-calendar"></i>
+                </span>
+            </div>
+            <h2 class="wts-payments-date-value">05 Nov 2026</h2>
+            <p>Upcoming installment deadline</p>
+        </article>
+
+    </section>
+
+    <!-- FEE PROGRESS -->
+    <section class="wts-payments-fee-card">
+        <div class="wts-payments-fee-header">
+            <div>
+                <span class="wts-payments-section-label">PAYMENT OVERVIEW</span>
+                <h2>Course Fee Progress</h2>
+                <p>Your overall payment progress for enrolled courses.</p>
+            </div>
+
+            <span class="wts-payments-progress-percent">67% Paid</span>
+        </div>
+
+        <div class="wts-payments-progress-track"
+             role="progressbar"
+             aria-label="Course fees paid"
+             aria-valuenow="67"
+             aria-valuemin="0"
+             aria-valuemax="100">
+            <span style="width: 66.67%;"></span>
+        </div>
+
+        <div class="wts-payments-progress-details">
+            <div>
+                <span class="wts-payments-progress-dot wts-payments-dot-paid"></span>
+                <span>Paid</span>
+                <strong>₹30,000</strong>
+            </div>
+
+            <div>
+                <span class="wts-payments-progress-dot wts-payments-dot-due"></span>
+                <span>Remaining</span>
+                <strong>₹15,000</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPCOMING PAYMENT -->
+    <section class="wts-payments-upcoming">
+        <div class="wts-payments-upcoming-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+        <div class="wts-payments-upcoming-info">
+            <span class="wts-payments-section-label">UPCOMING PAYMENT</span>
+            <h2>Course Fee Installment</h2>
+            <p>Your next installment of ₹15,000 is scheduled for 05 November 2026.</p>
+        </div>
+
+        <div class="wts-payments-upcoming-action">
+            <span class="wts-payments-status wts-payments-status-pending">
+                Pending
+            </span>
+            <a href="#wtsInvoiceHistory" class="wts-payments-primary-btn">
+                <i class="fa-solid fa-file-invoice"></i>
+                View Invoice
+            </a>
+        </div>
+    </section>
+
+    <!-- INVOICE HISTORY -->
+    <section class="wts-payments-invoices" id="wtsInvoiceHistory">
+
+        <div class="wts-payments-section-header">
+            <div>
+                <span class="wts-payments-section-label">BILLING RECORDS</span>
+                <h2>Invoices &amp; Payment History</h2>
+                <p>Review your previous transactions and outstanding invoices.</p>
+            </div>
+        </div>
+
+        <!-- SEARCH AND FILTER -->
+        <div class="wts-payments-table-toolbar">
+            <div class="wts-payments-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="search"
+                    id="wtsPaymentSearch"
+                    placeholder="Search invoice or payment..."
+                    aria-label="Search invoices and payments">
+            </div>
+
+            <div class="wts-payments-filters" role="group" aria-label="Filter invoices">
+                <button type="button"
+                        class="wts-payments-filter active"
+                        data-filter="all"
+                        aria-pressed="true">All</button>
+
+                <button type="button"
+                        class="wts-payments-filter"
+                        data-filter="paid"
+                        aria-pressed="false">Paid</button>
+
+                <button type="button"
+                        class="wts-payments-filter"
+                        data-filter="pending"
+                        aria-pressed="false">Pending</button>
+            </div>
+        </div>
+
+        <!-- INVOICE TABLE -->
+        <div class="wts-payments-table-wrap">
+            <table class="wts-payments-table">
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Description</th>
+                        <th>Issue Date</th>
+                        <th>Due Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="wtsPaymentsTableBody">
+
+                    <tr data-payment-status="paid"
+                        data-payment-search="wts-inv-001 mig welding course fee">
+                        <td>
+                            <span class="wts-payments-invoice-id">WTS-INV-001</span>
+                        </td>
+                        <td>
+                            <div class="wts-payments-description">
+                                <strong>MIG Welding Fundamentals</strong>
+                                <span>Course installment 1</span>
+                            </div>
+                        </td>
+                        <td>01 Sep 2026</td>
+                        <td>10 Sep 2026</td>
+                        <td class="wts-payments-amount">₹15,000</td>
+                        <td>
+                            <span class="wts-payments-status wts-payments-status-paid">
+                                Paid
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button"
+                                    class="wts-payments-action"
+                                    data-invoice="WTS-INV-001"
+                                    aria-label="View WTS-INV-001 invoice">
+                                <i class="fa-regular fa-eye"></i>
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr data-payment-status="paid"
+                        data-payment-search="wts-inv-002 tig welding course fee">
+                        <td>
+                            <span class="wts-payments-invoice-id">WTS-INV-002</span>
+                        </td>
+                        <td>
+                            <div class="wts-payments-description">
+                                <strong>TIG Welding Techniques</strong>
+                                <span>Course installment 1</span>
+                            </div>
+                        </td>
+                        <td>15 Sep 2026</td>
+                        <td>25 Sep 2026</td>
+                        <td class="wts-payments-amount">₹15,000</td>
+                        <td>
+                            <span class="wts-payments-status wts-payments-status-paid">
+                                Paid
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button"
+                                    class="wts-payments-action"
+                                    data-invoice="WTS-INV-002"
+                                    aria-label="View WTS-INV-002 invoice">
+                                <i class="fa-regular fa-eye"></i>
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr data-payment-status="pending"
+                        data-payment-search="wts-inv-003 course fee remaining installment">
+                        <td>
+                            <span class="wts-payments-invoice-id">WTS-INV-003</span>
+                        </td>
+                        <td>
+                            <div class="wts-payments-description">
+                                <strong>Course Fee Balance</strong>
+                                <span>Final installment</span>
+                            </div>
+                        </td>
+                        <td>20 Oct 2026</td>
+                        <td>05 Nov 2026</td>
+                        <td class="wts-payments-amount">₹15,000</td>
+                        <td>
+                            <span class="wts-payments-status wts-payments-status-pending">
+                                Pending
+                            </span>
+                        </td>
+                        <td>
+                            <button type="button"
+                                    class="wts-payments-action"
+                                    data-invoice="WTS-INV-003"
+                                    aria-label="View WTS-INV-003 invoice">
+                                <i class="fa-regular fa-eye"></i>
+                                View
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="wts-payments-empty" id="wtsPaymentsEmpty" hidden>
+                <i class="fa-solid fa-file-circle-xmark"></i>
+                <h3>No invoices found</h3>
+                <p>Try another search term or select a different filter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT INFORMATION -->
+    <section class="wts-payments-help">
+        <div class="wts-payments-help-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div>
+            <h3>Need help with a payment?</h3>
+            <p>
+                For questions about fees, invoices, or payment records,
+                contact the student finance office.
+            </p>
+        </div>
+
+        <a href="contact.html" class="wts-payments-help-link">
+            Contact Finance
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </section>
+
+</main>
+        </div>
+
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="wts-logout-overlay" id="wtsLogoutModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="wtsLogoutTitle"
+     aria-describedby="wtsLogoutMessage"
+     aria-hidden="true"
+     hidden>
+
+    <div class="wts-logout-modal">
+
+        <button type="button"
+                class="wts-logout-close"
+                id="wtsLogoutClose"
+                aria-label="Close logout dialog">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="wts-logout-icon">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+
+        <h2 id="wtsLogoutTitle">Logout?</h2>
+
+        <p id="wtsLogoutMessage">
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="wts-logout-actions">
+            <button type="button"
+                    class="wts-logout-stay"
+                    id="wtsLogoutStay">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="wts-logout-confirm"
+                    id="wtsLogoutConfirm">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Yes, Logout
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SHARED JAVASCRIPT -->
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

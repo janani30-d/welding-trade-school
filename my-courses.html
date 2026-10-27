@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+
+<body>
+
+<div class="wts-dashboard" id="wtsDashboard">
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+    <div class="wts-sidebar-overlay" id="wtsSidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="wts-sidebar" id="wtsSidebar">
+
+        <!-- LOGO IMAGE -->
+        <div class="wts-sidebar-brand">
+
+            <a href="index.html" class="wts-brand-link">
+                <img
+                    src="images/logo.png"
+                    alt="Welding Trade School"
+                    class="wts-dashboard-logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button
+                type="button"
+                class="wts-sidebar-close"
+                id="wtsSidebarClose"
+                aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <!-- SIDEBAR LABEL -->
+        <div class="wts-sidebar-label">STUDENT MENU</div>
+
+        <!-- NAVIGATION -->
+        <nav class="wts-sidebar-nav" aria-label="Student navigation">
+
+            <a href="dashboard.html"
+               class="wts-nav-link"
+               aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-courses.html" class="wts-nav-link active">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="lab-hours.html" class="wts-nav-link">
+                <i class="fa-regular fa-clock"></i>
+                <span>Lab Hours</span>
+            </a>
+
+            <a href="skill-assessments.html" class="wts-nav-link">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Skill Assessments</span>
+            </a>
+
+            <a href="class-schedule.html" class="wts-nav-link">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="exam-results.html" class="wts-nav-link">
+                <i class="fa-solid fa-award"></i>
+                <span>Exam Results &amp; Certificates</span>
+            </a>
+
+            <a href="payments.html" class="wts-nav-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Payments &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="wts-sidebar-bottom">
+
+            <div class="wts-sidebar-divider"></div>
+
+            <a href="login.html" class="wts-nav-link wts-logout-link">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+            <div class="wts-sidebar-footer">
+                <span class="wts-footer-indicator"></span>
+                <span>Welding Student Portal</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="wts-main-area">
+
+        <!-- TOPBAR -->
+        <header class="wts-topbar">
+
+            <!-- LEFT SIDE -->
+            <div class="wts-topbar-left">
+
+                <!-- HAMBURGER -->
+                <button
+                    type="button"
+                    class="wts-icon-button wts-menu-toggle"
+                    id="wtsMenuToggle"
+                    aria-label="Open sidebar"
+                    aria-controls="wtsSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- PAGE HEADING -->
+                <div class="wts-page-heading">
+                    <h1>Student Dashboard</h1>
+                    <p>Welcome back! Continue your welding journey.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE ACTIONS -->
+            <div class="wts-topbar-actions">
+
+                <!-- RTL BUTTON: IMAGE REFERENCE STYLE -->
+                <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                <!-- SETTINGS -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-icon-button"
+                        id="wtsSettingsToggle"
+                        aria-label="Settings"
+                        aria-expanded="false"
+                        aria-controls="wtsSettingsMenu"
+                        title="Settings">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu"
+                        id="wtsSettingsMenu"
+                        hidden>
+
+                        <span class="wts-dropdown-heading">Preferences</span>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsDark">
+                            <i class="fa-solid fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsRtl">
+                            <i class="fa-solid fa-left-right"></i>
+                            <span>RTL Layout</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PROFILE -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-profile-button"
+                        id="wtsProfileToggle"
+                        aria-label="Student profile"
+                        aria-expanded="false"
+                        aria-controls="wtsProfileMenu">
+
+                        <span class="wts-profile-avatar">
+    <img src="images/profile.jpg" alt="Student profile photo">
+</span>
+                        <span class="wts-profile-details">
+                            <strong>Ram</strong>
+                            <small>Welding Trainee</small>
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down wts-profile-chevron"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu wts-profile-menu"
+                        id="wtsProfileMenu"
+                        hidden>
+
+                        <div class="wts-profile-menu-header">
+                            <strong>Ram Account</strong>
+                            <span>Welding Trainee</span>
+                        </div>
+
+                        <div class="wts-dropdown-divider"></div>
+
+                        <a href="login.html" class="wts-dropdown-item">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================
+     MY COURSES SECTION
+========================================= -->
+
+<main class="wts-dashboard-content wts-courses-content">
+
+    <!-- PAGE INTRO -->
+    <section class="wts-courses-intro">
+
+        <div class="wts-courses-intro-text">
+            <span class="wts-courses-eyebrow">YOUR LEARNING JOURNEY</span>
+
+            <h2>My Welding Courses</h2>
+
+            <p>
+                Track your training progress, develop practical welding skills,
+                and work toward your certification goals.
+            </p>
+        </div>
+
+        <a href="#wtsCourseList" class="wts-courses-browse-button">
+            <i class="fa-solid fa-book-open"></i>
+            Explore My Courses
+        </a>
+
+    </section>
+
+
+    <!-- COURSE STATISTICS -->
+    <section class="wts-courses-summary">
+
+        <article class="wts-courses-summary-card">
+            <div class="wts-courses-summary-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div class="wts-courses-summary-info">
+                <p>Total Enrolled</p>
+                <h3>02</h3>
+                <span>Active programs</span>
+            </div>
+        </article>
+
+        <article class="wts-courses-summary-card">
+            <div class="wts-courses-summary-icon">
+                <i class="fa-solid fa-spinner"></i>
+            </div>
+
+            <div class="wts-courses-summary-info">
+                <p>In Progress</p>
+                <h3>02</h3>
+                <span>Keep learning</span>
+            </div>
+        </article>
+
+        <article class="wts-courses-summary-card">
+            <div class="wts-courses-summary-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div class="wts-courses-summary-info">
+                <p>Completed</p>
+                <h3>00</h3>
+                <span>Courses completed</span>
+            </div>
+        </article>
+
+        <article class="wts-courses-summary-card">
+            <div class="wts-courses-summary-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div class="wts-courses-summary-info">
+                <p>Lab Hours</p>
+                <h3>48</h3>
+                <span>Hours completed</span>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- COURSE LIST -->
+    <section class="wts-courses-list-section" id="wtsCourseList">
+
+        <!-- SECTION HEADER -->
+        <div class="wts-courses-list-header">
+
+            <div>
+                <span class="wts-courses-eyebrow">YOUR PROGRAMS</span>
+                <h2>Enrolled Courses</h2>
+                <p>Continue your welding training from where you stopped.</p>
+            </div>
+
+            <div class="wts-courses-count">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>2 Courses</span>
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTER -->
+        <div class="wts-courses-toolbar">
+
+            <div class="wts-courses-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="search"
+                    id="wtsCourseSearch"
+                    placeholder="Search your courses..."
+                    aria-label="Search courses"
+                >
+            </div>
+
+            <div class="wts-courses-filters" aria-label="Filter courses">
+
+                <button
+                    type="button"
+                    class="wts-course-filter active"
+                    data-filter="all"
+                    aria-pressed="true"
+                >
+                    All Courses
+                </button>
+
+                <button
+                    type="button"
+                    class="wts-course-filter"
+                    data-filter="in-progress"
+                    aria-pressed="false"
+                >
+                    In Progress
+                </button>
+
+                <button
+                    type="button"
+                    class="wts-course-filter"
+                    data-filter="completed"
+                    aria-pressed="false"
+                >
+                    Completed
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- COURSE CARDS -->
+        <div class="wts-courses-grid">
+
+
+            <!-- COURSE 1: MIG WELDING -->
+            <article
+                class="wts-course-card"
+                data-course-status="in-progress"
+                data-course-name="MIG Welding Fundamentals"
+            >
+
+                <div class="wts-course-image wts-course-image-mig">
+
+                    <img
+                        src="images/mig-welding.jpg"
+                        alt="MIG welding practical training"
+                        loading="lazy"
+                    >
+
+                    <span class="wts-course-status">
+                        <i class="fa-solid fa-circle"></i>
+                        In Progress
+                    </span>
+
+                    <span class="wts-course-level">BEGINNER</span>
+
+                </div>
+
+
+                <div class="wts-course-card-body">
+
+                    <div class="wts-course-category">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        MIG Welding
+                    </div>
+
+                    <h3>MIG Welding Fundamentals</h3>
+
+                    <p class="wts-course-description">
+                        Learn welding machine setup, wire feeding, safety
+                        procedures, and fundamental welding techniques.
+                    </p>
+
+
+                    <div class="wts-course-meta">
+
+                        <span>
+                            <i class="fa-solid fa-book"></i>
+                            12 Modules
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-clock"></i>
+                            40 Hours
+                        </span>
+
+                    </div>
+
+
+                    <div class="wts-course-progress-header">
+                        <span>Course Progress</span>
+                        <strong>72%</strong>
+                    </div>
+
+                    <div
+                        class="wts-course-progress-track"
+                        role="progressbar"
+                        aria-label="MIG Welding Fundamentals progress"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="72"
+                    >
+                        <span style="width: 72%;"></span>
+                    </div>
+
+
+                    <div class="wts-course-next-lesson">
+                        <div class="wts-course-lesson-icon">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                        <div>
+                            <span>CONTINUE LEARNING</span>
+                            <p>Welding Techniques and Practice</p>
+                        </div>
+                    </div>
+
+
+                    <a
+                        href="course-details.html?course=mig"
+                        class="wts-course-action"
+                    >
+                        Continue Course
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- COURSE 2: TIG WELDING -->
+            <article
+                class="wts-course-card"
+                data-course-status="in-progress"
+                data-course-name="TIG Welding Techniques"
+            >
+
+                <div class="wts-course-image wts-course-image-tig">
+
+                    <img
+                        src="images/tig-welding.jpg"
+                        alt="TIG welding hands-on training"
+                        loading="lazy"
+                    >
+
+                    <span class="wts-course-status">
+                        <i class="fa-solid fa-circle"></i>
+                        In Progress
+                    </span>
+
+                    <span class="wts-course-level">INTERMEDIATE</span>
+
+                </div>
+
+
+                <div class="wts-course-card-body">
+
+                    <div class="wts-course-category">
+                        <i class="fa-solid fa-bolt"></i>
+                        TIG Welding
+                    </div>
+
+                    <h3>TIG Welding Techniques</h3>
+
+                    <p class="wts-course-description">
+                        Develop precision welding skills, torch control,
+                        filler rod handling, and advanced joint techniques.
+                    </p>
+
+
+                    <div class="wts-course-meta">
+
+                        <span>
+                            <i class="fa-solid fa-book"></i>
+                            10 Modules
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-clock"></i>
+                            35 Hours
+                        </span>
+
+                    </div>
+
+
+                    <div class="wts-course-progress-header">
+                        <span>Course Progress</span>
+                        <strong>35%</strong>
+                    </div>
+
+                    <div
+                        class="wts-course-progress-track"
+                        role="progressbar"
+                        aria-label="TIG Welding Techniques progress"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="35"
+                    >
+                        <span style="width: 35%;"></span>
+                    </div>
+
+
+                    <div class="wts-course-next-lesson">
+                        <div class="wts-course-lesson-icon">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                        <div>
+                            <span>CONTINUE LEARNING</span>
+                            <p>TIG Equipment and Torch Control</p>
+                        </div>
+                    </div>
+
+
+                    <a
+                        href="course-details.html?course=tig"
+                        class="wts-course-action"
+                    >
+                        Continue Course
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- EMPTY SEARCH STATE -->
+        <div class="wts-courses-empty" id="wtsCoursesEmpty" hidden>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h3>No Courses Found</h3>
+
+            <p>
+                Try a different search term or select another course filter.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEARNING SUPPORT BANNER -->
+    <section class="wts-courses-support">
+
+        <div class="wts-courses-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="wts-courses-support-text">
+            <h3>Need Help With Your Training?</h3>
+            <p>
+                Contact your instructor for guidance on lessons,
+                practical sessions, and certification preparation.
+            </p>
+        </div>
+
+        <a href="class-schedule.html" class="wts-courses-support-button">
+            View Class Schedule
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</main>
+
+
+        </div>
+
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="wts-logout-overlay" id="wtsLogoutModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="wtsLogoutTitle"
+     aria-describedby="wtsLogoutMessage"
+     aria-hidden="true"
+     hidden>
+
+    <div class="wts-logout-modal">
+
+        <button type="button"
+                class="wts-logout-close"
+                id="wtsLogoutClose"
+                aria-label="Close logout dialog">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="wts-logout-icon">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+
+        <h2 id="wtsLogoutTitle">Logout?</h2>
+
+        <p id="wtsLogoutMessage">
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="wts-logout-actions">
+            <button type="button"
+                    class="wts-logout-stay"
+                    id="wtsLogoutStay">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="wts-logout-confirm"
+                    id="wtsLogoutConfirm">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Yes, Logout
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SHARED JAVASCRIPT -->
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

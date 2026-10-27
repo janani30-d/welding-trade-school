@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Register CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<main class="wts-register-page" id="wtsRegisterPage">
+
+    <!-- =========================================
+         HEADER OUTSIDE THE REGISTER CARD
+    ========================================== -->
+    <header class="wts-register-page-header">
+
+        <a href="index.html"
+           class="wts-register-logo"
+           aria-label="Welding Trade School home">
+
+            <img src="images/logo.png"
+                 alt="Welding Trade School">
+        </a>
+
+        <div class="wts-register-header-controls">
+
+            <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         REGISTER CARD
+    ========================================== -->
+    <div class="wts-register-shell">
+
+        <!-- LEFT IMAGE PANEL -->
+        <section class="wts-register-visual"
+                 aria-label="Start your welding career">
+
+            <div class="wts-register-visual-overlay"></div>
+
+            <div class="wts-register-visual-top">
+                <span class="wts-register-visual-eyebrow">
+                    BUILD YOUR FUTURE
+                </span>
+            </div>
+
+            <div class="wts-register-visual-content">
+
+                <span class="wts-register-visual-kicker">
+                    JOIN OUR COMMUNITY
+                </span>
+
+                <h1 class="wts-register-visual-title">
+                    Start Your Welding Journey
+                    <span>Today.</span>
+                </h1>
+
+                <p class="wts-register-visual-description">
+                    Create your account to explore hands-on training,
+                    develop practical welding skills, and take the
+                    next step toward your career.
+                </p>
+
+                <div class="wts-register-highlights">
+                    <span>LEARN</span>
+                    <i aria-hidden="true"></i>
+                    <span>PRACTICE</span>
+                    <i aria-hidden="true"></i>
+                    <span>PROGRESS</span>
+                </div>
+
+            </div>
+
+            <div class="wts-register-visual-footer">
+                <span class="wts-register-footer-line"></span>
+                <p>Learn the Craft. Build Your Future.</p>
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT REGISTRATION PANEL -->
+        <section class="wts-register-form-panel"
+                 aria-labelledby="wtsRegisterTitle">
+
+            <div class="wts-register-form-inner">
+
+                <!-- Step Indicator -->
+                <div class="wts-register-step">
+                    <span class="wts-register-step-number">02</span>
+                    <span class="wts-register-step-line"></span>
+                    <span class="wts-register-step-label">
+                        STUDENT REGISTRATION
+                    </span>
+                </div>
+
+                <!-- Heading -->
+                <div class="wts-register-heading">
+
+                    <span class="wts-register-eyebrow">
+                        GET STARTED
+                    </span>
+
+                    <h2 class="wts-register-title"
+                        id="wtsRegisterTitle">
+                        Create Your
+                        <span>Account.</span>
+                    </h2>
+
+                    <p class="wts-register-subtitle">
+                        Enter your details below to create your
+                        Welding Trade School account.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     REGISTRATION FORM
+                ================================== -->
+                <form class="wts-register-form"
+                      id="wtsRegisterForm"
+                      action="#"
+                      method="post">
+
+                    <!-- Full Name -->
+                    <div class="wts-register-field">
+
+                        <label for="wtsRegisterName">
+                            Full Name
+                        </label>
+
+                        <div class="wts-register-input-wrap">
+
+                            <i class="fa-regular fa-user wts-register-input-icon"
+                               aria-hidden="true"></i>
+
+                            <input type="text"
+                                   id="wtsRegisterName"
+                                   name="full_name"
+                                   placeholder="Enter your full name"
+                                   autocomplete="name"
+                                   required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="wts-register-field">
+
+                        <label for="wtsRegisterEmail">
+                            Email Address
+                        </label>
+
+                        <div class="wts-register-input-wrap">
+
+                            <i class="fa-regular fa-envelope wts-register-input-icon"
+                               aria-hidden="true"></i>
+
+                            <input type="email"
+                                   id="wtsRegisterEmail"
+                                   name="email"
+                                   placeholder="Enter your email address"
+                                   autocomplete="email"
+                                   required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Phone Number -->
+                    <div class="wts-register-field">
+
+                        <label for="wtsRegisterPhone">
+                            Phone Number
+                        </label>
+
+                        <div class="wts-register-input-wrap">
+
+                            <i class="fa-solid fa-phone wts-register-input-icon"
+                               aria-hidden="true"></i>
+
+                            <input type="tel"
+                                   id="wtsRegisterPhone"
+                                   name="phone"
+                                   placeholder="Enter your phone number"
+                                   autocomplete="tel"
+                                   inputmode="tel"
+                                   required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Training Program -->
+                    <div class="wts-register-field">
+
+                        <label for="wtsRegisterCourse">
+                            Select Training Program
+                        </label>
+
+                        <div class="wts-register-input-wrap wts-register-select-wrap">
+
+                            <i class="fa-solid fa-graduation-cap wts-register-input-icon"
+                               aria-hidden="true"></i>
+
+                            <select id="wtsRegisterCourse"
+                                    name="training_program"
+                                    required>
+
+                                <option value="" disabled selected>
+                                    Choose your program
+                                </option>
+
+                                <option value="arc-welding">Arc Welding</option>
+                                <option value="mig-welding">MIG Welding</option>
+                                <option value="tig-welding">TIG Welding</option>
+                                <option value="stick-welding">Stick Welding</option>
+                                <option value="fabrication">Welding and Fabrication</option>
+                                <option value="not-decided">Not decided yet</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Create Password -->
+                    <div class="wts-register-field">
+
+                        <label for="wtsRegisterPassword">
+                            Create Password
+                        </label>
+
+                        <div class="wts-register-input-wrap">
+
+                            <i class="fa-solid fa-lock wts-register-input-icon"
+                               aria-hidden="true"></i>
+
+                            <input type="password"
+                                   id="wtsRegisterPassword"
+                                   name="password"
+                                   placeholder="Create a password"
+                                   autocomplete="new-password"
+                                   minlength="8"
+                                   required>
+
+                            <button type="button"
+                                    class="wts-register-password-toggle"
+                                    data-target="wtsRegisterPassword"
+                                    aria-label="Show password">
+
+                                <i class="fa-regular fa-eye"
+                                   aria-hidden="true"></i>
+                            </button>
+
+                        </div>
+
+                        <p class="wts-register-field-hint">
+                            Use at least 8 characters.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="wts-register-field">
+
+                        <label for="wtsRegisterConfirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="wts-register-input-wrap">
+
+                            <i class="fa-solid fa-lock wts-register-input-icon"
+                               aria-hidden="true"></i>
+
+                            <input type="password"
+                                   id="wtsRegisterConfirmPassword"
+                                   name="confirm_password"
+                                   placeholder="Re-enter your password"
+                                   autocomplete="new-password"
+                                   minlength="8"
+                                   required>
+
+                            <button type="button"
+                                    class="wts-register-password-toggle"
+                                    data-target="wtsRegisterConfirmPassword"
+                                    aria-label="Show password">
+
+                                <i class="fa-regular fa-eye"
+                                   aria-hidden="true"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Terms and Conditions -->
+                    <div class="wts-register-terms">
+
+                        <label class="wts-register-terms-label">
+
+                            <input type="checkbox"
+                                   id="wtsRegisterTerms"
+                                   name="terms"
+                                   required>
+
+                            <span class="wts-register-custom-checkbox"></span>
+
+                            <span>
+                                I agree to the
+                                <a href="terms.html">Terms of Service</a>
+                                and
+                                <a href="privacy.html">Privacy Policy</a>.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Create Account Button -->
+                    <button type="submit"
+                            class="wts-register-submit">
+
+                        <span>Create My Account</span>
+
+                        <i class="fa-solid fa-arrow-right"
+                           aria-hidden="true"></i>
+                    </button>
+
+
+                    <!-- =================================
+                         SOCIAL LOGIN DIVIDER
+                    ================================== -->
+                    <div class="wts-register-social-divider">
+
+                        <span></span>
+
+                        <p>OR CONTINUE WITH</p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- =================================
+                         SOCIAL LOGIN ICONS
+                    ================================== -->
+                    <div class="wts-register-social">
+
+                        <!-- Google -->
+                        <button type="button"
+                                class="wts-register-social-button"
+                                data-provider="google"
+                                aria-label="Continue with Google">
+
+                            <svg viewBox="0 0 48 48"
+                                 width="20"
+                                 height="20"
+                                 aria-hidden="true">
+
+                                <path fill="#EA4335"
+                                      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 3.04 13.22l7.98 6.19C12.91 13.72 18.02 9.5 24 9.5Z"
+                                      transform="translate(0 4)"/>
+
+                                <path fill="#4285F4"
+                                      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.76 7.18l7.73 6C44.42 38.05 46.98 31.93 46.98 24.55Z"/>
+
+                                <path fill="#FBBC05"
+                                      d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.56 10.78l7.97-6.19Z"
+                                      transform="translate(0 4)"/>
+
+                                <path fill="#34A853"
+                                      d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-5.98 0-11.09-4.22-12.98-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"
+                                      transform="translate(0 -4)"/>
+
+                            </svg>
+
+                            <span>Google</span>
+                        </button>
+
+
+                        <!-- Facebook -->
+                        <button type="button"
+                                class="wts-register-social-button"
+                                data-provider="facebook"
+                                aria-label="Continue with Facebook">
+
+                            <svg viewBox="0 0 24 24"
+                                 width="20"
+                                 height="20"
+                                 aria-hidden="true">
+
+                                <path fill="#1877F2"
+                                      d="M24 12a12 12 0 1 0-13.875 11.86v-8.39H7.08V12h3.045V9.35c0-3.005 1.79-4.665 4.53-4.665 1.31 0 2.68.235 2.68.235v2.94h-1.51c-1.49 0-1.955.925-1.955 1.875V12h3.325l-.532 3.47H13.87v8.39A12.002 12.002 0 0 0 24 12Z"/>
+
+                            </svg>
+
+                            <span>Facebook</span>
+                        </button>
+
+
+                        <!-- Apple -->
+                        <button type="button"
+                                class="wts-register-social-button"
+                                data-provider="apple"
+                                aria-label="Continue with Apple">
+
+                            <svg viewBox="0 0 24 24"
+                                 width="20"
+                                 height="20"
+                                 aria-hidden="true">
+
+                                <path fill="currentColor"
+                                      d="M16.37 12.47c.02 2.06 1.81 2.75 1.83 2.76-.02.05-.29 1.02-.95 2.02-.57.86-1.16 1.72-2.09 1.74-.91.02-1.2-.56-2.24-.56s-1.37.54-2.23.58c-.9.03-1.58-.93-2.16-1.79-1.18-1.71-2.08-4.84-.87-6.95.6-1.04 1.68-1.7 2.85-1.72.89-.02 1.73.6 2.27.6.54 0 1.55-.74 2.62-.63.45.02 1.72.18 2.54 1.38-.07.04-1.52.89-1.57 2.57ZM14.65 6.98c.47-.57.79-1.36.7-2.14-.68.03-1.5.45-1.98 1.02-.43.5-.81 1.31-.71 2.08.75.06 1.52-.38 1.99-.96Z"/>
+
+                            </svg>
+
+                            <span>Apple</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Existing Account -->
+                    <div class="wts-register-login-link">
+
+                        <p>
+                            Already have an account?
+                            <a href="login.html">Sign In</a>
+                        </p>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Footer -->
+                <div class="wts-register-footer">
+
+                    <span>
+                        <i class="fa-solid fa-shield-halved"
+                           aria-hidden="true"></i>
+                        Secure Registration
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"
+                           aria-hidden="true"></i>
+                        Student Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

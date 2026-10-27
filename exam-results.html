@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Welding Trade School</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+
+<body>
+
+<div class="wts-dashboard" id="wtsDashboard">
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+    <div class="wts-sidebar-overlay" id="wtsSidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="wts-sidebar" id="wtsSidebar">
+
+        <!-- LOGO IMAGE -->
+        <div class="wts-sidebar-brand">
+
+            <a href="index.html" class="wts-brand-link">
+                <img
+                    src="images/logo.png"
+                    alt="Welding Trade School"
+                    class="wts-dashboard-logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button
+                type="button"
+                class="wts-sidebar-close"
+                id="wtsSidebarClose"
+                aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <!-- SIDEBAR LABEL -->
+        <div class="wts-sidebar-label">STUDENT MENU</div>
+
+        <!-- NAVIGATION -->
+        <nav class="wts-sidebar-nav" aria-label="Student navigation">
+
+            <a href="dashboard.html"
+               class="wts-nav-link"
+               aria-current="page">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-courses.html" class="wts-nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="lab-hours.html" class="wts-nav-link">
+                <i class="fa-regular fa-clock"></i>
+                <span>Lab Hours</span>
+            </a>
+
+            <a href="skill-assessments.html" class="wts-nav-link">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Skill Assessments</span>
+            </a>
+
+            <a href="class-schedule.html" class="wts-nav-link">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="exam-results.html" class="wts-nav-link active">
+                <i class="fa-solid fa-award"></i>
+                <span>Exam Results &amp; Certificates</span>
+            </a>
+
+            <a href="payments.html" class="wts-nav-link">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Payments &amp; Invoices</span>
+            </a>
+
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="wts-sidebar-bottom">
+
+            <div class="wts-sidebar-divider"></div>
+
+            <a href="login.html" class="wts-nav-link wts-logout-link">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+            <div class="wts-sidebar-footer">
+                <span class="wts-footer-indicator"></span>
+                <span>Welding Student Portal</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="wts-main-area">
+
+        <!-- TOPBAR -->
+        <header class="wts-topbar">
+
+            <!-- LEFT SIDE -->
+            <div class="wts-topbar-left">
+
+                <!-- HAMBURGER -->
+                <button
+                    type="button"
+                    class="wts-icon-button wts-menu-toggle"
+                    id="wtsMenuToggle"
+                    aria-label="Open sidebar"
+                    aria-controls="wtsSidebar"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- PAGE HEADING -->
+                <div class="wts-page-heading">
+                    <h1>Student Dashboard</h1>
+                    <p>Welcome back! Continue your welding journey.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE ACTIONS -->
+            <div class="wts-topbar-actions">
+
+                <!-- RTL BUTTON: IMAGE REFERENCE STYLE -->
+                <!-- RTL TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsRtlToggle"
+                            type="button"
+                            aria-label="Switch text direction"
+                            title="Toggle RTL">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+
+
+                    <!-- DARK MODE TOGGLE -->
+
+                    <button class="wts-header-icon-btn"
+                            id="wtsDarkToggle"
+                            type="button"
+                            aria-label="Enable dark mode"
+                            title="Toggle dark mode">
+
+                        <i class="fa-solid fa-moon"
+                           aria-hidden="true"></i>
+
+                    </button>
+
+                <!-- SETTINGS -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-icon-button"
+                        id="wtsSettingsToggle"
+                        aria-label="Settings"
+                        aria-expanded="false"
+                        aria-controls="wtsSettingsMenu"
+                        title="Settings">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu"
+                        id="wtsSettingsMenu"
+                        hidden>
+
+                        <span class="wts-dropdown-heading">Preferences</span>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsDark">
+                            <i class="fa-solid fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="wts-dropdown-item"
+                            id="wtsSettingsRtl">
+                            <i class="fa-solid fa-left-right"></i>
+                            <span>RTL Layout</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PROFILE -->
+                <div class="wts-topbar-dropdown">
+
+                    <button
+                        type="button"
+                        class="wts-profile-button"
+                        id="wtsProfileToggle"
+                        aria-label="Student profile"
+                        aria-expanded="false"
+                        aria-controls="wtsProfileMenu">
+
+                        <span class="wts-profile-avatar">
+    <img src="images/profile.jpg" alt="Student profile photo">
+</span>
+
+                        <span class="wts-profile-details">
+                            <strong>Ram</strong>
+                            <small>Welding Trainee</small>
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down wts-profile-chevron"></i>
+
+                    </button>
+
+                    <div
+                        class="wts-dropdown-menu wts-profile-menu"
+                        id="wtsProfileMenu"
+                        hidden>
+
+                        <div class="wts-profile-menu-header">
+                            <strong>Ram Account</strong>
+                            <span>Welding Trainee</span>
+                        </div>
+
+                        <div class="wts-dropdown-divider"></div>
+
+                        <a href="login.html" class="wts-dropdown-item">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<main class="wts-dashboard-content wts-results-content">
+
+    <!-- PAGE INTRO -->
+    <section class="wts-results-intro">
+        <div class="wts-results-intro-text">
+            <span class="wts-results-eyebrow">YOUR ACHIEVEMENTS</span>
+            <h2>Exam Results &amp; Certificates</h2>
+            <p>
+                Track your welding assessment scores, review exam outcomes,
+                and access your earned certificates.
+            </p>
+        </div>
+
+        <a href="#wtsCertificates" class="wts-results-primary-button">
+            <i class="fa-solid fa-award"></i>
+            View Certificates
+        </a>
+    </section>
+
+
+    <!-- SUMMARY CARDS -->
+    <section class="wts-results-summary">
+
+        <article class="wts-results-summary-card">
+            <div class="wts-results-summary-icon">
+                <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+            <div class="wts-results-summary-info">
+                <p>Exams Completed</p>
+                <h3>08</h3>
+                <span>Assessments evaluated</span>
+            </div>
+        </article>
+
+        <article class="wts-results-summary-card">
+            <div class="wts-results-summary-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="wts-results-summary-info">
+                <p>Average Score</p>
+                <h3>86<span>%</span></h3>
+                <span>Across completed exams</span>
+            </div>
+        </article>
+
+        <article class="wts-results-summary-card">
+            <div class="wts-results-summary-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="wts-results-summary-info">
+                <p>Exams Passed</p>
+                <h3>07</h3>
+                <span>Successful results</span>
+            </div>
+        </article>
+
+        <article class="wts-results-summary-card">
+            <div class="wts-results-summary-icon">
+                <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="wts-results-summary-info">
+                <p>Certificates Earned</p>
+                <h3>01</h3>
+                <span>Available to view</span>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- PERFORMANCE OVERVIEW -->
+    <section class="wts-results-performance">
+
+        <div class="wts-results-section-header">
+            <div>
+                <span class="wts-results-eyebrow">PERFORMANCE OVERVIEW</span>
+                <h3>Your Exam Performance</h3>
+                <p>Review your progress across completed welding assessments.</p>
+            </div>
+        </div>
+
+        <div class="wts-results-performance-grid">
+
+            <!-- OVERALL SCORE -->
+            <article class="wts-results-panel wts-results-overall-panel">
+
+                <div class="wts-results-panel-header">
+                    <h4>Overall Performance</h4>
+                    <span class="wts-results-status-badge">Good Progress</span>
+                </div>
+
+                <div class="wts-results-overall-content">
+
+                    <div class="wts-results-score-circle">
+                        <div class="wts-results-score-circle-inner">
+                            <strong>86%</strong>
+                            <span>Average Score</span>
+                        </div>
+                    </div>
+
+                    <div class="wts-results-score-details">
+                        <div class="wts-results-score-stat">
+                            <span class="wts-results-stat-dot wts-results-dot-passed"></span>
+                            <div>
+                                <p>Passed</p>
+                                <strong>07 Exams</strong>
+                            </div>
+                        </div>
+
+                        <div class="wts-results-score-stat">
+                            <span class="wts-results-stat-dot wts-results-dot-pending"></span>
+                            <div>
+                                <p>Pending</p>
+                                <strong>02 Exams</strong>
+                            </div>
+                        </div>
+
+                        <div class="wts-results-score-stat">
+                            <span class="wts-results-stat-dot wts-results-dot-failed"></span>
+                            <div>
+                                <p>Not Passed</p>
+                                <strong>01 Exam</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="wts-results-overall-progress">
+                    <div class="wts-results-progress-labels">
+                        <span>Assessment Completion</span>
+                        <strong>80%</strong>
+                    </div>
+                    <div class="wts-results-progress-track">
+                        <span style="width: 80%;"></span>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- SCORES BY SUBJECT -->
+            <article class="wts-results-panel wts-results-subject-panel">
+
+                <div class="wts-results-panel-header">
+                    <h4>Scores by Subject</h4>
+                    <span class="wts-results-panel-caption">Latest scores</span>
+                </div>
+
+                <div class="wts-results-subject-list">
+
+                    <div class="wts-results-subject-item">
+                        <div class="wts-results-subject-heading">
+                            <div class="wts-results-subject-name">
+                                <span class="wts-results-subject-icon">
+                                    <i class="fa-solid fa-fire-burner"></i>
+                                </span>
+                                <div>
+                                    <h5>MIG Welding</h5>
+                                    <p>Fundamentals &amp; joints</p>
+                                </div>
+                            </div>
+                            <strong>92%</strong>
+                        </div>
+                        <div class="wts-results-progress-track">
+                            <span style="width: 92%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="wts-results-subject-item">
+                        <div class="wts-results-subject-heading">
+                            <div class="wts-results-subject-name">
+                                <span class="wts-results-subject-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </span>
+                                <div>
+                                    <h5>TIG Welding</h5>
+                                    <p>Torch control &amp; precision</p>
+                                </div>
+                            </div>
+                            <strong>82%</strong>
+                        </div>
+                        <div class="wts-results-progress-track">
+                            <span style="width: 82%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="wts-results-subject-item">
+                        <div class="wts-results-subject-heading">
+                            <div class="wts-results-subject-name">
+                                <span class="wts-results-subject-icon">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </span>
+                                <div>
+                                    <h5>Welding Safety</h5>
+                                    <p>Safety rules &amp; procedures</p>
+                                </div>
+                            </div>
+                            <strong>90%</strong>
+                        </div>
+                        <div class="wts-results-progress-track">
+                            <span style="width: 90%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="wts-results-subject-item">
+                        <div class="wts-results-subject-heading">
+                            <div class="wts-results-subject-name">
+                                <span class="wts-results-subject-icon">
+                                    <i class="fa-solid fa-link"></i>
+                                </span>
+                                <div>
+                                    <h5>Joint Preparation</h5>
+                                    <p>Preparation &amp; inspection</p>
+                                </div>
+                            </div>
+                            <strong>80%</strong>
+                        </div>
+                        <div class="wts-results-progress-track">
+                            <span style="width: 80%;"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXAM RESULTS TABLE -->
+    <section class="wts-results-history">
+
+        <div class="wts-results-section-header">
+            <div>
+                <span class="wts-results-eyebrow">EXAM HISTORY</span>
+                <h3>Recent Exam Results</h3>
+                <p>Find your scores, exam dates, and result statuses.</p>
+            </div>
+        </div>
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="wts-results-toolbar">
+
+            <div class="wts-results-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="search"
+                    id="wtsResultsSearch"
+                    placeholder="Search exam results..."
+                    aria-label="Search exam results"
+                >
+            </div>
+
+            <div class="wts-results-filters">
+                <button type="button" class="wts-results-filter active"
+                    data-filter="all">All Results</button>
+
+                <button type="button" class="wts-results-filter"
+                    data-filter="passed">Passed</button>
+
+                <button type="button" class="wts-results-filter"
+                    data-filter="failed">Not Passed</button>
+
+                <button type="button" class="wts-results-filter"
+                    data-filter="pending">Pending</button>
+            </div>
+
+        </div>
+
+        <!-- RESULTS TABLE -->
+        <div class="wts-results-table-wrapper">
+            <table class="wts-results-table">
+
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Exam Date</th>
+                        <th>Score</th>
+                        <th>Grade</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="wtsResultsTableBody">
+
+                    <tr data-result-status="passed"
+                        data-result-name="MIG Welding Fundamentals">
+                        <td>
+                            <div class="wts-results-exam-name">
+                                <span class="wts-results-exam-icon">
+                                    <i class="fa-solid fa-fire-burner"></i>
+                                </span>
+                                <div>
+                                    <strong>MIG Welding Fundamentals</strong>
+                                    <span>Practical Examination</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 24, 2026</td>
+                        <td><strong class="wts-results-score">92%</strong></td>
+                        <td><span class="wts-results-grade">A</span></td>
+                        <td><span class="wts-results-status wts-results-status-passed">Passed</span></td>
+                        <td>
+                            <a href="assessment-details.html?id=mig-fundamentals"
+                                class="wts-results-action-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    <tr data-result-status="passed"
+                        data-result-name="TIG Torch Control">
+                        <td>
+                            <div class="wts-results-exam-name">
+                                <span class="wts-results-exam-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </span>
+                                <div>
+                                    <strong>TIG Torch Control</strong>
+                                    <span>Practical Examination</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 22, 2026</td>
+                        <td><strong class="wts-results-score">86%</strong></td>
+                        <td><span class="wts-results-grade">B+</span></td>
+                        <td><span class="wts-results-status wts-results-status-passed">Passed</span></td>
+                        <td>
+                            <a href="assessment-details.html?id=tig-torch"
+                                class="wts-results-action-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    <tr data-result-status="passed"
+                        data-result-name="Welding Safety">
+                        <td>
+                            <div class="wts-results-exam-name">
+                                <span class="wts-results-exam-icon">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </span>
+                                <div>
+                                    <strong>Welding Safety</strong>
+                                    <span>Theory Examination</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 20, 2026</td>
+                        <td><strong class="wts-results-score">90%</strong></td>
+                        <td><span class="wts-results-grade">A</span></td>
+                        <td><span class="wts-results-status wts-results-status-passed">Passed</span></td>
+                        <td>
+                            <a href="assessment-details.html?id=safety"
+                                class="wts-results-action-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    <tr data-result-status="passed"
+                        data-result-name="Joint Preparation">
+                        <td>
+                            <div class="wts-results-exam-name">
+                                <span class="wts-results-exam-icon">
+                                    <i class="fa-solid fa-link"></i>
+                                </span>
+                                <div>
+                                    <strong>Joint Preparation</strong>
+                                    <span>Practical Examination</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 18, 2026</td>
+                        <td><strong class="wts-results-score">80%</strong></td>
+                        <td><span class="wts-results-grade">B</span></td>
+                        <td><span class="wts-results-status wts-results-status-passed">Passed</span></td>
+                        <td>
+                            <a href="assessment-details.html?id=joint-preparation"
+                                class="wts-results-action-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    <tr data-result-status="failed"
+                        data-result-name="Arc Welding Theory">
+                        <td>
+                            <div class="wts-results-exam-name">
+                                <span class="wts-results-exam-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </span>
+                                <div>
+                                    <strong>Arc Welding Theory</strong>
+                                    <span>Theory Examination</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 16, 2026</td>
+                        <td><strong class="wts-results-score">48%</strong></td>
+                        <td><span class="wts-results-grade">D</span></td>
+                        <td><span class="wts-results-status wts-results-status-failed">Not Passed</span></td>
+                        <td>
+                            <a href="assessment-details.html?id=arc-theory"
+                                class="wts-results-action-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    <tr data-result-status="pending"
+                        data-result-name="TIG Precision Welding">
+                        <td>
+                            <div class="wts-results-exam-name">
+                                <span class="wts-results-exam-icon">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </span>
+                                <div>
+                                    <strong>TIG Precision Welding</strong>
+                                    <span>Practical Examination</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nov 02, 2026</td>
+                        <td><strong class="wts-results-score">—</strong></td>
+                        <td><span class="wts-results-grade">—</span></td>
+                        <td><span class="wts-results-status wts-results-status-pending">Pending</span></td>
+                        <td>
+                            <a href="class-schedule.html"
+                                class="wts-results-action-link">View Schedule</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="wts-results-empty" id="wtsResultsEmpty" hidden>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h4>No results found</h4>
+            <p>Try a different exam name or result filter.</p>
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATES -->
+    <section class="wts-results-certificates" id="wtsCertificates">
+
+        <div class="wts-results-section-header">
+            <div>
+                <span class="wts-results-eyebrow">YOUR QUALIFICATIONS</span>
+                <h3>My Certificates</h3>
+                <p>Access your earned training certificates.</p>
+            </div>
+            <span class="wts-results-certificate-count">1 Certificate</span>
+        </div>
+
+        <div class="wts-results-certificate-grid">
+
+            <!-- EARNED CERTIFICATE -->
+            <article class="wts-results-certificate-card">
+
+                <div class="wts-results-certificate-top">
+                    <div class="wts-results-certificate-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="wts-results-certificate-earned">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Earned
+                    </span>
+                </div>
+
+                <span class="wts-results-certificate-label">CERTIFICATE OF COMPLETION</span>
+
+                <h4>MIG Welding Fundamentals</h4>
+
+                <p>
+                    Successfully completed the foundational MIG welding
+                    training and practical evaluation.
+                </p>
+
+                <div class="wts-results-certificate-meta">
+                    <div>
+                        <span>Issued On</span>
+                        <strong>Oct 24, 2026</strong>
+                    </div>
+                    <div>
+                        <span>Certificate ID</span>
+                        <strong>WTS-MIG-2026-001</strong>
+                    </div>
+                </div>
+
+                <div class="wts-results-certificate-actions">
+                    <a href="certificate-details.html?id=mig-001"
+                        class="wts-results-certificate-primary">
+                        <i class="fa-regular fa-eye"></i>
+                        View Certificate
+                    </a>
+
+                    <a href="certificate-details.html?id=mig-001"
+                        class="wts-results-certificate-secondary"
+                        aria-label="Open certificate details">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+            </article>
+
+
+            <!-- CERTIFICATE IN PROGRESS -->
+            <article class="wts-results-certificate-card wts-results-certificate-locked">
+
+                <div class="wts-results-certificate-top">
+                    <div class="wts-results-certificate-icon">
+                        <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <span class="wts-results-certificate-locked-badge">
+                        In Progress
+                    </span>
+                </div>
+
+                <span class="wts-results-certificate-label">NEXT CERTIFICATION</span>
+
+                <h4>TIG Welding Techniques</h4>
+
+                <p>
+                    Complete the required training sessions and pass
+                    the final practical assessment to qualify.
+                </p>
+
+                <div class="wts-results-certificate-progress">
+                    <div class="wts-results-progress-labels">
+                        <span>Course Progress</span>
+                        <strong>35%</strong>
+                    </div>
+                    <div class="wts-results-progress-track">
+                        <span style="width: 35%;"></span>
+                    </div>
+                </div>
+
+                <div class="wts-results-certificate-actions">
+                    <a href="my-courses.html"
+                        class="wts-results-certificate-primary">
+                        Continue Learning
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENT REMINDER -->
+    <section class="wts-results-reminder">
+
+        <div class="wts-results-reminder-icon">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
+
+        <div class="wts-results-reminder-content">
+            <h3>Keep Building Your Welding Skills</h3>
+            <p>
+                Continue your practical training, review instructor feedback,
+                and complete your upcoming assessments to unlock more certificates.
+            </p>
+        </div>
+
+        <a href="skill-assessments.html" class="wts-results-reminder-link">
+            View Assessments
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</main>
+
+        </div>
+
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="wts-logout-overlay" id="wtsLogoutModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="wtsLogoutTitle"
+     aria-describedby="wtsLogoutMessage"
+     aria-hidden="true"
+     hidden>
+
+    <div class="wts-logout-modal">
+
+        <button type="button"
+                class="wts-logout-close"
+                id="wtsLogoutClose"
+                aria-label="Close logout dialog">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="wts-logout-icon">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+
+        <h2 id="wtsLogoutTitle">Logout?</h2>
+
+        <p id="wtsLogoutMessage">
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="wts-logout-actions">
+            <button type="button"
+                    class="wts-logout-stay"
+                    id="wtsLogoutStay">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="wts-logout-confirm"
+                    id="wtsLogoutConfirm">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Yes, Logout
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- SHARED JAVASCRIPT -->
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
