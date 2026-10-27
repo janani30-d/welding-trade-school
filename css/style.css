@@ -20724,7 +20724,7 @@ body.dark-mode .wts-contact-message-map-footer p {
 .wts-login-step-number {
     flex-shrink: 0;
 
-    color: #B85C61;
+    color: var(--color-primary);
     font-size: 18px;
     font-weight: 800;
     line-height: 1.3;
@@ -20740,7 +20740,7 @@ body.dark-mode .wts-contact-message-map-footer p {
 }
 
 .wts-login-step-label {
-    color: #74605F;
+    color: var(--wts-login-heading);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 2.3px;
@@ -20761,7 +20761,7 @@ body.dark-mode .wts-contact-message-map-footer p {
     display: inline-block;
     margin-bottom: 17px;
 
-    color: #B85C61;
+    color: var(--color-primary);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.7px;
@@ -21277,7 +21277,7 @@ body.dark-mode .wts-login-page-header .wts-login-control-button:hover {
 }
 
 body.dark-mode .wts-login-step-label {
-    color: #D0B9B8;
+    color: var(--wts-login-heading);
 }
 
 body.dark-mode .wts-login-input-wrap {
@@ -21760,7 +21760,7 @@ html[dir="rtl"] .wts-login-forgot {
 .wts-register-step-number {
     flex-shrink: 0;
 
-    color: #B85C61;
+    color: var(--color-primary);
     font-size: 18px;
     font-weight: 800;
     line-height: 1.3;
@@ -21776,7 +21776,7 @@ html[dir="rtl"] .wts-login-forgot {
 }
 
 .wts-register-step-label {
-    color: #74605F;
+    color: var(--wts-register-heading);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -21797,7 +21797,7 @@ html[dir="rtl"] .wts-login-forgot {
     display: inline-block;
     margin-bottom: 13px;
 
-    color: #B85C61;
+    color: var(--color-primary);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.7px;
@@ -22276,7 +22276,7 @@ body.dark-mode .wts-register-control-button:hover {
 }
 
 body.dark-mode .wts-register-step-label {
-    color: #D0B9B8;
+    color: var(--wts-login-heading);
 }
 
 body.dark-mode .wts-register-input-wrap {

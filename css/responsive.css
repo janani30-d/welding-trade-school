@@ -21199,3 +21199,31 @@ html[dir="rtl"] .wts-contact-hero-breadcrumb > i {
     }
 
 }
+/* REGISTER — CENTER EXISTING ACCOUNT LINK IN RTL */
+html[dir="rtl"] .wts-register-login-link {
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html[dir="rtl"] .wts-register-login-link p {
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+/* LOGIN — CENTER REGISTER LINK IN RTL MODE */
+html[dir="rtl"] .wts-login-register {
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html[dir="rtl"] .wts-login-register p {
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
