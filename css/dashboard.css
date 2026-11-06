@@ -7791,3 +7791,123 @@ body.dark-mode .wts-topbar-actions .wts-header-icon-btn:hover {
     object-fit: cover;
     border-radius: 50%;
 }
+
+
+
+
+
+
+
+
+/* =====================================
+   DASHBOARD SIDEBAR LOGO
+===================================== */
+
+.wts-brand-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.wts-dashboard-logo {
+    width: 200px;
+    height: 65px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Normal Mode */
+.wts-brand-link img:first-child {
+    display: block;
+}
+
+.wts-brand-link img:last-child {
+    display: none;
+}
+
+/* Dark Mode */
+body.dark-mode .wts-brand-link img:first-child {
+    display: none;
+}
+
+body.dark-mode .wts-brand-link img:last-child {
+    display: block;
+}
+
+/* Sidebar Brand Alignment */
+.wts-sidebar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 15px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .wts-dashboard-logo {
+        width: 175px;
+        height: 58px;
+    }
+}
+
+
+
+
+
+
+
+/* =====================================
+   DASHBOARD LOGO - DARK MODE FIX
+===================================== */
+
+.wts-sidebar-brand {
+    width: 100%;
+    height: 130px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wts-brand-link {
+    width: 100%;
+    max-width: 240px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wts-brand-link img {
+    width: 100% !important;
+    max-width: 220px !important;
+    height: 100px !important;
+    max-height: 100px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block;
+}
+
+/* Light Mode */
+.wts-brand-link img:first-child {
+    display: block;
+}
+
+/* Dark Mode */
+.wts-brand-link img:last-child {
+    display: none;
+}
+
+body.dark-mode .wts-brand-link img:first-child {
+    display: none !important;
+}
+
+body.dark-mode .wts-brand-link img:last-child {
+    display: block !important;
+}

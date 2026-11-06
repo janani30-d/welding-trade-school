@@ -22413,3 +22413,833 @@ html[dir="rtl"] .wts-home2-path-bottom-content {
     }
 
 }
+
+
+
+
+
+
+
+/* ==========================================
+   TESTIMONIALS - RTL AUTHOR ALIGNMENT
+========================================== */
+
+html[dir="rtl"] .wts-testimonial-author {
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] .wts-testimonial-author-info {
+    text-align: right !important;
+    direction: rtl !important;
+    align-items: flex-start !important;
+}
+
+html[dir="rtl"] .wts-testimonial-author-info h3,
+html[dir="rtl"] .wts-testimonial-author-info p {
+    text-align: right !important;
+    width: 100% !important;
+    direction: rtl !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Keep avatar on the right */
+html[dir="rtl"] .wts-testimonial-avatar {
+    flex-shrink: 0 !important;
+}
+
+
+
+
+
+/* ==========================================
+   TESTIMONIAL - RTL ALIGNMENT FIX
+========================================== */
+
+html[dir="rtl"] .wts-testimonial-author {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    direction: rtl !important;
+    gap: 15px !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] .wts-testimonial-author-info {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex: 1 !important;
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+html[dir="rtl"] .wts-testimonial-author-info h3,
+html[dir="rtl"] .wts-testimonial-author-info p {
+    display: block !important;
+    width: 100% !important;
+    text-align: right !important;
+    direction: rtl !important;
+    margin: 0 0 6px 0 !important;
+}
+
+html[dir="rtl"] .wts-testimonial-avatar {
+    order: 2 !important;
+    flex-shrink: 0 !important;
+}
+
+html[dir="rtl"] .wts-testimonial-author-info {
+    order: 1 !important;
+}
+
+
+
+
+
+
+/* Home 2 Success - RTL Paragraph Alignment */
+html[dir="rtl"] .wts-home2-success-intro {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] .wts-home2-success-intro {
+    text-align-last: center !important;
+}
+
+
+
+
+
+
+/* ABOUT INSTRUCTORS - RTL TEXT ALIGNMENT */
+
+html[dir="rtl"] .wts-about-instructor-info {
+    direction: rtl !important;
+    text-align: right !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+html[dir="rtl"] .wts-about-instructor-info h3,
+html[dir="rtl"] .wts-about-instructor-info p {
+    width: 100% !important;
+    text-align: right !important;
+    direction: rtl !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+
+
+
+
+
+/* ==========================================
+   INSTRUCTOR SUPPORT - RTL LAYOUT FIX
+========================================== */
+
+html[dir="rtl"] .wts-instructor-support-step {
+    display: grid !important;
+    grid-template-columns: 80px minmax(0, 1fr) 100px !important;
+    direction: rtl !important;
+    align-items: center !important;
+    text-align: right !important;
+}
+
+/* Number - RIGHT */
+html[dir="rtl"] .wts-instructor-support-step-marker {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+}
+
+/* Content - CENTER */
+html[dir="rtl"] .wts-instructor-support-step-content {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    text-align: right !important;
+    direction: rtl !important;
+    justify-self: stretch !important;
+}
+
+html[dir="rtl"] .wts-instructor-support-step-content h3,
+html[dir="rtl"] .wts-instructor-support-step-content p,
+html[dir="rtl"] .wts-instructor-support-step-label {
+    text-align: right !important;
+}
+
+/* Icon - LEFT */
+html[dir="rtl"] .wts-instructor-support-step-side {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    text-align: center !important;
+}
+
+/* Timeline line - RIGHT */
+html[dir="rtl"] .wts-instructor-support-journey::before {
+    left: auto !important;
+    right: 40px !important;
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   INSTRUCTOR WORKSHOP – RTL ALIGNMENT
+========================================= */
+
+html[dir="rtl"] .wts-instructor-workshop-header-layout {
+    direction: rtl;
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-heading-main {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-eyebrow {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-title {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-title span {
+    display: block;
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-intro {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Image caption alignment */
+html[dir="rtl"] .wts-instructor-workshop-caption {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-caption-label {
+    direction: rtl;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-link {
+    direction: rtl;
+    flex-direction: row-reverse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   INSTRUCTOR WORKSHOP – RTL HEADER FIX
+========================================= */
+
+html[dir="rtl"] .wts-instructor-workshop-header-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Eyebrow + Heading – Right Side */
+html[dir="rtl"] .wts-instructor-workshop-heading-main {
+    direction: ltr;
+    text-align: right !important;
+    align-self: start;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-eyebrow {
+    display: block;
+    width: 100%;
+    text-align: right !important;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-title {
+    text-align: right !important;
+    direction: ltr;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-title span {
+    display: block;
+    text-align: right !important;
+}
+
+/* Description – Left Side */
+html[dir="rtl"] .wts-instructor-workshop-intro {
+    direction: ltr;
+    text-align: left !important;
+    align-self: center;
+    margin: 0;
+    width: 100%;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-instructor-workshop-header-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    html[dir="rtl"] .wts-instructor-workshop-heading-main,
+    html[dir="rtl"] .wts-instructor-workshop-title,
+    html[dir="rtl"] .wts-instructor-workshop-title span,
+    html[dir="rtl"] .wts-instructor-workshop-eyebrow {
+        text-align: right !important;
+    }
+
+    html[dir="rtl"] .wts-instructor-workshop-intro {
+        text-align: right !important;
+    }
+}
+
+
+
+
+
+/* =========================================
+   WORKSHOP HEADER – RTL ALIGNMENT FIX
+========================================= */
+
+html[dir="rtl"] .wts-instructor-workshop-header-layout,
+body[dir="rtl"] .wts-instructor-workshop-header-layout {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 50px !important;
+    width: 100%;
+}
+
+/* Heading – Right Side */
+html[dir="rtl"] .wts-instructor-workshop-heading-main,
+body[dir="rtl"] .wts-instructor-workshop-heading-main {
+    flex: 1 1 55% !important;
+    width: 55% !important;
+    text-align: right !important;
+    direction: rtl !important;
+    margin: 0 !important;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-eyebrow,
+body[dir="rtl"] .wts-instructor-workshop-eyebrow {
+    display: block !important;
+    text-align: right !important;
+    width: 100%;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-title,
+body[dir="rtl"] .wts-instructor-workshop-title {
+    text-align: right !important;
+    direction: rtl !important;
+    margin: 20px 0 0 !important;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-title span,
+body[dir="rtl"] .wts-instructor-workshop-title span {
+    display: block !important;
+    text-align: right !important;
+}
+
+/* Description – Left Side */
+html[dir="rtl"] .wts-instructor-workshop-intro,
+body[dir="rtl"] .wts-instructor-workshop-intro {
+    flex: 0 1 40% !important;
+    width: 40% !important;
+    text-align: left !important;
+    direction: ltr !important;
+    margin: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-instructor-workshop-header-layout,
+    body[dir="rtl"] .wts-instructor-workshop-header-layout {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+    }
+
+    html[dir="rtl"] .wts-instructor-workshop-heading-main,
+    html[dir="rtl"] .wts-instructor-workshop-intro,
+    body[dir="rtl"] .wts-instructor-workshop-heading-main,
+    body[dir="rtl"] .wts-instructor-workshop-intro {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        text-align: right !important;
+    }
+}
+
+
+
+
+
+
+/* RTL – Workshop Header Alignment */
+
+html[dir="rtl"] .wts-instructor-workshop-header-layout {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Heading and Orange Span – Right */
+html[dir="rtl"] .wts-instructor-workshop-heading-main {
+    width: 55% !important;
+    text-align: right !important;
+    margin: 0 !important;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-eyebrow,
+html[dir="rtl"] .wts-instructor-workshop-title,
+html[dir="rtl"] .wts-instructor-workshop-title span {
+    display: block;
+    width: 100%;
+    text-align: right !important;
+}
+
+/* Paragraph – Left */
+html[dir="rtl"] .wts-instructor-workshop-intro {
+    width: 40% !important;
+    text-align: left !important;
+    direction: ltr !important;
+    margin: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   WORKSHOP HEADER – FINAL RTL FIX
+========================================= */
+
+html[dir="rtl"] .wts-instructor-workshop-header-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    direction: ltr !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+
+/* Paragraph – LEFT SIDE */
+html[dir="rtl"] .wts-instructor-workshop-intro {
+    order: 1 !important;
+    flex: 0 0 40% !important;
+    width: 40% !important;
+    direction: ltr !important;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+/* Eyebrow + H2 – RIGHT SIDE */
+html[dir="rtl"] .wts-instructor-workshop-heading-main {
+    order: 2 !important;
+    flex: 0 0 55% !important;
+    width: 55% !important;
+    direction: rtl !important;
+    text-align: right !important;
+    margin: 0 !important;
+}
+
+html[dir="rtl"] .wts-instructor-workshop-eyebrow,
+html[dir="rtl"] .wts-instructor-workshop-title,
+html[dir="rtl"] .wts-instructor-workshop-title span {
+    display: block !important;
+    width: 100% !important;
+    text-align: right !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-instructor-workshop-header-layout {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    html[dir="rtl"] .wts-instructor-workshop-heading-main,
+    html[dir="rtl"] .wts-instructor-workshop-intro {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+}
+
+
+
+
+
+
+/* RTL MODE ONLY */
+html[dir="rtl"] .wts-facilities-cta-content {
+    transform: translateX(35px);
+}
+
+/* Normal view unchanged */
+html:not([dir="rtl"]) .wts-facilities-cta-content {
+    transform: none;
+}
+
+
+
+
+/* =====================================
+   FACILITIES CTA - RTL POSITION FIX
+===================================== */
+
+html[dir="rtl"] .wts-facilities-cta-container {
+    direction: rtl !important;
+}
+
+html[dir="rtl"] .wts-facilities-cta-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 35px !important;
+    text-align: right !important;
+    transform: none !important;
+}
+
+html[dir="rtl"] .wts-facilities-cta-actions {
+    direction: rtl !important;
+    justify-content: flex-start !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+
+html[dir="rtl"] .wts-facilities-cta-title,
+html[dir="rtl"] .wts-facilities-cta-description,
+html[dir="rtl"] .wts-facilities-cta-eyebrow {
+    text-align: right !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-facilities-cta-content {
+        margin-right: 15px !important;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================
+   FACILITIES CTA - RTL LAYOUT
+========================================= */
+
+html[dir="rtl"] .wts-facilities-cta-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+/* Content and buttons - RIGHT SIDE */
+html[dir="rtl"] .wts-facilities-cta-content {
+    order: 1;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    transform: none;
+}
+
+html[dir="rtl"] .wts-facilities-cta-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Decorative accent - LEFT SIDE */
+html[dir="rtl"] .wts-facilities-cta-accent {
+    order: 2;
+    margin-left: 0;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-facilities-cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    html[dir="rtl"] .wts-facilities-cta-content {
+        width: 100%;
+        margin: 0;
+    }
+
+    html[dir="rtl"] .wts-facilities-cta-accent {
+        display: none;
+    }
+}
+
+
+
+
+
+/* =========================================
+   FACILITIES CTA - RTL FINAL POSITION
+========================================= */
+
+html[dir="rtl"] .wts-facilities-cta-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Content on RIGHT */
+html[dir="rtl"] .wts-facilities-cta-content {
+    order: 2;
+    width: 65%;
+    margin: 0 0 0 auto !important;
+    text-align: right !important;
+    transform: none !important;
+}
+
+/* Heading and paragraph */
+html[dir="rtl"] .wts-facilities-cta-eyebrow,
+html[dir="rtl"] .wts-facilities-cta-title,
+html[dir="rtl"] .wts-facilities-cta-description {
+    text-align: right !important;
+}
+
+/* Buttons */
+html[dir="rtl"] .wts-facilities-cta-actions {
+    display: flex;
+    justify-content: flex-start !important;
+    flex-direction: row;
+    direction: rtl;
+}
+
+/* Decorative accent on LEFT */
+html[dir="rtl"] .wts-facilities-cta-accent {
+    order: 1;
+    margin: 0 auto 0 0 !important;
+    right: auto !important;
+    left: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-facilities-cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    html[dir="rtl"] .wts-facilities-cta-content {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    html[dir="rtl"] .wts-facilities-cta-accent {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   FACILITIES CTA - RTL FINAL FIX
+========================================= */
+
+html[dir="rtl"] .wts-facilities-cta-container {
+    position: relative !important;
+    display: block !important;
+}
+
+/* CONTENT - RIGHT SIDE */
+html[dir="rtl"] .wts-facilities-cta-content {
+    width: 65% !important;
+    margin-left: auto !important;
+    margin-right: 8% !important;
+    text-align: right !important;
+    transform: none !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* BUTTONS - RIGHT SIDE */
+html[dir="rtl"] .wts-facilities-cta-actions {
+    display: flex !important;
+    justify-content: flex-start !important;
+    flex-direction: row !important;
+    direction: rtl !important;
+}
+
+/* DECORATIVE ACCENT - LEFT SIDE */
+html[dir="rtl"] .wts-facilities-cta-accent {
+    position: absolute !important;
+    left: 8% !important;
+    right: auto !important;
+    top: 50% !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 1;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+    html[dir="rtl"] .wts-facilities-cta-content {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    html[dir="rtl"] .wts-facilities-cta-accent {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   CONTACT INFO - RTL ALIGNMENT
+========================================= */
+
+html[dir="rtl"] .wts-contact-info-card {
+    text-align: right;
+}
+
+/* Contact phone and email */
+html[dir="rtl"] .wts-contact-info-links {
+    align-items: flex-end;
+    direction: rtl;
+}
+
+html[dir="rtl"] .wts-contact-info-link {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+/* Training center address */
+html[dir="rtl"] .wts-contact-info-location {
+    direction: rtl;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+html[dir="rtl"] .wts-contact-info-location address {
+    text-align: right;
+    direction: rtl;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Get in Touch link */
+html[dir="rtl"] .wts-contact-info-text-link {
+    direction: rtl;
+    justify-content: flex-start;
+}
+
+/* Office hours */
+html[dir="rtl"] .wts-contact-info-hours-row {
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+
+
+
+/* =========================================
+   CONTACT INFO – RTL ALIGNMENT FIX
+========================================= */
+
+html[dir="rtl"] .wts-contact-info-card {
+    direction: rtl !important;
+}
+
+/* Training Center Address */
+html[dir="rtl"] .wts-contact-info-location {
+    direction: rtl !important;
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: right !important;
+    width: 100% !important;
+    gap: 12px !important;
+}
+
+html[dir="rtl"] .wts-contact-info-location address {
+    direction: rtl !important;
+    text-align: right !important;
+    width: 100% !important;
+    margin: 0 !important;
+    font-style: normal !important;
+}
+
+/* Contact Details – Phone and Email */
+html[dir="rtl"] .wts-contact-info-links {
+    direction: rtl !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+html[dir="rtl"] .wts-contact-info-link {
+    direction: rtl !important;
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: right !important;
+    gap: 12px !important;
+}
+
+html[dir="rtl"] .wts-contact-info-link span {
+    text-align: right !important;
+}

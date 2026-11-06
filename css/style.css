@@ -24306,3 +24306,146 @@ html[dir="rtl"] #wts-contact-subject {
 body.dark-mode #wts-contact-subject {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
 }
+
+
+
+
+
+
+/* =====================================
+   HEADER LOGO
+===================================== */
+
+.wts-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.wts-logo img {
+    width: 260px;
+    height: 75px;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+}
+
+/* Normal Mode */
+.wts-logo img:first-child {
+    display: block;
+}
+
+.wts-logo img:last-child {
+    display: none;
+}
+
+/* Dark Mode */
+body.dark-mode .wts-logo img:first-child {
+    display: none;
+}
+
+body.dark-mode .wts-logo img:last-child {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .wts-logo img {
+        width: 190px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 420px) {
+    .wts-logo img {
+        width: 155px;
+        height: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   LOGIN PAGE LOGO
+===================================== */
+
+.wts-login-logo,
+.wts-register-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.wts-login-logo img,
+.wts-register-logo img {
+    width: 240px;
+    height: 75px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Light Mode */
+.wts-login-logo img:first-child,
+.wts-register-logo img:first-child {
+    display: block;
+}
+
+.wts-login-logo img:last-child,
+.wts-register-logo img:last-child {
+    display: none;
+}
+
+/* Dark Mode */
+body.dark-mode .wts-login-logo img:first-child,
+body.dark-mode .wts-register-logo img:first-child {
+    display: none !important;
+}
+
+body.dark-mode .wts-login-logo img:last-child,
+body.dark-mode .wts-register-logo img:last-child {
+    display: block !important;
+}
+
+/* =====================================
+   LOGIN HEADER
+===================================== */
+
+.wts-login-page-header,
+.wts-register-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 767px) {
+    .wts-login-logo img,
+    .wts-register-logo img {
+        width: 190px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 420px) {
+    .wts-login-logo img,
+    .wts-register-logo img {
+        width: 155px;
+        height: 50px;
+    }
+}
