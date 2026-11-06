@@ -23243,3 +23243,86 @@ html[dir="rtl"] .wts-contact-info-link {
 html[dir="rtl"] .wts-contact-info-link span {
     text-align: right !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* HOME 2 PROCESS - MOBILE DARK MODE */
+@media (max-width: 767px) {
+
+    body.dark-mode .wts-home2-process-number {
+        background: #292D30 !important;
+        color: #E87524 !important;
+        border: 1px solid #E87524 !important;
+    }
+
+    body.dark-mode .wts-home2-process-icon {
+        background: #292D30 !important;
+        color: #E87524 !important;
+        border: 1px solid #44494D !important;
+    }
+
+    body.dark-mode .wts-home2-process-icon i {
+        color: #E87524 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    body.dark-mode .wts-home2-process-step-line {
+        background: #555B60 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE - JOURNEY CONTENT ALIGNMENT */
+@media (max-width: 767px) {
+
+    .wts-home2-journey-step-label,
+    .wts-home2-journey-step h3,
+    .wts-home2-journey-step p {
+        margin-left: 8px !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* MOBILE - Align Journey Content in One Straight Line */
+@media (max-width: 767px) {
+
+    .wts-home2-journey-step .wts-home2-journey-label,
+    .wts-home2-journey-step h3,
+    .wts-home2-journey-step p {
+        position: relative;
+        left: 35px;
+        margin-left: 0 !important;
+        margin-right: 24px;
+        width: calc(100% - 48px);
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+}
