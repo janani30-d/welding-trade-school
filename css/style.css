@@ -3195,7 +3195,8 @@ body.dark-mode .wts-facility-item:hover .wts-facility-icon {
 }
 
 body.dark-mode .wts-facilities-cta {
-    background: #151719;
+    /* Keep the CTA photo visible; set only the fallback color in dark mode. */
+    background-color: #151719;
 }
 
 body.dark-mode .wts-facilities-cta-button {
@@ -19016,7 +19017,7 @@ body.dark-mode .wts-facilities-practical-cta-description {
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 40px;
     width: 100%;
     max-width: 1240px;
@@ -19028,6 +19029,8 @@ body.dark-mode .wts-facilities-practical-cta-description {
 .wts-facilities-cta-content {
     width: 100%;
     max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* EYEBROW */
@@ -19066,7 +19069,7 @@ body.dark-mode .wts-facilities-practical-cta-description {
 
 .wts-facilities-cta-description {
     max-width: 650px;
-    margin: 0;
+    margin: 0 auto;
     color: #E1E3E5;
     font-family: inherit;
     font-size: 14px;
@@ -19080,6 +19083,7 @@ body.dark-mode .wts-facilities-practical-cta-description {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 14px;
     margin-top: 30px;
 }
@@ -19155,6 +19159,9 @@ body.dark-mode .wts-facilities-practical-cta-description {
 /* DECORATIVE ACCENT */
 
 .wts-facilities-cta-accent {
+    position: absolute;
+    right: 0;
+    top: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19163,6 +19170,7 @@ body.dark-mode .wts-facilities-practical-cta-description {
     flex-shrink: 0;
     margin-right: 20px;
     opacity: 0.9;
+    transform: translateY(-50%);
 }
 
 .wts-facilities-cta-accent-line {

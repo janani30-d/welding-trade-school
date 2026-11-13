@@ -264,8 +264,13 @@ body.wts-sidebar-open {
     overflow-x: hidden;
     overflow-y: auto;
 
-    scrollbar-width: thin;
-    scrollbar-color: var(--wts-border-strong) transparent;
+    /* Keep the menu scrollable on short screens without showing a scrollbar. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.wts-sidebar-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .wts-nav-link {

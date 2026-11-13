@@ -23326,3 +23326,149 @@ html[dir="rtl"] .wts-contact-info-link span {
     }
 
 }
+
+
+/* Center hero banner copy consistently across the public pages. */
+.wts-home1-hero-content,
+.wts-home2-hero-content,
+.wts-about-hero-content,
+.wts-contact-hero-content,
+.wts-programs-hero-content,
+.wts-instructors-hero-content,
+.wts-facilities-hero-content {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.wts-home1-hero-content > p,
+.wts-home2-hero-description,
+.wts-about-hero-description,
+.wts-contact-hero-description,
+.wts-programs-hero-description,
+.wts-instructors-hero-description,
+.wts-facilities-hero-description {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.wts-home1-hero-actions,
+.wts-home2-hero-actions,
+.wts-home2-hero-note,
+.wts-home2-hero-controls,
+.wts-about-hero-actions,
+.wts-about-hero-breadcrumb,
+.wts-contact-hero-actions,
+.wts-contact-hero-breadcrumb,
+.wts-programs-hero-breadcrumb,
+.wts-programs-hero-buttons,
+.wts-instructors-hero-breadcrumb,
+.wts-instructors-hero-actions,
+.wts-facilities-hero-actions,
+.wts-facilities-hero-breadcrumb {
+    justify-content: center;
+    text-align: center;
+}
+
+.wts-home2-hero-eyebrow {
+    justify-content: center;
+}
+
+/* Preserve centered hero alignment when the page direction is RTL. */
+html[dir="rtl"] .wts-home1-hero-content,
+html[dir="rtl"] .wts-home2-hero-content,
+html[dir="rtl"] .wts-about-hero-content,
+html[dir="rtl"] .wts-contact-hero-content,
+html[dir="rtl"] .wts-programs-hero-content,
+html[dir="rtl"] .wts-instructors-hero-content,
+html[dir="rtl"] .wts-facilities-hero-content {
+    margin-inline: auto !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-home1-hero-content > p,
+html[dir="rtl"] .wts-home2-hero-description,
+html[dir="rtl"] .wts-about-hero-description,
+html[dir="rtl"] .wts-contact-hero-description,
+html[dir="rtl"] .wts-programs-hero-description,
+html[dir="rtl"] .wts-instructors-hero-description,
+html[dir="rtl"] .wts-facilities-hero-description {
+    margin-inline: auto !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-home1-hero-actions,
+html[dir="rtl"] .wts-home2-hero-actions,
+html[dir="rtl"] .wts-home2-hero-note,
+html[dir="rtl"] .wts-home2-hero-controls,
+html[dir="rtl"] .wts-about-hero-actions,
+html[dir="rtl"] .wts-about-hero-breadcrumb,
+html[dir="rtl"] .wts-contact-hero-actions,
+html[dir="rtl"] .wts-contact-hero-breadcrumb,
+html[dir="rtl"] .wts-programs-hero-breadcrumb,
+html[dir="rtl"] .wts-programs-hero-buttons,
+html[dir="rtl"] .wts-instructors-hero-breadcrumb,
+html[dir="rtl"] .wts-instructors-hero-actions,
+html[dir="rtl"] .wts-facilities-hero-actions,
+html[dir="rtl"] .wts-facilities-hero-breadcrumb {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-home2-hero-eyebrow {
+    justify-content: center !important;
+}
+
+/* Center the About and Contact hero blocks inside their full width containers. */
+html[dir="rtl"] .wts-about-hero .wts-about-hero-container,
+html[dir="rtl"] .wts-contact-hero-container {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-content,
+html[dir="rtl"] .wts-contact-hero-content {
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-title,
+html[dir="rtl"] .wts-contact-hero-title {
+    width: 100% !important;
+    margin-inline: auto !important;
+    direction: rtl !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-title span {
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-description,
+html[dir="rtl"] .wts-contact-hero-description {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin-inline: auto !important;
+    direction: rtl !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-eyebrow,
+html[dir="rtl"] .wts-contact-hero-eyebrow {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-actions,
+html[dir="rtl"] .wts-contact-hero-actions,
+html[dir="rtl"] .wts-about-hero .wts-about-hero-breadcrumb,
+html[dir="rtl"] .wts-contact-hero-breadcrumb {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-about-hero .wts-about-hero-actions,
+html[dir="rtl"] .wts-contact-hero-actions {
+    align-items: center !important;
+}
