@@ -23418,6 +23418,33 @@ html[dir="rtl"] .wts-home2-hero-eyebrow {
     justify-content: center !important;
 }
 
+/* Keep Home 1 hero copy aligned to the page start in both directions. */
+.wts-home1-hero-content {
+    margin-inline: 0 auto !important;
+    text-align: left !important;
+}
+
+.wts-home1-hero-content > p {
+    margin-inline: 0 auto !important;
+    text-align: left !important;
+}
+
+.wts-home1-hero-actions {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] .wts-home1-hero-content,
+html[dir="rtl"] .wts-home1-hero-content > p {
+    margin-inline: 0 auto !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] .wts-home1-hero-actions {
+    justify-content: flex-start !important;
+    text-align: right !important;
+}
+
 /* Center the About and Contact hero blocks inside their full width containers. */
 html[dir="rtl"] .wts-about-hero .wts-about-hero-container,
 html[dir="rtl"] .wts-contact-hero-container {
