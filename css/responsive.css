@@ -23499,3 +23499,25 @@ html[dir="rtl"] .wts-about-hero .wts-about-hero-actions,
 html[dir="rtl"] .wts-contact-hero-actions {
     align-items: center !important;
 }
+
+/* Center the facilities CTA content in RTL mode. */
+html[dir="rtl"] .wts-facilities-cta-container {
+    justify-content: center !important;
+}
+
+html[dir="rtl"] .wts-facilities-cta-content {
+    width: min(100%, 780px) !important;
+    max-width: 780px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-facilities-cta-eyebrow,
+html[dir="rtl"] .wts-facilities-cta-title,
+html[dir="rtl"] .wts-facilities-cta-description {
+    text-align: center !important;
+}
+
+html[dir="rtl"] .wts-facilities-cta-actions {
+    justify-content: center !important;
+}
